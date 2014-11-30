@@ -1,4 +1,4 @@
-<div>
+<footer>
 	<div>
 		<div>
 			<h1>Opening Hours</h1>
@@ -33,7 +33,7 @@
 		<span><a href="#"><img src="" alt="" ></a></span>
 		<span><a href="#"><img src="" alt="" ></a></span>
 	</div>
-</div>
+</footer>
 
 
 
