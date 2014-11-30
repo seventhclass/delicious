@@ -23,7 +23,7 @@ header {
 	
 }
 
-nav {
+header > nav {
 	//background-color: #fff;
 	//border: 1px solid #dedede;
 	border-radius: 4px;
@@ -41,13 +41,13 @@ header ul li {
 	font-size:20px;
 	transition: all 0.2s;
 }
-nav > ul > li > a {
+header > nav > ul > li > a {
 	color: #aaa;
 	display: inline-block;
 	line-height: 30px;
 	padding: 10px;
 }
-nav > ul > li:hover {
+header > nav > ul > li:hover {
 	background-color: rgb( 40, 44, 47 );
 }
 
