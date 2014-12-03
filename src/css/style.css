@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* Initialization */
+/*========== Initialization ==========*/
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,header,footer,dl,dt,dd,input{
 	margin:0;
 	padding:0;
@@ -11,8 +11,9 @@ body{font-size:12px;
 	height:100%;
 	/* background:url("../images/background.jpg")  no-repeat center center fixed; */
 	background:url("../images/slider3 (2).jpg")  no-repeat right top fixed; 
-	-webkit-background-size:100%;/*cover;*/
-	background-size:100%;/*cover;*/
+	/* background:url("../images/noodles.jpg")  no-repeat right bottom fixed;  */
+	/*-webkit-background-size:100%;cover;*/
+	/*background-size:100%;cover;*/
 	background-color:#320100; 
 	font-family: 'HelveticaRegular',Helvetica,Arial;
 	line-height:18px;}
@@ -25,81 +26,208 @@ a{text-decoration:none;}
 .clearfix:after{content:"";display:block;clear:both;}
 .clearfix{zoom:1;}
 
-/* #wrap{
-	with:100%;
-	margin:0 auto;
-}  */
-/*========== header ==========*/
+/*========== header ==================================================*/
 header {
 	display: block;
-	/*margin-top: 0;*/
 	width: 100%;
 	height: 50px;
 	background-color:#a94718;/*#300300;/*#4f1e19;*/
-	-webkit-box-shadow: 0 15px 10px ##b07546;
-	-moz-box-shadow: 0 15px 10px ##b07546;
-	box-shadow: 0 15px 10px #b07546;/*#1e0000;*/
+	-webkit-box-shadow: 0 4px 10px ##b07546;
+	-moz-box-shadow: 0 4px 10px ##b07546;
+	box-shadow: 0 4px 10px #b07546;/*#1e0000;*/
 }
 
 header > nav {
+	position:relative;
 	display: block;
-	text-align:center;
+	width:980px;
+	height:50px;
+	margin:0 auto;
 }
 header ul {
 	display: inline-block;
 	margin:15px 0 0;
 }
 
- header ul li  {
+header ul li  {
 	display:inline-block;
-	text-align:center;
-	width:100px;
 }
 
-header  #menu{
-	/* font-size:16px; */
+header  #menus li{
 	font: normal normal normal 17px/1.4em 'open sans', sans-serif;
 }
-header  #languages{
+header #languages{
 	font-size:12px;
 	float:right;
-	margin-right:10px;
 }
-	
+header #languages li{
+	text-align:right;
+}
+
  header ul li  a{
 	-webkit-transition: color 0.4s ease 0s;
 	-moz-transition: color 0.4s ease 0s;
 	transition: color 0.4s ease 0s;
-}
-
-header > nav > ul > li > a {
-	 color: #d9b181;
+	color: #d9b181;
 	display: inline-block;
+	position:absolute;
+	bottom:10px;
 }
-
 
 header > nav > ul > li a:hover {
 	color: white;
-	/*font-weight:bold;
-	color: #280000;
-	 background-color:black; */
+	/*color: #280000;*/
+}
+header #menu{	left:77px;}
+header #promotion{left:152px;}
+header #about{left:261px;}
+header #contact{left:363px;}
+header #english{right:56px;}
+header #french{right:129px;}
+header #chinese{right:0;}
+
+
+/*========== style for all pages ==================================================*/
+/* .content{
+	-webkit-transition: all 0.8s ease 0s;
+	-moz-transition: all 0.8s ease 0s;
+	transition: all 0.8s ease 0s;
+
+} */
+/*========== home ==================================================*/
+#content_home{
+	/* float:center;
+	position:absolute; */
+	width:980px;
+	height:490px;
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* top:0; */
+	/* display: block; */
+}
+#content_menu{
+	/* float:center;
+	position:absolute; */
+ 	width:1200px;
+	height:540px;
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* display: none; */
+	/* top:-490px; */
+}
+#content_promotion{
+	/* position:relative; */
+	width:980px;
+	height:540px;
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* display: none; */
+}
+#content_about{
+	/* position:relative; */
+	width:980px;
+	height:540px;
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* display: none; */
+}
+#content_contact{
+	/* position:relative; */
+	width:980px;
+	height:540px;
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* display: none; */
 }
 
-/*========== home ==========*/
 * {margin:0;padding:0}
-section {
+figure {
 	/* position:relative; */
 	width:980px;
 	height:490px;
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
 }
-section > div {
-	
+/* Slider */
+figure #slider {
+  display:block;
+  /* border:1px solid #000; */
+  width:980px; /* slider width */
+  height:490px;; /* slider height*/
+  /* margin:0 auto; 
+  background:white url('http://reader-download.googlecode.com/svn/trunk/images/nivo-loading.gif') no-repeat 50% 50%;*/
+  overflow:hidden;
+  position:relative;
 }
 
+/* For caption */
+figure #slider figcaption {
+  display:block;
+  background-color:black;
+  font:normal normal 11px Arial,Sans-Serif;
+  color:white;
+  opacity:.8;
+  padding:10px 15px;
+  position:absolute;
+  right:0;
+  bottom:-100px; /* hide the caption with this way :) */
+  left:0;
+ /*  z-index:44; */
+}
 
-/*========== footer ==========*/
+figure #slider img {
+  display:block;
+  margin:0 0;
+  width:980px; /* slide width */
+  height:490px; /* slide height */
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+/* Navigation */
+#slider-nav {
+  display:block;
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:99;
+}
+
+#slider-nav a {
+  display:block;
+  float:left;
+  width:10px;
+  height:10px;
+  background-color:#111;
+  font-size:0;
+  color:transparent;
+  overflow:hidden;
+  text-indent:-99px;
+  margin:0 2px 0 0;
+  border:2px solid white;
+  border-radius:100%;
+  box-shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+/* #slider-nav .active {
+  background-color:#2589B4;
+} */
+
+/* Hide all element inside the '#slider' until the page has been loaded! */
+#slider .container, #slider figcaption {display:none}
+#slider-nav {opacity:0}
+
+
+/*========== menu ==================================================
+section #content_menu{
+	border:1px solid #bc966d;/*just for seeing the area
+	width:1200px;
+	height:490px;
+	margin: 45px auto;
+}*/
+
+/*========== footer ==================================================*/
 footer {
 	height:350px;
 	width:100%;

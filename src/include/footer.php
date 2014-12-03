@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer>
 	<div>
 		<div id="footer1">
 			<h1>Opening Hours</h1>
@@ -29,7 +29,7 @@
 			<p>Happy Hour:</p>
 			<p>Mon-Wed 3:00pm - 7:00pm</p>
 		</div>
-		<p id="copyright">&copy; 2014 by Delicious. Proudly created with <a href="www.7thclass.com">7thclass.com</a>
+		<p id="copyright">&copy; 2014 by Delicious. Proudly created with <a href="http://www.7thclass.com">7thclass.com</a>
 		<span><a href="#"><img src="" alt="" >Facebook</a>
 		<span><a href="#"><img src="" alt="" >Twitter</a>
 		<span><a href="#"><img src="" alt="" >Google+</a></span></p>
