@@ -96,18 +96,19 @@ header #chinese{right:0;}
 } */
 /*========== home ==================================================*/
 #content_home{
-	/* float:center;
-	position:absolute; */
+	/* float:center; */
+	position:relative;
 	width:980px;
 	height:490px;
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
+    overflow:hidden;
 	/* top:0; */
 	/* display: block; */
 }
 #content_menu{
-	/* float:center;
-	position:absolute; */
+	/* float:center; */
+	position:absolute;
  	width:1200px;
 	height:540px;
 	border:1px solid #bc966d; /*just for seeing the area*/
@@ -140,83 +141,67 @@ header #chinese{right:0;}
 	/* display: none; */
 }
 
-* {margin:0;padding:0}
-figure {
-	/* position:relative; */
-	width:980px;
-	height:490px;
-	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 45px auto;
-}
-/* Slider */
-figure #slider {
-  display:block;
-  /* border:1px solid #000; */
-  width:980px; /* slider width */
-  height:490px;; /* slider height*/
-  /* margin:0 auto; 
-  background:white url('http://reader-download.googlecode.com/svn/trunk/images/nivo-loading.gif') no-repeat 50% 50%;*/
-  overflow:hidden;
-  position:relative;
-}
 
-/* For caption */
-figure #slider figcaption {
-  display:block;
-  background-color:black;
-  font:normal normal 11px Arial,Sans-Serif;
-  color:white;
-  opacity:.8;
-  padding:10px 15px;
-  position:absolute;
-  right:0;
-  bottom:-100px; /* hide the caption with this way :) */
-  left:0;
- /*  z-index:44; */
-}
+/*========== slider ==================================================*/
+	   
+#list{
+       width:6860px;
+	   height:490px;
+	   position:absolute;
+	   z-index:1;}
+	   
+#list img {
+           float:left;}
+		   
+#buttons {
+       position:absolute;
+	   height:10px;
+	   width:100px;
+	   z-index:2;
+	   bottom:20px;
+	   left:440px;}
+	   
+#buttons span{
+              cursor:pointer;
+			  float:left;
+			  border:1px solid #fff;
+			  width:10px;
+			  height:10px;
+			  border-radius:50%;
+			  background:#333;
+			  margin-right:5px;}
+			  
+#buttons .on{
+              background:orangered;}
+			  
+.arrow{
+       cursor:pointer;
+	   display:none;
+	   line-height:39px;
+	   text-align:center;
+	   font-size:36px;
+	   font-weight:bold;
+	   width:40px;
+	   height:40px;
+	   position:absolute;
+	   z-index:2;
+	   top:225px;
+	   background-color:RGBA(0,0,0,.3);
+	   color:#fff;}
+	   
+.arrow:hover{
+             background-color:RGBA(0,0,0,.7);}
+			 
+#content_home:hover .arrow{
+                       display:block;}
+					   
+#prev{
+       left:20px;}
+	   
+#next{
+       right:20px;}
 
-figure #slider img {
-  display:block;
-  margin:0 0;
-  width:980px; /* slide width */
-  height:490px; /* slide height */
-  position:absolute;
-  top:0;
-  left:0;
-}
 
-/* Navigation */
-#slider-nav {
-  display:block;
-  position:absolute;
-  top:10px;
-  right:10px;
-  z-index:99;
-}
-
-#slider-nav a {
-  display:block;
-  float:left;
-  width:10px;
-  height:10px;
-  background-color:#111;
-  font-size:0;
-  color:transparent;
-  overflow:hidden;
-  text-indent:-99px;
-  margin:0 2px 0 0;
-  border:2px solid white;
-  border-radius:100%;
-  box-shadow:0 1px 2px rgba(0,0,0,.4);
-}
-
-/* #slider-nav .active {
-  background-color:#2589B4;
-} */
-
-/* Hide all element inside the '#slider' until the page has been loaded! */
-#slider .container, #slider figcaption {display:none}
-#slider-nav {opacity:0}
 
 
 /*========== menu ==================================================
