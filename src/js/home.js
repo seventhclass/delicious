@@ -23,8 +23,8 @@
 				 function animate(offset) {
 				          animated=true;                //true就表示可以允许animate运行
 				        var newleft=parseInt(list.style.left)+offset;
-						var time=300;  // 实现动画效果：位移总时间
-						var interval=10;  //位移间隔时间
+						var time=245;  // 实现动画效果：位移总时间
+						var interval=5;  //位移间隔时间
 						var speed= offset/(time/interval);  //每次位移量
 						
 						function go(){
@@ -47,20 +47,15 @@
 						}
 						go();          //做完判断之后开始运行程序
 						
-						
-				       
-						
-						
 				    }
 				 function play(){             //自动播放功能
 				     timer = setInterval(function() {          //setInterval这个函数会一直执行，而setTimeout这个函数只会执行一次
 					    next.onclick();
-					 },4900);
+					 },4000);
 				 }
 				 function stop() {
 				    clearInterval(timer);
 				 }
-				 
 				 //实现next,prev功能
 				 next.onclick= function() {
 				  if (index==5){
