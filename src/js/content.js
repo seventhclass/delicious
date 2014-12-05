@@ -5,6 +5,7 @@ var sections = new Array();
 var pages = new Array();  		//pages for different languages 
 var mouseMenu = null;			//the menu item that the mouse clicks on
 var index = "";
+var prev = 0; 					//used to remember the menu item clicked last time
 
 //initialize to show home section and hide all other sections
 function init(){
@@ -35,12 +36,17 @@ function changeShowDiv(e){
 	
 	//evt.stopPropagation();  //stop bubbling
 	//evt.preventDefault();   //prevent default event for tag 'a'
-	
+	if (prev == mouseMenu.id){
+		return;
+	}
+	else{
+		prev = mouseMenu.id;
+	}
 	index = "content_" + mouseMenu.id;
 	for(var i = 0; i < sections.length; i++){
 		if(sections[i].style.display == "block"){
 				$(sections[i]).fadeOut();
-			sections[i].style.display="none";
+				sections[i].style.display="none";
 		}else{
 			if(sections[i].id == index){
 				$(sections[i]).fadeIn(1500);
