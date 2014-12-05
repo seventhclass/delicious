@@ -28,6 +28,9 @@ a{text-decoration:none;}
 
 /*========== header ==================================================*/
 header {
+	position:fixed;
+	top:0px;
+	z-index:10;
 	display: block;
 	width: 100%;
 	height: 50px;
@@ -88,12 +91,13 @@ header #chinese{right:0;}
 
 
 /*========== style for all pages ==================================================*/
-/* .content{
-	-webkit-transition: all 0.8s ease 0s;
+.content{
+	top:45px;
+	/* -webkit-transition: all 0.8s ease 0s;
 	-moz-transition: all 0.8s ease 0s;
-	transition: all 0.8s ease 0s;
-
-} */
+	transition: all 0.8s ease 0s; */
+	margin-bottom:45px;
+}
 /*========== home ==================================================*/
 #content_home{
 	cursor:pointer;
@@ -111,34 +115,38 @@ header #chinese{right:0;}
 }
 #content_menu{
 	/* float:center; */
-	position:absolute;
+	position:relative;
  	width:1200px;
 	height:540px;
+	background-color:red;
 	border:1px solid #bc966d;/* just for seeing the area*/
 	margin: 45px auto;
 	/* display: none; */
 	/* top:-490px; */
 }
 #content_promotion{
-	/* position:relative; */
+	position:relative;
 	width:980px;
 	height:540px;
+	background-color:green;
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
 	/* display: none; */
 }
 #content_about{
-	/* position:relative; */
+	position:relative;
 	width:980px;
 	height:540px;
+	background-color:yellow;
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
 	/* display: none; */
 }
 #content_contact{
-	/* position:relative; */
+	position:relative;
 	width:980px;
 	height:540px;
+	background-color:blue;
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
 	/* display: none; */
@@ -175,8 +183,8 @@ header #chinese{right:0;}
 			  margin-right:15px;}
 			  
 #buttons .on{
-              background:#d36532;/*#d36532;#a94718;
-			  border:1px solid #fff;*/}
+              background:#d36532;}
+			  
 #buttons span:hover{
 	color:
 }			  
@@ -220,6 +228,8 @@ section #content_menu{
 
 /*========== footer ==================================================*/
 footer {
+	position:relative;
+	top:45px;
 	height:350px;
 	width:100%;
 	margin: 0 auto;

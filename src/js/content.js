@@ -1,13 +1,12 @@
-/* window.onload = init; */
 addEvent(window, "load", init, false);
 
-var menuItems = new Array();	/*menu items*/
+var menuItems = new Array();	//menu items
 var sections = new Array();   
-var pages = new Array();  		/*pages for different languages*/ 
-var mouseMenu = null;			/*the menu item that the mouse clicks on */
+var pages = new Array();  		//pages for different languages 
+var mouseMenu = null;			//the menu item that the mouse clicks on
 var index = "";
 
-/*initialize to show home section and hide all other sections*/
+//initialize to show home section and hide all other sections
 function init(){
 	var allElem = document.getElementsByTagName("*");
 	
@@ -15,45 +14,38 @@ function init(){
 		if(allElem[i].className == "content"){
 			sections.push(allElem[i]);
 			var idx = allElem[i].id;
-			menuItems.push(document.getElementById(idx.substring(8,idx.length)));  /*cut 'content_' to get menu item id*/
+			menuItems.push(document.getElementById(idx.substring(8,idx.length)));  //cut 'content_' to get menu item id
 		}
 	}
 	
 	for(var i = 0; i < menuItems.length; i++){
-		/* sections[i].style.display = getStyle(sections[i],"display"); */
 		
-		if(sections[i].id == "content_home") 
-			sections[i].style.display="block";
-		else
-			sections[i].style.display="none";
+		if(sections[i].id == "content_home"){
+			sections[i].style.display="block";} 
 			
-		
-		/* addEvent(menuItems[i], "mousedown", changeShowDiv, false);*/
-		removeEvent(menuItems[i], "mouseup", changeShowDiv, false); 
-		/* sections[i].style.display="none"; 
-		menuItems[i].onclick = changeShowDiv;*/
+		else{
+			sections[i].style.display="none";}
+		addEvent(menuItems[i], "click", changeShowDiv, false);
 	}
 }
 
 function changeShowDiv(e){
 	var evt = e || window.event;
 	mouseMenu = evt.target || evt.srcElement;
+	
+	//evt.stopPropagation();  //stop bubbling
+	//evt.preventDefault();   //prevent default event for tag 'a'
+	
 	index = "content_" + mouseMenu.id;
-	
 	for(var i = 0; i < sections.length; i++){
-		/* alert(sections[i].id +","+ sections[i].style.display); */
-		sections[i].style.display="none";
-		/* alert(sections[i].id +","+ sections[i].style.display); */
-	}
-	
-	for(var i = 0; i < sections.length; i++){
-		if(sections[i].id == index){
-		
-			alert(sections[i].id+".display="+sections[i].style.display);  /* debug */
-			
-			sections[i].style.display="block";
-			alert(sections[i].id+".display="+sections[i].style.display);  /* debug */
-			
+		if(sections[i].style.display == "block"){
+				$(sections[i]).fadeOut();
+			sections[i].style.display="none";
+		}else{
+			if(sections[i].id == index){
+				$(sections[i]).fadeIn(1500);
+				sections[i].style.display="block";
+			}
 		}
 	}
 }
