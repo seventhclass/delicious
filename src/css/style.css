@@ -43,7 +43,7 @@ header {
 header > nav {
 	position:relative;
 	display: block;
-	width:980px;
+	width:1000px;
 	height:50px;
 	margin:0 auto;
 }
@@ -85,9 +85,10 @@ header #menu{	left:77px;}
 header #promotion{left:152px;}
 header #about{left:261px;}
 header #contact{left:363px;}
-header #english{right:56px;}
-header #french{right:129px;}
-header #chinese{right:0;}
+header #english{right:129px;}
+header #french{right:202px;}
+header #chinese{right:76px;}
+header #admin{right:0;}
 
 
 /*========== style for all pages ==================================================*/
