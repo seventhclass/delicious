@@ -137,7 +137,7 @@ header #admin{right:0;}
 #content_about{
 	position:relative;
 	width:980px;
-	height:540px;
+	height:1000px;
 	background-color:yellow;
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
