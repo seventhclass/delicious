@@ -4,9 +4,9 @@
  * @return string
  */
 function addCate(){
-	$arr_c['cate_name']=$_POST['cName'];
-	$arr_e['cate_name']=$_POST['eName'];
-	$arr_f['cate_name']=$_POST['fName'];
+	$arr_c['cate_name']=addslashes($_POST['cName']);
+	$arr_e['cate_name']=addslashes($_POST['eName']);
+	$arr_f['cate_name']=addslashes($_POST['fName']);
 	
 	if( insert("cate_cn",$arr_c) && insert("cate_en",$arr_e) && insert("cate_fr",$arr_f) ){
 		$mesg="分类添加成功!<br/> <a href='addCate.php'>继续添加</a>|<a href='listCate.php'>查看分类</a>";		
@@ -34,9 +34,9 @@ function getCateById($id){
  */
 function editCate($where){
 	//$arr=$_POST;
-	$arr_c['cate_name']=$_POST['cName'];
-	$arr_e['cate_name']=$_POST['eName'];
-	$arr_f['cate_name']=$_POST['fName'];	
+	$arr_c['cate_name']=addslashes($_POST['cName']);
+	$arr_e['cate_name']=addslashes($_POST['eName']);
+	$arr_f['cate_name']=addslashes($_POST['fName']);	
 	if( update("cate_cn", $arr_c, $where) && update("cate_en", $arr_e, $where) && update("cate_fr", $arr_f, $where)){
 		$mesg="分类修改成功!<br/> <a href='listCate.php'>查看分类</a>";
 	}else{

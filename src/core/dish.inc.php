@@ -26,21 +26,21 @@ function addDish(){
 	$dish_id=getInsertId();
 	
 	$arr_1['dish_id']=$dish_id;
-	$arr_1['dish_name']=$_POST['cName'];
-	$arr_1['dish_desc']=$_POST['cDesc'];
+	$arr_1['dish_name']=addslashes($_POST['cName']);
+	$arr_1['dish_desc']=addslashes($_POST['cDesc']);
 	$res1=insert("dish_cn", $arr_1);
 	
 	$arr_2['dish_id']=$dish_id;
-	$arr_2['dish_name']=$_POST['eName'];
-	$arr_2['dish_desc']=$_POST['eDesc'];	
+	$arr_2['dish_name']=addslashes($_POST['eName']);
+	$arr_2['dish_desc']=addslashes($_POST['eDesc']);	
 	$res2=insert("dish_en", $arr_2);
 	
 	$arr_3['dish_id']=$dish_id;
-	$arr_3['dish_name']=$_POST['fName'];
-	$arr_3['dish_desc']=$_POST['fDesc'];	
+	$arr_3['dish_name']=addslashes($_POST['fName']);
+	$arr_3['dish_desc']=addslashes($_POST['fDesc']);	
 	$res3=insert("dish_fr", $arr_3);
 
-	if( $res0 && $res1 && $res2 && $dish_id ){
+	if( $res0 && $res1 && $res2 && $res3 && $dish_id ){
 		foreach ($uploadFiles as $uploadFile){
 			$arr['dish_id']=$dish_id;
 			$arr['album_path']=$uploadFile['name'];
@@ -60,7 +60,10 @@ function addDish(){
 			}
 			if(file_exists("../image_350/".$uploadFile['name'])){
 				unlink("../image_350/".$uploadFile['name']);
-			}			
+			}	
+			if(file_exists("./uploads/".$uploadFile['name'])){
+				unlink("./uploads/".$uploadFile['name']);
+			}					
 		}
 		$mesg="<p>添加失败!</p><a href='addDish.php' target='mainFrame'>重新添加</a>";
 	}
@@ -97,16 +100,16 @@ function editDish($id){
 	$where="dish_id={$id}";
 	$res0=update("dish", $arr_0, $where);
 
-	$arr_1['dish_name']=$_POST['cName'];
-	$arr_1['dish_desc']=$_POST['cDesc'];
+	$arr_1['dish_name']=addslashes($_POST['cName']);
+	$arr_1['dish_desc']=addslashes($_POST['cDesc']);
 	$res1=update("dish_cn", $arr_1, $where);
 
-	$arr_2['dish_name']=$_POST['eName'];
-	$arr_2['dish_desc']=$_POST['eDesc'];
+	$arr_2['dish_name']=addslashes($_POST['eName']);
+	$arr_2['dish_desc']=addslashes($_POST['eDesc']);
 	$res2=update("dish_en", $arr_2, $where);
 
-	$arr_3['dish_name']=$_POST['fName'];
-	$arr_3['dish_desc']=$_POST['fDesc'];
+	$arr_3['dish_name']=addslashes($_POST['fName']);
+	$arr_3['dish_desc']=addslashes($_POST['fDesc']);
 	$res3=update("dish_fr", $arr_3, $where);	
 
 	$pid=$id;
@@ -134,6 +137,9 @@ function editDish($id){
 				if (file_exists ( "../image_350/" . $uploadFile ['name'] )) {
 					unlink ( "../image_350/" . $uploadFile ['name'] );
 				}
+				if(file_exists("./uploads/".$uploadFile['name'])){
+					unlink("./uploads/".$uploadFile['name']);
+				}				
 			}
 		}
 		$mesg="<p>编辑失败!</p><a href='listDish.php' target='mainFrame'>重新编辑</a>";

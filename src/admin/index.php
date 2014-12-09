@@ -66,9 +66,22 @@ checkLogined();
                         </dl>
                     </li>                    
                     <li>
-                        <h3><span onclick="show('menu6','change6')" id="change6">+</span>商品图片管理</h3>
+                        <h3><span onclick="show('menu6','change6')" id="change6">+</span>菜品图片管理</h3>
                         <dl id="menu6" style="display:none;">
-                            <dd><a href="listDishImages.php" target="mainFrame">商品图片列表</a></dd>
+                            <dd><a href="listDishImages.php" target="mainFrame">菜品图片列表</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <h3><span onclick="show('menu7','change7')" id="change7">+</span>促销活动管理</h3>
+                        <dl id="menu7" style="display:none;">
+                        	<dd><a href="addPromotion.php" target="mainFrame">添加促销活动</a></dd>
+                            <dd><a href="listPromotion.php" target="mainFrame">促销活动列表</a></dd>
+                        </dl>
+                    </li>  
+                    <li>
+                        <h3><span onclick="show('menu8','change8')" id="change8">+</span>幻灯图片管理</h3>
+                        <dl id="menu8" style="display:none;">
+                            <dd><a href="listSliderImgs.php" target="mainFrame">幻灯图片列表</a></dd>
                         </dl>
                     </li>
                 </ul>

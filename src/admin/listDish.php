@@ -161,7 +161,7 @@ if($strkeys) {
 								?>                                   
                                 </td>
                                 <td align="center">
-                                				<input type="button" value="详情" class="btn" onclick="showDetail(<?php echo $row['dish_id'];?>,'<?php echo $row['dish_name_cn'];?>')"><input type="button" value="修改" class="btn" onclick="editDish(<?php echo $row['dish_id'];?>)"><input type="button" value="删除" class="btn"onclick="delDish(<?php echo $row['dish_id'];?>)">
+                                				<input type="button" value="详情" class="btn" onclick="showDetail(<?php echo $row['dish_id'];?>,'<?php echo $row['dish_name_cn'];?>')"><input type="button" value="修改" class="btn" onclick="editDish(<?php echo $row['dish_id'];?>)"><input type="button" value="删除" class="btn"onclick="delDish(<?php echo $row['dish_id'];?>)"><input type="button" value="促销" class="btn"onclick="addPromotion(<?php echo $row['dish_id'];?>)">
 					                            <div id="showDetail<?php echo $row['dish_id'];?>" style="display:none;">
 					                        	<table class="table" cellspacing="0" cellpadding="0">
 					                        		<tr>
@@ -453,6 +453,9 @@ function showDetail(id,t){
 			window.location="doAdminAction.php?act=delDish&id="+id;
 		}
 	}
+	function addPromotion(id){
+		window.location='addPromotion.php?id='+id;
+	}		
 	function search(){
 		if(event.keyCode==13){
 			var val=document.getElementById("search").value;

@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS delicious default character set utf8;
-USE delicious;
-
 /*
 Navicat MySQL Data Transfer
 
@@ -13,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2014-12-06 22:14:05
+Date: 2014-12-09 12:08:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,13 +29,6 @@ CREATE TABLE `album` (
 -- ----------------------------
 -- Records of album
 -- ----------------------------
-INSERT INTO `album` VALUES ('7', '5', 'e5eaf62bc4c93d71c8f93cfbe8f731ce.jpg');
-INSERT INTO `album` VALUES ('8', '5', '8447083b2bf6553079319af88987f27f.jpg');
-INSERT INTO `album` VALUES ('10', '1', '90611705dcf1a6c6d1faceab9e777c29.jpg');
-INSERT INTO `album` VALUES ('11', '2', 'e5119e6b7816f8bf8ab39ce406286212.jpg');
-INSERT INTO `album` VALUES ('17', '2', '32a403e3740510f3538e5de0a4d51f9a.png');
-INSERT INTO `album` VALUES ('18', '2', '004afe50326ee32425d8904b7f7e8a0f.png');
-INSERT INTO `album` VALUES ('19', '1', 'd836add1503aa34f8a276f04f795098c.jpg');
 
 -- ----------------------------
 -- Table structure for `cate_cn`
@@ -114,9 +104,6 @@ CREATE TABLE `dish` (
 -- ----------------------------
 -- Records of dish
 -- ----------------------------
-INSERT INTO `dish` VALUES ('1', '1', '123456', '500', '12.00', '10.00', '0', '1', '0');
-INSERT INTO `dish` VALUES ('2', '1', '10002', '120', '16.00', '13.00', '1417493231', '0', '1');
-INSERT INTO `dish` VALUES ('5', '2', '1123334', '100', '21.00', '17.00', '1417569208', '1', '0');
 
 -- ----------------------------
 -- Table structure for `dish_cn`
@@ -133,9 +120,6 @@ CREATE TABLE `dish_cn` (
 -- ----------------------------
 -- Records of dish_cn
 -- ----------------------------
-INSERT INTO `dish_cn` VALUES ('1', '鱼香肉丝', '鱼香肉丝好吃啊，非常好吃，太好吃了，好吃的不行了。');
-INSERT INTO `dish_cn` VALUES ('2', '水煮鱼123', '<p>\r\n	<span style=\"color:#337FE5;font-size:18px;font-family:NSimSun;\">水煮鱼123</span> \r\n</p>\r\n<p>\r\n	<span><span style=\"font-size:14px;line-height:27px;font-family:NSimSun;color:#9933E5;\">我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span>我爱水煮鱼！我爱水煮鱼！<span style=\"color:#9933E5;font-family:NSimSun;font-size:14px;line-height:27px;\">我爱水煮鱼！</span><img src=\"/delicious/plugins/kindeditor/attached/image/20141202/20141202050449_79760.png\" alt=\"\" /></span></span> \r\n</p>');
-INSERT INTO `dish_cn` VALUES ('5', '测试123', '2343dfhd');
 
 -- ----------------------------
 -- Table structure for `dish_en`
@@ -152,9 +136,6 @@ CREATE TABLE `dish_en` (
 -- ----------------------------
 -- Records of dish_en
 -- ----------------------------
-INSERT INTO `dish_en` VALUES ('1', 'yuxiangroushi', 'yuxiangroushi hao chi a ,hao chi ,fei chang hao chi ,hao chi de bu xing le.');
-INSERT INTO `dish_en` VALUES ('2', 'ShuiZhu Fish123', '<p>\r\n	<span style=\"color:#337FE5;font-size:18px;\">Shuizhu Fish123</span> \r\n</p>\r\n<p>\r\n	<span>I love shuizhu fish!</span><span>I love shuizhu fish!</span><span>I love shuizhu fish!</span><span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!<span>I love shuizhu fish!</span><span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span>I love shuizhu fish!I love shuizhu fish!I love shuizhu fish!<span>I love shuizhu fish!</span> \r\n</p>');
-INSERT INTO `dish_en` VALUES ('5', 'test123', 'dfgdfgd');
 
 -- ----------------------------
 -- Table structure for `dish_fr`
@@ -171,9 +152,83 @@ CREATE TABLE `dish_fr` (
 -- ----------------------------
 -- Records of dish_fr
 -- ----------------------------
-INSERT INTO `dish_fr` VALUES ('1', 'francais ', 'francais francis');
-INSERT INTO `dish_fr` VALUES ('2', 'ShuiZhu Poisson123', '<p>\r\n	<span style=\"color:#337FE5;font-size:24px;\">Shuizhu&nbsp;poisson123</span> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<span>Shuizhu </span><span>poisson</span>!<span>Shuizhu </span><span>poisson</span><span>!</span><span>Shuizhu </span><span>poisson</span><span>!</span><span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!<span>Shuizhu </span><span>poisson</span><span>!</span>Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!Shuizhu&nbsp;poisson!\r\n</p>');
-INSERT INTO `dish_fr` VALUES ('5', 'test123', 'dfgdcgfd');
+
+-- ----------------------------
+-- Table structure for `promotion`
+-- ----------------------------
+DROP TABLE IF EXISTS `promotion`;
+CREATE TABLE `promotion` (
+  `prom_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `start_time` int(10) unsigned NOT NULL,
+  `end_time` int(10) unsigned NOT NULL,
+  `dish_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`prom_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of promotion
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `promotion_album`
+-- ----------------------------
+DROP TABLE IF EXISTS `promotion_album`;
+CREATE TABLE `promotion_album` (
+  `album_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `prom_id` int(10) unsigned NOT NULL,
+  `dish_id` int(10) unsigned DEFAULT NULL,
+  `album_path` varchar(50) NOT NULL,
+  PRIMARY KEY (`album_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of promotion_album
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `promotion_cn`
+-- ----------------------------
+DROP TABLE IF EXISTS `promotion_cn`;
+CREATE TABLE `promotion_cn` (
+  `prom_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title_cn` varchar(50) NOT NULL,
+  `content_cn` mediumtext,
+  PRIMARY KEY (`prom_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of promotion_cn
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `promotion_en`
+-- ----------------------------
+DROP TABLE IF EXISTS `promotion_en`;
+CREATE TABLE `promotion_en` (
+  `prom_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title_en` varchar(50) NOT NULL,
+  `content_en` mediumtext,
+  PRIMARY KEY (`prom_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of promotion_en
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `promotion_fr`
+-- ----------------------------
+DROP TABLE IF EXISTS `promotion_fr`;
+CREATE TABLE `promotion_fr` (
+  `prom_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title_fr` varchar(50) NOT NULL,
+  `content_fr` mediumtext,
+  PRIMARY KEY (`prom_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of promotion_fr
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `resto_admin`
@@ -196,3 +251,18 @@ INSERT INTO `resto_admin` VALUES ('2', 'Leo', 'e10adc3949ba59abbe56e057f20f883e'
 INSERT INTO `resto_admin` VALUES ('3', 'Lucas', 'e10adc3949ba59abbe56e057f20f883e', 'Lucas@qq.com');
 INSERT INTO `resto_admin` VALUES ('4', 'veron', 'e10adc3949ba59abbe56e057f20f883e', 'veron@qq.com');
 INSERT INTO `resto_admin` VALUES ('5', 'Michael', 'e10adc3949ba59abbe56e057f20f883e', 'Michael@qq.com');
+
+-- ----------------------------
+-- Table structure for `slider_album`
+-- ----------------------------
+DROP TABLE IF EXISTS `slider_album`;
+CREATE TABLE `slider_album` (
+  `slider_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `dish_id` int(10) unsigned DEFAULT NULL,
+  `album_path` varchar(50) NOT NULL,
+  PRIMARY KEY (`slider_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of slider_album
+-- ----------------------------

@@ -67,7 +67,22 @@ function doWaterPic($id){
 	return $mesg;
 }
 
+function addSliderAlbum($arr){
+	return insert("slider_album",$arr);
+}
 
+function getSliderImgByImagId($id){
+	$sql="select slider_id, dish_id, album_path from slider_album where slider_id={$id}";
+	$row=fetchOne($sql);
+	return $row;
+}
 
+function addPromotionAlbum($arr){
+	return insert("promotion_album",$arr);
+}
 
-
+function getPromotionImgById($id){
+	$sql="select a.album_id, a.prom_id, a.dish_id, a.album_path from promotion_album a where prom_id={$id} limit 1";
+	$row=fetchOne($sql);
+	return $row;
+}

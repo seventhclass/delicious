@@ -17,5 +17,7 @@ require_once "dish.inc.php";
 require_once "album.inc.php";
 require_once "upload.func.php";
 require_once "search.func.php";
+require_once "slider.inc.php";
+require_once "promotion.inc.php";
 
 connect();

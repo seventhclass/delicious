@@ -35,6 +35,16 @@ if($act=="logout"){
 	$mesg=delDishImgById($id);
 }elseif($act=="uploadPic"){
 	$mesg=uploadDishPic($id);
+}elseif($act=="addSlider"){
+	$mesg=addSlider();
+}elseif($act=="deleteSlider"){
+	$mesg=delSliderById($id);
+}elseif($act=="addPromotion"){
+	$mesg=addPromotion($id);
+}elseif($act=="editPromotion"){
+	$mesg=editPromotion($id);
+}elseif($act=="delPromotion"){
+	$mesg=delPromotion($id);
 }
 
 ?>

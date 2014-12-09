@@ -2,6 +2,11 @@
 require_once '../include.php';
 checkLogined();
 $rows=getDishInfo();
+
+if (! $rows) {
+	alertMesg ( "没有菜品,请添加!", "addDish.php" );
+	exit ();
+}
 ?>
 <!doctype html>
 <html>

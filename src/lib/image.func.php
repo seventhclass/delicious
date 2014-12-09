@@ -1,7 +1,5 @@
 <?php
-
 require_once 'string.func.php';
-
 
 // 通过GD库做验证码
 function verifyImage($type = 1,$length = 4, $pixel=0, $line=0, $sess_name = "verify") {
@@ -50,6 +48,11 @@ function verifyImage($type = 1,$length = 4, $pixel=0, $line=0, $sess_name = "ver
 			imageline ( $image, mt_rand ( 0, $width - 1 ), mt_rand ( 0, $height - 1 ), mt_rand ( 0, $width - 1 ), mt_rand ( 0, $height - 1 ), $color );
 		}
 	}
+	
+	ob_clean();
+	header("Pragma:no-cachern");
+	header("Cache-Control:no-cachern");
+	header("Expires:0rn");
 	
 	header ( "content-type:image/gif" );
 	imagegif ( $image );
