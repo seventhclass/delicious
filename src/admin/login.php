@@ -29,11 +29,11 @@
 	<form id="loginForm" action="doLogin.php" method="post">
 			<ul class="login">
 				<li class="l_tit">管理员账号</li>
-				<li class="mb_10"><input type="text"  name="username" placeholder="请输入管理员帐号" class="login_input user_icon"></li>
+				<li class="mb_10"><input type="text"  id="username" name="username" placeholder="请输入管理员帐号" class="login_input user_icon"><span class="prompt" id="sp1"></span></li>
 				<li class="l_tit">密码</li>
-				<li class="mb_10"><input type="password"  name="password" class="login_input password_icon"></li>
+				<li class="mb_10"><input type="password" id="password" name="password" class="login_input password_icon"><span class="prompt" id="sp2"></span></li>
 				<li class="l_tit">验证码</li>
-				<li class="mb_10"><input type="text"  name="verify" class="login_input password_icon"></li>				
+				<li class="mb_10"><input type="text" id="verify" name="verify" class="login_input password_icon"><span class="prompt" id="sp3"></span></li>				
 				<img src="getVerify.php" alt="验证码" />
 				<li class="autoLogin"><input type="checkbox" id="a1" class="checked" name="autoFlag" value="1"><label for="a1">自动登陆(一周内自动登陆)</label></li>				
 				<div id="login_status" style="display:none"><img width="80" height="80" src="./images/loader4.gif" alt="logging"/></div> 
@@ -43,7 +43,6 @@
 		</form>
 	</div>
 </div>
-
 <div class="hr_25"></div>
 <div class="footer">
 	<p>Copyright &copy; 2023 Delicious Restaurant版权所有&nbsp;&nbsp;&nbsp;</p>
@@ -51,8 +50,74 @@
 
 <script>
 $(document).ready(function(){
+	$('#username').focus(function(){
+		if ($(this).val() == "") {
+	            $(this).css("border-color", "#FF0000");	            
+	    } else {
+	            $(this).css("border-color", "#999");
+	            $("#sp1").html("");
+	    }
+	});	
+	$('#username').blur(function() {
+        if ($(this).val() == "") {
+                $(this).css("border-color", "#FF0000");
+                $("#sp1").html("用户名不能为空").css("color", "red");
+                $('#username').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#sp1").html("");
+        }
+	});
+	$('#password').focus(function(){
+		if ($(this).val() == "") {
+	            $(this).css("border-color", "#FF0000");
+	    } else {
+	            $(this).css("border-color", "#999");
+	            $("#sp2").html("");
+	    }
+	});	
+	$('#password').blur(function() {
+        if ($(this).val() == "") {
+                $(this).css("border-color", "#FF0000");
+                $("#sp2").html("密码不能为空").css("color", "red");
+                $('#password').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#sp2").html("");
+        }
+	});	
+	$('#verify').focus(function(){
+		if ($(this).val() == "") {
+	            $(this).css("border-color", "#FF0000");
+	    } else {
+	            $(this).css("border-color", "#999");
+	            $("#sp3").html("");
+	    }
+	});	
+	$('#verify').blur(function() {
+        if ($(this).val() == "") {
+                $(this).css("border-color", "#FF0000");
+                $("#sp3").html("验证码不能为空").css("color", "red");
+                $('#verify').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#sp3").html("");
+        }
+	});		
     $('#loginForm').submit(function(){
-     
+     	if($('#username').val() == ""){
+     		$("#sp1").html("用户名不能为空").css("color", "red");
+     		return false;
+     	}
+     	if($('#password').val() == ""){
+     		$("#sp2").html("密码不能为空").css("color", "red");
+     		return false;
+     	}
+     	if($('#verify').val() == ""){
+     		$("#sp3").html("验证码不能为空").css("color", "red");
+     		return false;
+     	}
+     	
         // show that something is loading
         /*$('#response').html("<b>Logging system...</b>");*/
         $('#response').html("");
