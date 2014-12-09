@@ -17,7 +17,7 @@
 	<div class="logoBar login_logo">
 		<div class="comWidth">
 			<div class="logo fl">
-				<a href="#"><img src="images/logo_delicieux.jpg" alt="吃货网"></a>
+				<a href="../index.php"><img src="images/logo_delicieux.jpg" alt="Delicious Restaurant"></a>
 			</div>
 			<h3 class="welcome_title">欢迎登陆</h3>
 		</div>
