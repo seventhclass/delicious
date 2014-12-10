@@ -11,7 +11,7 @@
 		<li><a href="#" id="french">Français</a></li>
 		<li><a href="#" id="english">English</a></li>
 		<li><a href="#" id="chinese">中文</a></li>
-		<li><a href="./admin/login.php" id="admin">管理员登录</a></li>
+		<li><a href="./admin/index.php" id="admin">管理员登录</a></li>
 	</ul>
   </nav>
 </header>
