@@ -12,7 +12,7 @@ checkLogined();
 
 <body>
     <div class="head">
-            <a href="#"><div class="logo fl"></div></a>
+            <a href="../index.php"><div class="logo fl"></div></a>
             <h3 class="head_text fr">Delicious restaurant后台管理系统</h3>
     </div>
     <div class="operation_user clearfix">
