@@ -51,6 +51,9 @@ function changeShowDiv(e){
 			if(sections[i].id == index){
 				$(sections[i]).fadeIn(1500);
 				sections[i].style.display="block";
+				if(index=="content_contact"){
+					initMap();
+				}
 			}
 		}
 	}
@@ -77,3 +80,20 @@ function getStyle(object, styleName) {
       return object.currentStyle[styleName]
    }
 }
+
+/* load google map */
+function initMap(){
+	var mapProp = {
+    	      center:new google.maps.LatLng(45.4853106,-73.6273434),
+    	      zoom:7,
+    	      mapTypeId:google.maps.MapTypeId.ROADMAP
+  	  };
+
+  	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  	var marker=new google.maps.Marker({
+  		position:myCenter,
+  		animation:google.maps.Animation.BOUNCE
+  	});
+  	marker.setMap(map);
+}
+

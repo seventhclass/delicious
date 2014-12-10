@@ -1,3 +1,3 @@
 <section class="content" id="content_contact">
-	<div>This is contact page<div>
+	<div id="googleMap" style="width:100%;height:300px;">
 </section>
