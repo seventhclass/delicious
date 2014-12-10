@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -45,7 +45,7 @@
 </div>
 <div class="hr_25"></div>
 <div class="footer">
-	<p>Copyright &copy; 2023 Delicious Restaurant版权所有&nbsp;&nbsp;&nbsp;</p>
+	<p>Copyright &copy; 2014 Delicious Restaurant版权所有&nbsp;&nbsp;&nbsp;</p>
 </div>
 
 <script>
