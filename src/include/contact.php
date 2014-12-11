@@ -19,6 +19,6 @@
 		</fieldset>
 		<fieldset>
 			<input type='button' value='send' ></input>
-		<fieldset>		
+		</fieldset>		
 	</div>
 </section>
