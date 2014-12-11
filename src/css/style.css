@@ -190,7 +190,7 @@ header #admin{right:0;}
 	position:relative;
  	width:1200px;
 	height:540px;
-	color:#D9B181;
+	/* color:#D9B181; */
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d;/* just for seeing the area*/
 	margin: 45px auto;
@@ -204,7 +204,7 @@ header #admin{right:0;}
 #content_promotion{
 	position:relative;
 	width:980px;
-	height:540px;
+	/* height:540px; */
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d; /*just for seeing the area*/
@@ -217,7 +217,7 @@ header #admin{right:0;}
 #content_about{
 	position:relative;
 	width:980px;
-	height:1000px;
+	/* height:1000px; */
 	/* color:#3A2F22; */
 	color:#D9B181;
 	/* line-height:22px; */
@@ -237,7 +237,7 @@ header #admin{right:0;}
 #content_contact{
 	position:relative;
 	width:980px;
-	height:540px;
+	/* height:540px; */
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d; /*just for seeing the area*/
