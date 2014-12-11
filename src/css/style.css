@@ -152,6 +152,11 @@ header #admin{right:0;}
 	margin: 45px auto;
 	/* display: none; */
 }
+#googleMap {
+	width: 900px;
+	height: 300px;
+	
+}
 
 
 /*========== home page slider ========================================*/

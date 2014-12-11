@@ -5,6 +5,7 @@
 		<title>Welcome to Restaurant Delicieux</title>
 		<!--<script type="text/javascript" async="" src="./include/home.js"></script>-->
 		<script src="./js/jquery.min.js"></script>
+		<<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script type="text/javascript" src="./js/content.js"></script>
 		<script type="text/javascript" src="./js/home.js"></script>
 		<link href="./css/style.css" type="text/css" rel="stylesheet">

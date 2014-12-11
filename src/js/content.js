@@ -83,8 +83,9 @@ function getStyle(object, styleName) {
 
 /* load google map */
 function initMap(){
+	var myCenter=new google.maps.LatLng(45.4853106,-73.6273434);
 	var mapProp = {
-    	      center:new google.maps.LatLng(45.4853106,-73.6273434),
+    	      center:myCenter,
     	      zoom:7,
     	      mapTypeId:google.maps.MapTypeId.ROADMAP
   	  };
