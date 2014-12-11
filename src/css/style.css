@@ -9,14 +9,15 @@ html, body{
 
 body{font-size:12px; 
 	height:100%;
-	/* background:url("../images/background.jpg")  no-repeat center center fixed; */
+	/* background:url("../images/background.jpg")  no-repeat center center fixed; 
 	background:url("../images/slider3 (2).jpg")  no-repeat right top fixed; 
 	/* background:url("../images/noodles.jpg")  no-repeat right bottom fixed;  */
 	/*-webkit-background-size:100%;cover;*/
 	/*background-size:100%;cover;*/
-	background-color:#320100; 
+	background:url("../images/bg-unit.png") repeat fixed; 
+	/* background-color:#320100;  */
 	font-family: 'HelveticaRegular',Helvetica,Arial;
-	line-height:18px;}
+	/* line-height:18px; */}
 img{border:none;}
 li{list-style:none;}
 input,select,textarea{outline:none;}
@@ -35,9 +36,9 @@ header {
 	width: 100%;
 	height: 50px;
 	background-color:#a94718;/*#300300;/*#4f1e19;*/
-	-webkit-box-shadow: 0 4px 10px ##b07546;
-	-moz-box-shadow: 0 4px 10px ##b07546;
-	box-shadow: 0 4px 10px #b07546;/*#1e0000;*/
+	-webkit-box-shadow: 0 4px 10px #b07546;
+	-moz-box-shadow: 0 4px 10px #b07546;
+	box-shadow: 0 7px 20px #1e0000;/*#b07546;*/
 }
 
 header > nav {
@@ -99,68 +100,28 @@ header #admin{right:0;}
 	transition: all 0.8s ease 0s; */
 	margin-bottom:45px;
 }
-/*========== home ==================================================*/
+
+
+/*========== home page slider   ==============================================*/
 #content_home{
 	cursor:pointer;
 	position:relative;
 	width:980px;
 	height:490px;
-	border:15px solid rgba(255,255,255,.2); /*#bc966djust for seeing the area*/
-	margin: 45px auto;
+	color:#D9B181;
+	/*border:15px solid rgba(255,255,255,.2); #bc966djust for seeing the area*/
+	border:6px solid rgba(45,3,7,.5); /*#bc966djust for seeing the area*/
+	border-radius: 8px;
+	margin: 30px auto;
     overflow:hidden;
-	-webkit-box-shadow: 6px 6px 10px ##b07546;
-	-moz-box-shadow: 6px 6px 10px ##b07546;
-	box-shadow: 6px 6px 10px #b07546;
+	-webkit-box-shadow: 6px 6px 10px #2d0307; /*#b07546; */
+	/*-moz-box-shadow: 6px 6px 10px #480b12; #b07546; */
+	/*box-shadow: 6px 6px 10px #480b12; #b07546; */
 	/* top:0; */
 	/* display: block; */
 }
-#content_menu{
-	/* float:center; */
-	position:relative;
- 	width:1200px;
-	height:540px;
-	background-color:red;
-	border:1px solid #bc966d;/* just for seeing the area*/
-	margin: 45px auto;
-	/* display: none; */
-	/* top:-490px; */
-}
-#content_promotion{
-	position:relative;
-	width:980px;
-	height:540px;
-	background-color:green;
-	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 45px auto;
-	/* display: none; */
-}
-#content_about{
-	position:relative;
-	width:980px;
-	height:1000px;
-	background-color:yellow;
-	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 45px auto;
-	/* display: none; */
-}
-#content_contact{
-	position:relative;
-	width:980px;
-	height:540px;
-	background-color:blue;
-	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 45px auto;
-	/* display: none; */
-}
-#googleMap {
-	width: 900px;
-	height: 300px;
-	
-}
 
 
-/*========== home page slider ========================================*/
-	   
 #list{
        width:6860px;
 	   height:490px;
@@ -222,21 +183,79 @@ header #admin{right:0;}
        right:20px;}
 
 
+/*==========   menu   =========================================*/
 
-
-/*========== menu ==================================================
-section #content_menu{
-	border:1px solid #bc966d;/*just for seeing the area
-	width:1200px;
-	height:490px;
+#content_menu{
+	/* float:center; */
+	position:relative;
+ 	width:1200px;
+	height:540px;
+	color:#D9B181;
+	background-color:rgba(30,0,0,0.4);
+	border:1px solid #bc966d;/* just for seeing the area*/
 	margin: 45px auto;
-}*/
+	/* display: none; */
+	/* top:-490px; */
+}
+
+
+/*==========   promotions   =========================================*/
+
+#content_promotion{
+	position:relative;
+	width:980px;
+	height:540px;
+	color:#D9B181;
+	background-color:rgba(30,0,0,0.4);
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* display: none; */
+}
+
+/*==========   about us   =========================================*/
+
+#content_about{
+	position:relative;
+	width:980px;
+	height:1000px;
+	/* color:#3A2F22; */
+	color:#D9B181;
+	/* line-height:22px; */
+	/* background-color:rgba(217,177,129,0.6); */
+	background-color:rgba(30,0,0,0.4);
+	margin: 0 auto 45px;
+	/* display: none; */
+}
+#content_about h1{font-size:48px;}
+#content_about img{
+	height:490px;
+	width:890px;
+}
+
+
+/*==========   contact us   =========================================*/
+#content_contact{
+	position:relative;
+	width:980px;
+	height:540px;
+	color:#D9B181;
+	background-color:rgba(30,0,0,0.4);
+	border:1px solid #bc966d; /*just for seeing the area*/
+	margin: 45px auto;
+	/* display: none; */
+}
+
+#googleMap {
+	width: 900px;
+	height: 300px;
+	
+}
 
 /*========== footer ==================================================*/
 footer {
 	position:relative;
 	top:45px;
-	height:350px;
+	height:280px;
 	width:100%;
 	margin: 0 auto;
 	color:#D9B181;
@@ -246,7 +265,7 @@ footer {
 
 footer  div{
 	position: relative;
-	height:350px;
+	height:280px;
 	width:980px;
 	margin: 0 auto;
 	background-color:rgba(30,0,0, 0.2);
@@ -260,8 +279,8 @@ footer div div {
 	position:absolute;
 	display:inline-block;
 	width: 230px;
-	height:220px;
-	top:40px;
+	height:200px;
+	top:20px;
 	padding:10px 0 10px 30px;
 	background-color:rgba(30,0,0, 0.4);
 }
@@ -283,7 +302,7 @@ footer #copyright{
 	font:normal normal normal 13px/1.4em 'open sans', sans-serif;
 	color: rgba(239,187,127,0.5);
 	position: relative;
-	top:315px;
+	top:260px;
 	padding:0 0 5px 5px;
 }
 footer span{

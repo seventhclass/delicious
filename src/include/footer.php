@@ -3,21 +3,21 @@
 		<div id="footer1">
 			<h1>Opening Hours</h1>
 			<br/>
-			<p>Mon: 11:00am - 11:00pm</p>
+			<p>Mon:11:00am - 11:00pm</p>
 			<p>Tue: 11:00am - 11:00pm</p>
-			<p>Wed: 11:00am - 11:00pm</p>
+			<p>Wed:11:00am - 11:00pm</p>
 			<p>Thu: 11:00am - 11:00pm</p>
-			<p>Fri: 11:00am - 11:00pm</p>
-			<p>Sat: 11:00am - 11:00pm</p>
+			<p>Fri: &nbsp;&nbsp;11:00am - 11:00pm</p>
+			<p>Sat: &nbsp;11:00am - 11:00pm</p>
 			<p>Sun: 11:00am - 11:00pm</p>
 		</div>
 
 		<div id="footer2">
 			<h1>Contact Details</h1>
 			<br/>
-			<p>500 Terry Francois Street <br/>San Francisco, <br/>CA 94158</p>
-			<p>Tel: 123-456-7890</p>
-			<p>Fax: 123-456-7890</p>
+			<p>5665 Côte-des-Neiges <br/>Montreal<br/>QC, CA<br/>H3T xxx</p>
+			<p>Tel: 514-342-7687</p>
+			<!--<p>Fax: 123-456-7890</p>-->
 		</div>
 
 		<div id="footer3">
