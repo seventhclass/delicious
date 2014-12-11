@@ -16,11 +16,13 @@
 			<?php
 				include("./include/header.php");
 				//according to certain condition, load different content:
-				include("./include/home.php");
-				include("./include/menu.php");
-				include("./include/promotion.php");
-				include("./include/about.php");
-				include("./include/contact.php");
+				echo "<div id='content'>";
+					include("./include/home.php");
+					include("./include/menu.php");
+					include("./include/promotion.php");
+					include("./include/about.php");
+					include("./include/contact.php");
+					echo "</div>";
 				include("./include/footer.php");
 			?>
 		<!--</div>-->

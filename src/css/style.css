@@ -14,7 +14,7 @@ body{font-size:12px;
 	/* background:url("../images/noodles.jpg")  no-repeat right bottom fixed;  */
 	/*-webkit-background-size:100%;cover;*/
 	/*background-size:100%;cover;*/
-	background:url("../images/bg-unit.png") repeat fixed; 
+	background:url("../images/bg-unit2.png") repeat fixed; 
 	/* background-color:#320100;  */
 	font-family: 'HelveticaRegular',Helvetica,Arial;
 	/* line-height:18px; */}
@@ -93,12 +93,12 @@ header #admin{right:0;}
 
 
 /*========== style for all pages ==================================================*/
-.content{
-	top:45px;
-	/* -webkit-transition: all 0.8s ease 0s;
+#content{
+	/*top:45px;
+	 -webkit-transition: all 0.8s ease 0s;
 	-moz-transition: all 0.8s ease 0s;
 	transition: all 0.8s ease 0s; */
-	margin-bottom:45px;
+	margin:95px auto 45px;
 }
 
 
@@ -118,7 +118,7 @@ header #admin{right:0;}
 	/*-moz-box-shadow: 6px 6px 10px #480b12; #b07546; */
 	/*box-shadow: 6px 6px 10px #480b12; #b07546; */
 	/* top:0; */
-	/* display: block; */
+	display: block;
 }
 
 
@@ -194,7 +194,7 @@ header #admin{right:0;}
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d;/* just for seeing the area*/
 	margin: 45px auto;
-	/* display: none; */
+	display: none;
 	/* top:-490px; */
 }
 
@@ -209,7 +209,7 @@ header #admin{right:0;}
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d; /*just for seeing the area*/
 	margin: 45px auto;
-	/* display: none; */
+	display: none;
 }
 
 /*==========   about us   =========================================*/
@@ -223,8 +223,8 @@ header #admin{right:0;}
 	/* line-height:22px; */
 	/* background-color:rgba(217,177,129,0.6); */
 	background-color:rgba(30,0,0,0.4);
-	margin: 0 auto 45px;
-	/* display: none; */
+	margin: -50px auto 45px;
+	display: none;
 }
 #content_about h1{font-size:48px;}
 #content_about img{
@@ -241,8 +241,8 @@ header #admin{right:0;}
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 45px auto;
-	/* display: none; */
+	margin: -50px auto 45px;
+	display: none;
 }
 
 #googleMap {
@@ -254,7 +254,7 @@ header #admin{right:0;}
 /*========== footer ==================================================*/
 footer {
 	position:relative;
-	top:45px;
+	/* top:45px; */
 	height:280px;
 	width:100%;
 	margin: 0 auto;
