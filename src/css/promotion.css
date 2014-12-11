@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/*公用*/
+.comWidth{width:1000px; margin-left:auto; margin-right:auto;}
+.leftArea{float:left;}
+.rightArea{float:right;}
+.hide{display:none;}
+.show{display:block;}
+
+/*位置*/
+.description_info{background-color:#FFF;}
+.description{border:#CCC solid 1px;}
+.description .leftArea{width:309px;}
+.description .rightArea{width:688px; border-left:#CCC solid 1px;}
+
+/*图片展示*/
+.description_imgs .big{height:340px; text-align:center;}
+.des_smimg{padding-left:1px; width:265px; margin:0 auto;}
+.des_smimg li{float:left; margin-left:-1px;}
+.des_smimg img{border:#CCC solid 1px;}
+.des_smimg .active{border-color:#317EE7; position:relative;}
+.des_content{padding:10px;}
+.des_content_tit{font:bold 16px/22px "Microsoft YaHei", "微软雅黑"; padding:13px 25px;}
+.des_content .dl{margin-bottom:8px;}
+.des_content .dt{width:105px; float:left; position:relative; color:#666; text-indent:17px; line-height:25px;font-weight: bold;}
+.des_content .dd{padding-left:105px; *padding-left:0;}
+.des_money{font-size:18px; color:#F30; font-family:Verdana;}
+.des_money em{font-style:normal; font-size:12px;}
