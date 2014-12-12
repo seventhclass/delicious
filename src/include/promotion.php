@@ -50,8 +50,40 @@ $rows=fetchAll($sql);
 					<div class="dd clearfix"><?php echo $row['content_cn'];?></div>
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">促销菜品</div>
-					<div class="dd clearfix"></div>
+					<div class="dt">促销菜品</div><br/>
+					<div class="dd clearfix">
+						<?php 
+							if($row['dish_id']){
+								$dishInfo=getDishById($row['dish_id']);
+								$promImgs=getAllImgByDishId($row['dish_id']);
+								$cateInfo=getCateById($dishInfo['cate_id']);
+						?>
+						<div class="dt">名&nbsp;&nbsp;&nbsp;&nbsp;称：</div>
+						<div class="dd clearfix">
+							<a href="#"><h4><?php echo $dishInfo['dish_name_cn'];?></h4></a>
+						</div>
+						<div class="dt">分&nbsp;&nbsp;&nbsp;&nbsp;类：</div>
+						<div class="dd clearfix">
+							<?php echo $cateInfo['cate_name_cn'];?>
+						</div>
+<!-- 						<div class="dt">菜品编号：</div> -->
+<!-- 						<div class="dd clearfix"> -->
+							<?php //echo $dishInfo['dish_no'];?>
+<!-- 						</div> -->
+<!-- 						<div class="dt">数&nbsp;&nbsp;&nbsp;&nbsp;量：</div> -->
+<!-- 						<div class="dd clearfix"> -->
+							<?php //echo $dishInfo['dish_num'];?>
+<!-- 						</div> -->
+						<div class="dt">原&nbsp;&nbsp;&nbsp;&nbsp;价：</div>
+						<div class="dd clearfix">
+							<?php echo $dishInfo['reg_price']." $";?>
+						</div>
+						<div class="dt">现&nbsp;&nbsp;&nbsp;&nbsp;价：</div>
+						<div class="dd clearfix">
+							<?php echo $dishInfo['current_price']." $";?>
+						</div>
+						<?php } ?>				
+					</div>
 				</div>
 			</div>
 		</div>
