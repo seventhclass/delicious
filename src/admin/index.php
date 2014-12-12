@@ -76,6 +76,7 @@ checkLogined();
                         <dl id="menu7" style="display:none;">
                         	<dd><a href="addPromotion.php" target="mainFrame">添加促销活动</a></dd>
                             <dd><a href="listPromotion.php" target="mainFrame">促销活动列表</a></dd>
+                            <dd><a href="listPromImages.php" target="mainFrame">促销图片列表</a></dd>
                         </dl>
                     </li>  
                     <li>

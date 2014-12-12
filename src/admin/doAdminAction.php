@@ -33,7 +33,7 @@ if($act=="logout"){
 	$mesg=doWaterPic($id);
 }elseif($act=="delDishImage"){
 	$mesg=delDishImgById($id);
-}elseif($act=="uploadPic"){
+}elseif($act=="uploadDishPic"){
 	$mesg=uploadDishPic($id);
 }elseif($act=="addSlider"){
 	$mesg=addSlider();
@@ -45,6 +45,11 @@ if($act=="logout"){
 	$mesg=editPromotion($id);
 }elseif($act=="delPromotion"){
 	$mesg=delPromotion($id);
+}elseif($act=="delPromotionImage"){
+	$mesg=delPromImgById($id);
+}elseif($act=="uploadPromPic"){
+	$dish_id=$_REQUEST['dish_id'];
+	$mesg=uploadPromPic($id,$dish_id);
 }
 
 ?>

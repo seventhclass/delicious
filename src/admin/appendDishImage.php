@@ -36,10 +36,10 @@
 </head>
 <body>
 <h3>添加新图片</h3>
-<form action="doAdminAction.php?act=uploadPic&id=<?php echo $id;?>" method="post" enctype="multipart/form-data">
+<form action="doAdminAction.php?act=uploadDishPic&id=<?php echo $id;?>" method="post" enctype="multipart/form-data">
 <table width="70%"  border="1" cellpadding="5" cellspacing="0"  bgcolor="#cccccc">
 	<tr>
-		<td align="right">菜品图像</td>
+		<td align="right">菜品图片</td>
 		<td>
 			<a href="javascript:void(0)" id="selectFileBtn">添加附件</a>
 			<div id="attachList" class="clear"></div>

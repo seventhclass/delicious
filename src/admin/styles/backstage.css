@@ -81,8 +81,11 @@ a:hover{text-decoration: underline;}
 	position:relative;
 }
 
-
-
+/*促销图片*/
+.promimg:hover {
+	border:1px solid red;	
+	position:relative;
+}
 
 
 

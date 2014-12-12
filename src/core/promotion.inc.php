@@ -180,6 +180,70 @@ function delPromotion($id){
 	return $mes;
 }
 
+function delPromImgById($id){
+
+	$promImg=getPromImgsByImagId($id);
+
+	$where="album_id={$id}";
+	$res=delete("promotion_album",$where);
+	if(res){
+		if(file_exists("../image_800/".$promImg['album_path'])){
+			unlink("../image_800/".$promImg['album_path']);
+		}
+		if(file_exists("../image_50/".$promImg['album_path'])){
+			unlink("../image_50/".$promImg['album_path']);
+		}
+		if(file_exists("../image_220/".$promImg['album_path'])){
+			unlink("../image_220/".$promImg['album_path']);
+		}
+		if(file_exists("../image_350/".$promImg['album_path'])){
+			unlink("../image_350/".$promImg['album_path']);
+		}
+		if(file_exists("./uploads/".$promImg['album_path'])){
+			unlink("./uploads/".$promImg['album_path']);
+		}
+		$mes="删除成功!<br/><a href='listPromImages.php' target='mainFrame'>查看促销活动图片列表</a>";
+	}else{
+		$mes="删除失败!<br/><a href='listPromImages.php' target='mainFrame'>重新删除</a>";
+	}
+
+	return $mes;
+}
+
+function uploadPromPic($id,$dish_id){
+
+	$path="./uploads";
+	$uploadFiles=uploadFile($path);
+
+	if( is_array($uploadFiles) && $uploadFiles ){
+		foreach ($uploadFiles as $key => $uploadFile){
+			thumb($path."/".$uploadFile['name'],"../image_50/".$uploadFile['name'],50,50);
+			thumb($path."/".$uploadFile['name'],"../image_220/".$uploadFile['name'],220,220);
+			thumb($path."/".$uploadFile['name'],"../image_350/".$uploadFile['name'],350,350);
+			thumb($path."/".$uploadFile['name'],"../image_800/".$uploadFile['name'],800,800);
+		}
+
+		foreach ($uploadFiles as $uploadFile){
+			$arr['prom_id']=$id;
+			$arr['dish_id']=$dish_id;
+			$arr['album_path']=$uploadFile['name'];
+			addPromotionAlbum($arr);
+		}
+
+		$mesg="<p>图片上传成功!</p><a href='listPromImages.php' target='mainFrame'>查看促销活动图片列表</a>";
+	}else{
+		$mesg="<p>无图片上传!</p><a href='listPromImages.php' target='mainFrame'>查看促销活动图片列表</a>";
+	}
+
+	return $mesg;
+}
+
+function getPromotionInfo(){
+	$sql="select p.prom_id,pc.title_cn,pe.title_en,pf.title_fr,p.start_time,p.end_time,pc.content_cn,pe.content_en,pf.content_fr,p.dish_id from promotion as p, promotion_cn as pc, promotion_en as pe, promotion_fr as pf where p.prom_id=pc.prom_id and pc.prom_id=pe.prom_id and pe.prom_id=pf.prom_id";
+	$rows=fetchAll($sql);
+	return $rows;	
+}
+
 function getAllImgByPromId($id){
 	$sql="select a.album_id, a.prom_id, a.dish_id, a.album_path from promotion_album a where prom_id={$id}";
 	$rows=fetchAll($sql);

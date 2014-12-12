@@ -86,3 +86,11 @@ function getPromotionImgById($id){
 	$row=fetchOne($sql);
 	return $row;
 }
+
+function getPromImgsByImagId($id){
+	$sql="select album_id, prom_id, dish_id, album_path from promotion_album where album_id={$id}";
+	$row=fetchOne($sql);
+	return $row;
+}
+
+

@@ -95,7 +95,7 @@ if (! $rows) {
 			window.location="doAdminAction.php?act="+act+"&id="+id;
  	 	}
  	 	function appendImg(id){
- 	 		window.location="appendImage.php?id="+id;
+ 	 		window.location="appendDishImage.php?id="+id;
  	 	}
  		function delImg(id){
  			if(window.confirm("您确认要删除嘛？添加一次不容易，且删且珍惜!")){
