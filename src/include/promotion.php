@@ -27,13 +27,13 @@ $rows=fetchAll($sql);
 		<div class="leftArea">
 			<div class="description_imgs">
 				<div class="big">
-					<a href="./image_800/<?php echo  $promImgs[0]['album_path'];?>" class="jqzoom" rel='gal1'  title="triumph" >
+					<a href="./image_800/<?php echo  $promImgs[0]['album_path'];?>" class="jqzoom" rel="gal<?php echo $row['prom_id'];?>"  title="triumph" >
            			 <img width="309" height="340" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="triumph">
 	        		</a>
 				</div>
 				<ul class="des_smimg clearfix" id="thumblist" >
 					<?php foreach($promImgs as $key=>$promImg):?>
-					<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}"><img src="./image_50/<?php echo $promImg['album_path'];?>" alt=""></a></li>
+					<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal<?php echo $row['prom_id'];?>', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}"><img src="./image_50/<?php echo $promImg['album_path'];?>" alt=""></a></li>
 					<?php endforeach;?>
 				</ul>
 			</div>
