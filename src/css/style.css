@@ -217,7 +217,7 @@ header #admin{right:0;}
 #content_about{
 	position:relative;
 	width:980px;
-	/* height:1000px; */
+	height:1000px; 
 	/* color:#3A2F22; */
 	color:#D9B181;
 	/* line-height:22px; */
@@ -230,7 +230,29 @@ header #admin{right:0;}
 #content_about img{
 	height:490px;
 	width:890px;
+	margin-left:45px;
 }
+#abouttext1{
+margin-left: 45px;
+}
+
+
+#about2{
+    margin-left:45px;
+	margin-right:45px;}
+
+#about3{
+position: absolute; 
+top: 624px; 
+width: 263px; 
+left: 52px;
+font-size:24px;}
+
+#about4{
+position: absolute; 
+top: 0px; 
+width: 580px; 
+left: 300px;}
 
 
 /*==========   contact us   =========================================*/

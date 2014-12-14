@@ -2,37 +2,8 @@
 <html>
 <head>
 <style>
-div {
-display: block;
-}
-s6 { 
-position: absolute;
-top: 107px;
-width: 854px;
-left: 35px;
-
-
-word-wrap: break-word;
-}
-#about1{color:#3A2F22;
-    font-size:60px;}
-#about2{color:#3A2F22;
-    font-size:30px;}
-#about3{color:#3A2F22;
-    font-size:30px;}
-#about4{color:#3A2F22;
-    font-size:15px;}
-#about5{color:#3A2F22;
-    font-size:15px;}
-#about6{color:#3A2F22;
-    font-size:15px;}
-
-
-.s17 {
-border-bottom: 2px dotted rgba(227, 235, 182, 1);
-height: 0 !important;
-min-height: 0 !important;
-}
+img{
+margin-left: 45px;}
 
 </style>
 </head>
