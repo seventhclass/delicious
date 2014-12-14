@@ -9,13 +9,7 @@ html, body{
 
 body{font-size:12px; 
 	height:100%;
-	/* background:url("../images/background.jpg")  no-repeat center center fixed; 
-	background:url("../images/slider3 (2).jpg")  no-repeat right top fixed; 
-	/* background:url("../images/noodles.jpg")  no-repeat right bottom fixed;  */
-	/*-webkit-background-size:100%;cover;*/
-	/*background-size:100%;cover;*/
 	background:url("../images/bg-unit4.png") repeat fixed; 
-	/* background-color:#320100;  */
 	font-family: 'HelveticaRegular',Helvetica,Arial;
 	/* line-height:18px; */}
 img{border:none;}
@@ -31,7 +25,7 @@ a{text-decoration:none;}
 header {
 	position:fixed;
 	top:0px;
-	z-index:10;
+	z-index:100;
 	display: block;
 	width: 100%;
 	height: 50px;
@@ -93,13 +87,15 @@ header #admin{right:0;}
 
 
 /*========== style for all pages ==================================================*/
-#content{
-	/*top:45px;
+/*.main{
+	top:45px;
 	 -webkit-transition: all 0.8s ease 0s;
 	-moz-transition: all 0.8s ease 0s;
-	transition: all 0.8s ease 0s; */
-	margin:95px auto 45px;
-}
+	transition: all 0.8s ease 0s;
+	position:relative;
+	width:1200px;
+	margin:50px auto 45px;
+} */
 
 
 /*========== home page slider   ==============================================*/
@@ -109,18 +105,15 @@ header #admin{right:0;}
 	width:980px;
 	height:490px;
 	color:#D9B181;
-	/*border:15px solid rgba(255,255,255,.2); #bc966djust for seeing the area*/
 	border:6px solid rgba(45,3,7,.5); /*#bc966djust for seeing the area*/
 	border-radius: 8px;
-	margin: 30px auto;
+	margin: 95px auto 45px;
     overflow:hidden;
-	-webkit-box-shadow: 6px 6px 10px #2d0307; /*#b07546; */
-	/*-moz-box-shadow: 6px 6px 10px #480b12; #b07546; */
-	/*box-shadow: 6px 6px 10px #480b12; #b07546; */
-	/* top:0; */
+	-webkit-box-shadow: 6px 6px 10px #2d0307; /*#b07546;#480b12; */
+	-moz-box-shadow: 6px 6px 10px #2d0307; 
+	box-shadow: 6px 6px 10px #2d0307; 
 	display: block;
 }
-
 
 #list{
        width:6860px;
@@ -193,7 +186,7 @@ header #admin{right:0;}
 	/* color:#D9B181; */
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d;/* just for seeing the area*/
-	margin: 45px auto;
+	margin: 95px auto 45px;
 	display: none;
 	/* top:-490px; */
 }
@@ -218,59 +211,48 @@ header #admin{right:0;}
 	position:relative;
 	width:980px;
 	height:1000px; 
-	/* color:#3A2F22; */
 	color:#D9B181;
-	/* line-height:22px; */
-	/* background-color:rgba(217,177,129,0.6); */
 	background-color:rgba(30,0,0,0.4);
-	margin: -50px auto 45px;
+	margin: 0 auto 45px;
 	display: none;
 }
-#content_about h1{font-size:48px;}
-#content_about img{
+#content_about h1{font-size:48px; padding:20px 0 20px 30px;}
+#content_about .top {
+	margin:0 auto;
+}
+
+#content_about div img{
 	height:490px;
 	width:890px;
 	margin-left:45px;
 }
-#abouttext1{
-margin-left: 45px;
+
+#content_about .bottom {
+	margin:45px auto;
+	height:280px;
+	width:850px;
+	padding:20px;
+	background:rgba(30,0,0,0.4);/*#a94718;*/
+	line-height:22px;
+	font-size:18px;
 }
-
-
-#about2{
-    margin-left:45px;
-	margin-right:45px;}
-
-#about3{
-position: absolute; 
-top: 624px; 
-width: 263px; 
-left: 52px;
-font-size:24px;}
-
-#about4{
-position: absolute; 
-top: 0px; 
-width: 580px; 
-left: 300px;}
-
 
 /*==========   contact us   =========================================*/
 #content_contact{
 	position:relative;
+	height:600px;
 	width:980px;
-	/* height:540px; */
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
-	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: -50px auto 45px;
+	margin: 0 auto 45px;
 	display: none;
 }
 
 #googleMap {
+	/* position:absolute; */
 	width: 900px;
 	height: 300px;
-	
+	margin:40px;
 }
 
 /*========== footer ==================================================*/
@@ -282,7 +264,6 @@ footer {
 	margin: 0 auto;
 	color:#D9B181;
 	background-color:rgba(30,0,0, 0.4);
-	
 }
 
 footer  div{

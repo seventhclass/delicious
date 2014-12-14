@@ -39,13 +39,13 @@ $(document).ready(function() {
 			<?php
 				include("./include/header.php");
 				//according to certain condition, load different content:
-				echo "<div id='content'>";
+				//echo "<section class='main clearfix'>";
 					include("./include/home.php");
 					include("./include/menu.php");
 					include("./include/promotion.php");
 					include("./include/about.php");
 					include("./include/contact.php");
-					echo "</div>";
+				//echo "</section>";
 				include("./include/footer.php");
 			?>
 		<!--</div>-->
