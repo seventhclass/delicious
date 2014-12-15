@@ -9,20 +9,21 @@
 			<li><a href="#">Assorted Plates</a></li>
 		</ul></div>
 	</nav>
-	<div id="menu">
-		<div id="gallery">
-			<div >
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-				<img src="" alt=""/>
-			</div>
-			
+	<div id="gallery">
+		<div >
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
 		</div>
-	<div>
+		
+	</div>
 </section>

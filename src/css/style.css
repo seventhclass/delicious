@@ -190,18 +190,18 @@ header #admin{right:0;}
 /*==========   menu   =========================================*/
 
 #content_menu{
-	/* float:center; */
 	position:relative;
- 	width:900px;
-	height:540px;
+ 	width:1000px;
+	height:950px;
 	/* color:#D9B181; */
-	background-color:rgba(30,0,0,0.4);
-	border:1px solid #bc966d;/* just for seeing the area*/
+	background-color:#bc966d;/*rgba(30,0,0,0.6);*/
+	/*border:1px solid #bc966d; just for seeing the area*/
 	/* margin: 0 auto 45px; */
 	left:50%;
-	margin-left:-300px;
-	display: none;
+	margin-left:-450px;
 	top:50px;
+	margin-bottom: 100px;
+	display: none;
 }
 
 #content_menu nav{
@@ -209,22 +209,41 @@ header #admin{right:0;}
 	top:130px;
 	left:50%;
 	margin-left:-600px;
-	width:300px;
+	width:270px;
+	background-color:rgba(30,0,0,0);
 	
 }
 
 #content_menu nav li{
-	line-height:35px;
-	padding:5px 10px;
-	vertical-align:center;
-	/* font: normal normal normal 18px/1.4em impact, impact-w01-2010, impact-w02-2010,impact-w10-2010, sans-serif; */
-	font:normal normal normal 18px/1.4em impact,Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	background-color: rgba(30,0,0,0.4)
+	background: rgba(255,255,255,.5);
+	border-radius: 10px;
+	line-height: 35px;
+	padding-left: 20px;
+	margin: 10px 0px;
+	//font: normal normal normal 18px/1.4em impact, impact-w01-2010, impact-w02-2010,impact-w10-2010, sans-serif;
+	//font:normal normal normal 18px/1.4em impact,Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	//background-color: rgba(30,0,0,0.4)
 }
 #content_menu nav li a{
-	color:#D9B181;
+	font-size:22px;
+	color:#93714c;//#D9B181;
+	//padding:0 10px 10px;
+	text-decoration:underline;
+	text-shadow: 2px 2px 2px #bc966d;
 }
 
+#gallery{
+	margin: 10px 100px 50px 150px;
+	width: 800px;
+	padding-top: 30px;
+}
+
+#gallery img{
+	width:250px;
+	height:200px;
+	border:1px solid white;
+	margin:5px;
+}
 /*==========   promotions   =========================================*/
 
 #content_promotion{
@@ -234,7 +253,7 @@ header #admin{right:0;}
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 45px auto;
+	margin: 50px auto;
 	display: none;
 }
 
@@ -246,7 +265,7 @@ header #admin{right:0;}
 	height:1000px; 
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
-	margin: 0 auto 45px;
+	margin: 50px auto;
 	display: none;
 }
 #content_about h1{font-size:48px; padding:20px 0 20px 30px;}
@@ -279,7 +298,7 @@ header #admin{right:0;}
 	width:980px;
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
-	margin:0 auto 45px;
+	margin:50px auto;
 	display: none;
 }
 #content_contact .wrap {
