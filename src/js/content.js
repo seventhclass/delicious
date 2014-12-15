@@ -24,14 +24,18 @@ function init(){
 		if(sections[i].id == "content_home"){
 			sections[i].style.display="block";
 			prev = menuItems[i].id;				//home item
-			menuItems[i].style.color = "white";
+			menuItems[i].className = "on";
+			//menuItems[i].style.color = "white";
 			//mouseMenu = menuItems[i];
 		}else{
-			sections[i].style.display="none";}
+			sections[i].style.display="none";
+			menuItems[i].className = "";
+		}
 		addEvent(menuItems[i], "click", changeShowDiv, false);
 	}
 }
 
+//click on items on the header bar, switch page content accordingly:
 function changeShowDiv(e){
 	var evt = e || window.event;
 	mouseMenu = evt.target || evt.srcElement;
@@ -49,12 +53,14 @@ function changeShowDiv(e){
 		if(sections[i].style.display == "block"){
 				$(sections[i]).fadeOut();
 				sections[i].style.display="none";
-				menuItems[i].style.color = "#d9b181";
+				//menuItems[i].style.color = "#d9b181";
+				menuItems[i].className = "";
 		}else{
 			if(sections[i].id == index){
 				$(sections[i]).fadeIn(1500);
 				sections[i].style.display="block";
-				menuItems[i].style.color = "white";
+				menuItems[i].className = "on";
+				//menuItems[i].style.color = "white";
 				if(index=="content_contact"){
 					initMap();
 				}
