@@ -1,6 +1,6 @@
 <section class="content" id="content_menu">
 	<nav>
-		<div><ul>
+		<div><ul id="category">
 			<li class="on">Appetizers</li>
 			<li>Soup Meals</li>
 			<li>Thaï Style</li>

@@ -5,7 +5,11 @@ var sections = new Array();
 var pages = new Array();  		//pages for different languages 
 var mouseMenu = null;			//the menu item that the mouse clicks on
 var index = "";
-var prev = 0; 					//attribute 'id' of the menu item clicked last time
+var prevMenu = 0; 				//attribute 'id' of the menu item clicked last time
+
+var menuNav = new Array();		//menu page, category nav items
+var ptCate = null;				//the category that the mouse clicks on
+var prevCate = null;			//the category selected last time
 
 //initialize to show home section and hide all other sections
 function init(){
@@ -23,7 +27,7 @@ function init(){
 		
 		if(sections[i].id == "content_home"){
 			sections[i].style.display="block";
-			prev = menuItems[i].id;				//home item
+			prevMenu = menuItems[i].id;				//home item
 			menuItems[i].className = "on";
 			//menuItems[i].style.color = "white";
 			//mouseMenu = menuItems[i];
@@ -33,6 +37,7 @@ function init(){
 		}
 		addEvent(menuItems[i], "click", changeShowDiv, false);
 	}
+	initMenuNav(); 	//find menu category lists and add onclick events
 }
 
 //click on items on the header bar, switch page content accordingly:
@@ -42,11 +47,11 @@ function changeShowDiv(e){
 	
 	//evt.stopPropagation();  //stop bubbling
 	//evt.preventDefault();   //prevent default event for tag 'a'
-	if (prev == mouseMenu.id){
+	if (prevMenu == mouseMenu.id){
 		return;
 	}
 	else{
-		prev = mouseMenu.id;
+		prevMenu = mouseMenu.id;
 	}
 	index = "content_" + mouseMenu.id;
 	for(var i = 0; i < sections.length; i++){
@@ -108,3 +113,29 @@ function initMap(){
   	marker.setMap(map);
 }
 
+//find menu category lists and add onclick events
+function initMenuNav(){
+	var ulobj = document.getElementById("category");
+	if(ulobj){
+		menuNav = ulobj.getElementsByTagName("li");
+		prevCate = menuNav[0];
+		for(var i = 0; i < menuNav.length; i++){
+			addEvent(menuNav[i],"click",switchOn, false);
+		}
+	}
+}
+
+//change the class name of the clicked item to 'on', while others to ''
+function switchOn(e){
+	var evt = e || window.event;
+	ptCate = evt.target || evt.srcElement;
+	
+	if (prevCate == ptCate){
+		return;
+	}
+	else{
+		prevCate.className = "";
+		ptCate.className = "on";
+		prevCate = ptCate;
+	}
+}
