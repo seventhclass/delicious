@@ -5,7 +5,7 @@ var sections = new Array();
 var pages = new Array();  		//pages for different languages 
 var mouseMenu = null;			//the menu item that the mouse clicks on
 var index = "";
-var prev = 0; 					//used to remember the menu item clicked last time
+var prev = 0; 					//attribute 'id' of the menu item clicked last time
 
 //initialize to show home section and hide all other sections
 function init(){
@@ -22,9 +22,11 @@ function init(){
 	for(var i = 0; i < menuItems.length; i++){
 		
 		if(sections[i].id == "content_home"){
-			sections[i].style.display="block";} 
-			
-		else{
+			sections[i].style.display="block";
+			prev = menuItems[i].id;				//home item
+			menuItems[i].style.color = "white";
+			//mouseMenu = menuItems[i];
+		}else{
 			sections[i].style.display="none";}
 		addEvent(menuItems[i], "click", changeShowDiv, false);
 	}
@@ -47,10 +49,12 @@ function changeShowDiv(e){
 		if(sections[i].style.display == "block"){
 				$(sections[i]).fadeOut();
 				sections[i].style.display="none";
+				menuItems[i].style.color = "#d9b181";
 		}else{
 			if(sections[i].id == index){
 				$(sections[i]).fadeIn(1500);
 				sections[i].style.display="block";
+				menuItems[i].style.color = "white";
 				if(index=="content_contact"){
 					initMap();
 				}

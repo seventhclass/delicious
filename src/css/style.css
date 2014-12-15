@@ -80,8 +80,8 @@ header #menu{	left:77px;}
 header #promotion{left:152px;}
 header #about{left:261px;}
 header #contact{left:363px;}
-header #english{right:129px;}
-header #french{right:202px;}
+header #french{right:172px;}
+header #english{right:115px;}
 header #chinese{right:76px;}
 header #admin{right:0;}
 
@@ -178,19 +178,52 @@ header #admin{right:0;}
 
 /*==========   menu   =========================================*/
 
+/* #content_menu{
+	position:relative;
+ 	width:1200px;
+	height:540px;
+	background-color:rgba(30,0,0,0.4);
+	border:1px solid #bc966d;
+	margin: 95px auto 45px;
+	display: none;
+} */
+/*==========   menu   =========================================*/
+
 #content_menu{
 	/* float:center; */
 	position:relative;
- 	width:1200px;
+ 	width:900px;
 	height:540px;
 	/* color:#D9B181; */
 	background-color:rgba(30,0,0,0.4);
 	border:1px solid #bc966d;/* just for seeing the area*/
-	margin: 95px auto 45px;
+	/* margin: 0 auto 45px; */
+	left:50%;
+	margin-left:-300px;
 	display: none;
-	/* top:-490px; */
+	top:50px;
 }
 
+#content_menu nav{
+	position:fixed;
+	top:130px;
+	left:50%;
+	margin-left:-600px;
+	width:300px;
+	
+}
+
+#content_menu nav li{
+	line-height:35px;
+	padding:5px 10px;
+	vertical-align:center;
+	/* font: normal normal normal 18px/1.4em impact, impact-w01-2010, impact-w02-2010,impact-w10-2010, sans-serif; */
+	font:normal normal normal 18px/1.4em impact,Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	background-color: rgba(30,0,0,0.4)
+}
+#content_menu nav li a{
+	color:#D9B181;
+}
 
 /*==========   promotions   =========================================*/
 
