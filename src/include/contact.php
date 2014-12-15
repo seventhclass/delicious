@@ -1,5 +1,7 @@
 <section class="content" id="content_contact">
-	<div id="googleMap">
+	<div class="wrap">
+		<div id="googleMap">
+		</div>
 	</div>
 	<div id='contact_comment'>
 		<h3> Get in touch </h3>

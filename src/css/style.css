@@ -258,6 +258,7 @@ header #admin{right:0;}
 	height:490px;
 	width:890px;
 	margin-left:45px;
+	border-radius: 10px;
 }
 
 #content_about .bottom {
@@ -266,26 +267,44 @@ header #admin{right:0;}
 	width:850px;
 	padding:20px;
 	background:rgba(30,0,0,0.4);/*#a94718;*/
-	line-height:22px;
+	border-radius: 10px;
+	line-height:28px;
 	font-size:18px;
 }
 
 /*==========   contact us   =========================================*/
 #content_contact{
 	position:relative;
-	height:600px;
+	height:650px;
 	width:980px;
 	color:#D9B181;
 	background-color:rgba(30,0,0,0.4);
-	margin: 0 auto 45px;
+	margin:0 auto 45px;
 	display: none;
 }
-
+#content_contact .wrap {
+	position:absolute;
+	left:50%;
+	margin-left:-450px;
+	margin-top:40px;
+	/* margin:40px auto; */
+}
 #googleMap {
 	/* position:absolute; */
 	width: 900px;
 	height: 300px;
-	margin:40px;
+	border-radius: 10px;
+}
+#contact_comment{
+	position: absolute;
+	top: 380px;
+	margin-left: -450px;
+	left: 50%;
+	font-size: 20px;
+	padding: 30px;
+	background: rgba(30,0,0,0.4);
+	border-radius: 10px;
+	width: 840px;
 }
 
 /*========== footer ==================================================*/
