@@ -108,7 +108,14 @@ $dishInfo=getDishById($id);
 			<option value="0" <?php echo $dishInfo['is_hot']=='0'? "selected='selected'":null;?>>否</option>
 		</select>
 		</td>
-	</tr>		
+	</tr>
+	<tr>
+		<td align="right">是否辛辣</td>
+		<td>
+			<input type="radio" name="cSpicy"  value="0" <?php echo $dishInfo['is_spicy']=='0'? "checked='checked'":null ;?> />否<br/>
+			<input type="radio" name="cSpicy"  value="1" <?php echo $dishInfo['is_spicy']=='1'? "checked='checked'":null ;?> />是
+		</td>
+	</tr>			
 	<tr>	
 		<td align="right">菜品描述(中文)</td>
 		<td>

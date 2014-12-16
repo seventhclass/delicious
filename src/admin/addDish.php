@@ -86,6 +86,13 @@
 		<td><input type="text" name="cPrice"  placeholder="请输入菜品现价"/></td>
 	</tr>
 	<tr>
+		<td align="right">是否辛辣</td>
+		<td>
+			<input type="radio" name="cSpicy"  value="0" checked="checked"/>否<br/>
+			<input type="radio" name="cSpicy"  value="1"/>是
+		</td>
+	</tr>	
+	<tr>
 		<td align="right">菜品描述(中文)</td>
 		<td>
 			<textarea name="cDesc" id="editor_id_cn" style="width:100%;height:150px;"></textarea>

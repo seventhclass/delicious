@@ -4,7 +4,7 @@ checkLogined();
 
 $pageSize=5;
 $page = $_REQUEST ['page'] ? ( int ) $_REQUEST ['page'] : 1;
-$sql="select d.dish_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,cc.cate_name as 'cate_name_cn', ce.cate_name as 'cate_name_en',cf.cate_name as 'cate_name_fr', dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df, cate_cn as cc, cate_en as ce, cate_fr as cf where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id and d.cate_id=cc.cate_id and d.cate_id=ce.cate_id and d.cate_id=cf.cate_id";
+$sql="select d.dish_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,d.is_spicy,cc.cate_name as 'cate_name_cn', ce.cate_name as 'cate_name_en',cf.cate_name as 'cate_name_fr', dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df, cate_cn as cc, cate_en as ce, cate_fr as cf where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id and d.cate_id=cc.cate_id and d.cate_id=ce.cate_id and d.cate_id=cf.cate_id";
 $totalRows=getResultNum($sql);
 $totalPage=ceil($totalRows/$pageSize);
 if ($page < 1 || $page == null || ! is_numeric ( $page )) {
@@ -23,7 +23,7 @@ if($strkeys) {
 	$sql = null;	
 	foreach ($keywords as $keyword){
 		if($sql==null)  
-			$sql = "select d.dish_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,cc.cate_name as 'cate_name_cn', ce.cate_name as 'cate_name_en',cf.cate_name as 'cate_name_fr', dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df, cate_cn as cc, cate_en as ce, cate_fr as cf where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id and d.cate_id=cc.cate_id and d.cate_id=ce.cate_id and d.cate_id=cf.cate_id and concat(d.dish_id,' ',dc.dish_name,' ',de.dish_name,' ',df.dish_name,' ',d.dish_no,' ',d.dish_num,' ',d.reg_price,' ',d.current_price,' ',d.dish_time,' ',cc.cate_name,' ',ce.cate_name,' ',cf.cate_name,' ',dc.dish_desc,' ',de.dish_desc,' ',df.dish_desc) like '%{$keyword}%' ";
+			$sql = "select d.dish_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,d.is_spicy,cc.cate_name as 'cate_name_cn', ce.cate_name as 'cate_name_en',cf.cate_name as 'cate_name_fr', dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df, cate_cn as cc, cate_en as ce, cate_fr as cf where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id and d.cate_id=cc.cate_id and d.cate_id=ce.cate_id and d.cate_id=cf.cate_id and concat(d.dish_id,' ',dc.dish_name,' ',de.dish_name,' ',df.dish_name,' ',d.dish_no,' ',d.dish_num,' ',d.reg_price,' ',d.current_price,' ',d.dish_time,' ',cc.cate_name,' ',ce.cate_name,' ',cf.cate_name,' ',dc.dish_desc,' ',de.dish_desc,' ',df.dish_desc) like '%{$keyword}%' ";
 		else
 			$sql.= "and concat(d.dish_id,' ',dc.dish_name,' ',de.dish_name,' ',df.dish_name,' ',d.dish_no,' ',d.dish_num,' ',d.reg_price,' ',d.current_price,' ',d.dish_time,' ',cc.cate_name,' ',ce.cate_name,' ',cf.cate_name,' ',dc.dish_desc,' ',de.dish_desc,' ',df.dish_desc) like '%{$keyword}%' ";		
 	}
@@ -37,7 +37,7 @@ if($strkeys) {
 }else{	
 	
 	$_REQUEST['order']?$order="order by ".$_REQUEST['order']:$order=null;
-	$sql="select d.dish_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,cc.cate_name as 'cate_name_cn', ce.cate_name as 'cate_name_en',cf.cate_name as 'cate_name_fr', dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df, cate_cn as cc, cate_en as ce, cate_fr as cf where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id and d.cate_id=cc.cate_id and d.cate_id=ce.cate_id and d.cate_id=cf.cate_id {$order} limit {$offset},{$pageSize}";
+	$sql="select d.dish_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,d.is_spicy,cc.cate_name as 'cate_name_cn', ce.cate_name as 'cate_name_en',cf.cate_name as 'cate_name_fr', dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df, cate_cn as cc, cate_en as ce, cate_fr as cf where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id and d.cate_id=cc.cate_id and d.cate_id=ce.cate_id and d.cate_id=cf.cate_id {$order} limit {$offset},{$pageSize}";
 	$rows=fetchAll($sql);
 	
 	//print_r($rows);
@@ -363,6 +363,12 @@ if($strkeys) {
 					                        				<?php echo $row['is_hot']==1?"热卖":"正常";?>
 					                        			</td>
 					                        		</tr>
+					                        		<tr>
+					                        			<td width="20%"  align="right">是否辛辣</td>
+					                        			<td>
+					                        				<?php echo $row['is_spicy']==1?"是":"否";?>
+					                        			</td>
+					                        		</tr>					                        		
 													<tr>
 														<td width="20%"  align="right">菜品描述(中文)</td>													 														
 					                        			<td>	

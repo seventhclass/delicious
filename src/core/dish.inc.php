@@ -22,6 +22,7 @@ function addDish(){
 	$arr_0['reg_price']=$_POST['rPrice'];
 	$arr_0['current_price']=$_POST['cPrice'];
 	$arr_0['dish_time']=time();
+	$arr_0['is_spicy']=$_POST['cSpicy'];
 	$res0=insert("dish", $arr_0);
 	$dish_id=getInsertId();
 	
@@ -96,7 +97,8 @@ function editDish($id){
 	$arr_0['reg_price']=$_POST['rPrice'];
 	$arr_0['current_price']=$_POST['cPrice'];
 	$arr_0['is_show']=$_POST['isShow'];
-	$arr_0['is_hot']=$_POST['isHot'];		
+	$arr_0['is_hot']=$_POST['isHot'];
+	$arr_0['is_spicy']=$_POST['cSpicy'];
 	$where="dish_id={$id}";
 	$res0=update("dish", $arr_0, $where);
 
@@ -251,12 +253,12 @@ function uploadDishPic($id){
 /**
  * 得到商品的所有信息
  * @return array:
- */
+
 function getAllProByAdmin(){
 	$sql="select p.id,p.pname,p.psn,p.pnum,p.mprice,p.iprice,p.pdesc,p.pubtime,p.isshow,p.ishot,c.cname from imooc_pro as p join imooc_cate c on p.cid=c.id";
 	$rows=fetchAll($sql);
 	return $rows;
-}
+} */
 
 /**
  * 根据商品ID得到商品图片
@@ -275,18 +277,18 @@ function getAllImgByDishId($id){
  * @return array:
  */
 function getDishById($id){
-	$sql="select d.dish_id,d.cate_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df where d.dish_id={$id} and d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id";
+	$sql="select d.dish_id,d.cate_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,d.is_spicy,dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df where d.dish_id={$id} and d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id";
 	$row=fetchOne($sql);
 	return $row;
 }
 
 /**
- * 检查分类下是否有产品
+ * 检查分类下是否有菜品
  * @param int $cid
  * @return array
  */
 function checkProExist($cid){
-	$sql="select * from imooc_pro where cId={$cid}";
+	$sql="select * from dish where cate_id={$cid}";
 	$rows=fetchAll($sql);
 	return $rows;
 }
@@ -294,42 +296,42 @@ function checkProExist($cid){
 /**
  * 得到所有商品
  * @return array
- */
+
 function getAllPros(){
 	$sql="select p.id,p.pname,p.psn,p.pnum,p.mprice,p.iprice,p.pdesc,p.pubtime,p.isshow,p.ishot,c.cname,p.cid from imooc_pro as p join imooc_cate c on p.cid=c.id ";
 	$rows=fetchAll($sql);
 	return $rows;
-}
+} */
 
 
 /**
  *根据cid得到4条产品
  * @param int $cid
  * @return Array
- */
+
 function getProsByCid($cid){
 	$sql="select p.id,p.pname,p.psn,p.pnum,p.mprice,p.iprice,p.pdesc,p.pubtime,p.isshow,p.ishot,c.cname,p.cid from imooc_pro as p join imooc_cate c on p.cid=c.id where p.cid={$cid} limit 4";
 	$rows=fetchAll($sql);
 	return $rows;
-}
+} */
 
 /**
  * 得到下4条产品
  * @param int $cid
  * @return array
- */
+
 function getSmallProsByCid($cid){
 	$sql="select p.id,p.pname,p.psn,p.pnum,p.mprice,p.iprice,p.pdesc,p.pubtime,p.isshow,p.ishot,c.cname,p.cid from imooc_pro as p join imooc_cate c on p.cid=c.id where p.cid={$cid} limit 4,4";
 	$rows=fetchAll($sql);
 	return $rows;
-}
+} */
 
 /**
  * 得到商品ID和商品名称
  * @return array:
  */
 function getDishInfo(){
-	$sql="select d.dish_id,d.cate_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id";
+	$sql="select d.dish_id,d.cate_id,dc.dish_name as 'dish_name_cn',de.dish_name as 'dish_name_en',df.dish_name as 'dish_name_fr',d.dish_no,d.dish_num,d.reg_price,d.current_price,d.dish_time,d.is_show,d.is_hot,d.is_spicy,dc.dish_desc as 'dish_desc_cn',de.dish_desc as 'dish_desc_en',df.dish_desc as 'dish_desc_fr' from dish as d, dish_cn as dc, dish_en as de, dish_fr as df where d.dish_id=dc.dish_id and dc.dish_id=de.dish_id and de.dish_id=df.dish_id";
 	$rows=fetchAll($sql);
 	return $rows;
 }
