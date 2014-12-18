@@ -339,7 +339,17 @@ header #admin {
 	color: #75593b;
 	font-weight: bold;
 	padding: 10px 15px;
+	text-align:left;
 }
+.t_left {
+	float:left;
+	font-weight: bold;
+}
+.t_right {
+	float:right;
+	font-weight: normal;
+}
+
 /*==========   promotions   =========================================*/
 
 #content_promotion {

@@ -272,6 +272,17 @@ function getAllImgByDishId($id){
 }
 
 /**
+ * 根据菜品ID得到菜品第一张图片
+ * @param int $id
+ * @return array:
+ */
+function getFirstImgByDishId($id){
+	$sql="select a.id, a.album_path from album a where dish_id={$id} limit 1";
+	$row=fetchOne($sql);
+	return $row;
+}
+
+/**
  * 根据ID得到商品的详细信息
  * @param int $id
  * @return array:
