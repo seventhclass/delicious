@@ -47,6 +47,7 @@ $(document).ready(function() {
 					include("./include/contact.php");
 				//echo "</section>";
 				include("./include/footer.php");
+				include("./include/detail.php");
 			?>
 		<!--</div>-->
 	</body>

@@ -29,10 +29,13 @@
 			<p>Happy Hour:</p>
 			<p>Mon-Wed 3:00pm - 7:00pm</p>
 		</div>
-		<p id="copyright">&copy; 2014 by Delicious. Proudly created with <a href="http://www.7thclass.com">7thclass.com</a>
-		<span><a href="#"><img src="" alt="" >Facebook</a>
-		<span><a href="#"><img src="" alt="" >Twitter</a>
-		<span><a href="#"><img src="" alt="" >Google+</a></span></p>
+		<article id="copyright">&copy; 2014 by Delicious. Proudly created with <a href="http://www.7thclass.com">7thclass.com</a>
+		</article>
+		<article id="follow">
+			<span><a href="http://www.google.com"><img src="./images/logo_g.png" alt="Google+" ></a></span>
+			<span><a href="http://www.twitter.com"><img src="./images/logo_t.png" alt="Twitter" ></a></span>
+			<span><a href="http://www.facebook.com"><img src="./images/logo_f.png" alt="Facebook" ></a></span>
+		</article>
 	</div>
 </footer>
 

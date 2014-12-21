@@ -1,3 +1,20 @@
+/* 
+functions:
+
+	setOpacity(objID, value)  
+		  Set the opacity of the document object with the id, objID to value.
+		  
+	fadeIn(objID, maxOpacity, fadeTime, delay)
+		  Fades in an object with the id, objID up to a maximum opacity of 
+		  maxOpacity over an interval of fadeTime seconds with a delay of
+		  delay seconds.
+
+	   fadeOut(objID, maxOpacity, fadeTime, delay)
+		  Fades out an object with the id, objID from a maximum opacity of 
+		  maxOpacity down to 0 over an interval of fadeTime seconds with a 
+		  delay of delay seconds.
+		  
+*/  
 addEvent(window, "load", init, false);
 
 var menuItems = new Array();	//menu items
@@ -10,6 +27,11 @@ var prevMenu = 0; 				//attribute 'id' of the menu item clicked last time
 var menuNav = new Array();		//menu page, category nav items
 var ptCate = null;				//the category that the mouse clicks on
 var prevCate = null;			//the category selected last time
+
+var overlay = null;				//object of div id='page_overlay'
+var detailBox = null;			//popup div for displaying detailed dish info
+var clsoeBtn = null;			//close button on detail div
+var dishPics = new Array();		//dish thumbnail pictures in 'menu' div
 
 //initialize to show home section and hide all other sections
 function init(){
@@ -37,7 +59,30 @@ function init(){
 		}
 		addEvent(menuItems[i], "click", changeShowDiv, false);
 	}
+	
 	initMenuNav(); 	//find menu category lists and add onclick events
+	
+	
+	overlay = document.getElementById("page_overlay");
+	detailBox = document.getElementById("popup");
+	//overlay.style.display = "none";
+	//detailBox.style.display = "none";
+	closeBtn = document.getElementById("close");
+	addEvent(closeBtn, "click", closeDetail, false);
+	
+	for(var i = 0; i < allElem.length; i++){
+		if(allElem[i].className == "pic"){
+			dishPics.push(allElem[i]);
+		}	
+	}
+	
+	for(var i = 0; i < dishPics.length; i++){
+		addEvent(dishPics[i], "click", showDetail, false);
+	}
+		
+	addEvent(closeBtn, "click", closeDetail, false);
+	//addEvent(overlay, "click", closeDetail, false);
+	
 }
 
 //click on items on the header bar, switch page content accordingly:
@@ -62,7 +107,7 @@ function changeShowDiv(e){
 				menuItems[i].className = "";
 		}else{
 			if(sections[i].id == index){
-				$(sections[i]).fadeIn(1500);
+				$(sections[i]).fadeIn(500);
 				sections[i].style.display="block";
 				menuItems[i].className = "on";
 				//menuItems[i].style.color = "white";
@@ -98,7 +143,7 @@ function getStyle(object, styleName) {
 
 /* load google map */
 function initMap(){
-	var myCenter=new google.maps.LatLng(45.4997032,-73.6251816);
+	var myCenter=new google.maps.LatLng(45.498620,-73.626997);
 	var mapProp = {
     	      center:myCenter,
     	      zoom:15,
@@ -137,5 +182,62 @@ function switchOn(e){
 		prevCate.className = "";
 		ptCate.className = "on";
 		prevCate = ptCate;
+	}
+}
+
+function showDetail() {
+	// Change the image based on dish_id
+	//changeSlide(this);
+	
+	// Reveal the slide show
+	setOpacity("popup", 0);
+	setOpacity("page_overlay", 0);
+	detailBox.style.display = "block";
+	overlay.style.display = "block";
+	detailBox.style.zIndex="1000";
+	overlay.style.zIndex="999";
+	fadeIn("popup", 100, 0.5, 0);
+	fadeIn("page_overlay", 80, 0.5, 0);
+	
+	// Halt propagation of the click event
+	return false;
+}
+
+//close detailed dish info div and page overlay div
+function closeDetail(){
+	fadeOut("popup", 100, 0.5, 0);
+	fadeOut("page_overlay", 80, 0.5, 0);
+	setTimeout(function() {
+		detailBox.style.display = "none";
+		overlay.style.display = "none";
+		detailBox.style.zIndex="-1";
+		overlay.style.zIndex="-1";
+		}, 500);
+}
+
+function setOpacity(objID, value) {
+	var object = document.getElementById(objID);
+	// Apply the opacity value for IE and non-IE browsers
+	object.style.filter = "alpha(opacity = " + value + ")";
+	object.style.opacity = value/100;
+}
+
+function fadeIn(objID, maxOpacity, fadeTime, delay) {
+	// Calculate the interval between opacity changes
+	var fadeInt = Math.round(fadeTime*1000)/maxOpacity;
+	// Loop up the range of opacity values
+	for (var i = 0; i <= maxOpacity; i++) {
+		setTimeout("setOpacity('" + objID + "', " + i + ")", delay);
+		delay += fadeInt;
+	}
+}
+
+function fadeOut(objID, maxOpacity, fadeTime, delay) {
+	// Calculate the interval between opacity changes
+	var fadeOut = Math.round(fadeTime*1000)/maxOpacity;
+	// Loop down the range of opacity values
+	for (var i = maxOpacity; i >= 0; i--) {
+		setTimeout("setOpacity('" + objID + "', " + i + ")", delay);
+		delay += fadeOut;
 	}
 }
