@@ -38,6 +38,8 @@ function init(){
 		addEvent(menuItems[i], "click", changeShowDiv, false);
 	}
 	initMenuNav(); 	//find menu category lists and add onclick events
+	//register onclick function to send email	
+	registerLister();
 }
 
 //click on items on the header bar, switch page content accordingly:
@@ -139,3 +141,21 @@ function switchOn(e){
 		prevCate = ptCate;
 	}
 }
+
+function registerLister(){
+	var emailBtnId = document.getElementById('emailBtnId');
+	addEvent(emailBtnId,"click",sendEmail,"false");	
+}
+
+function sendEmail(){
+	// var clientName=document.getElementById('clientName');
+	// var clientEmail=document.getElementById('clientEmail');
+	// var leaveMessage=document.getElementById('leaveMessageId');
+	
+	var commentForm=document.getElementById('commnetFormId');
+	
+	commentForm.action='sendMail.php';
+	commentForm.submit();
+	
+		
+}	
