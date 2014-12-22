@@ -17,7 +17,6 @@ require_once '../include.php';
     
     echo $resut;
     
-    
     alertMesg("go home page ",'../index.php');
     
 ?>
