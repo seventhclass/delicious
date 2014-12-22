@@ -35,20 +35,15 @@ $(document).ready(function() {
 </script>			
 	</head>
 	<body>
-	<!--<div id="wrap"> -->
-			<?php
-				include("./include/header.php");
-				//according to certain condition, load different content:
-				//echo "<section class='main clearfix'>";
-					include("./include/home.php");
-					include("./include/menu.php");
-					include("./include/promotion.php");
-					include("./include/about.php");
-					include("./include/contact.php");
-				//echo "</section>";
-				include("./include/footer.php");
-				include("./include/detail.php");
-			?>
-		<!--</div>-->
+		<?php
+			include("./include/home.php");
+			include("./include/menu.php");
+			include("./include/promotion.php");
+			include("./include/about.php");
+			include("./include/contact.php");
+			include("./include/header.php");
+			include("./include/footer.php");
+			include("./include/detail.php");
+		?>
 	</body>
 </html>

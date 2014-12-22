@@ -103,14 +103,12 @@ function changeShowDiv(e){
 		if(sections[i].style.display == "block"){
 				$(sections[i]).fadeOut();
 				sections[i].style.display="none";
-				//menuItems[i].style.color = "#d9b181";
 				menuItems[i].className = "";
 		}else{
 			if(sections[i].id == index){
 				$(sections[i]).fadeIn(500);
 				sections[i].style.display="block";
 				menuItems[i].className = "on";
-				//menuItems[i].style.color = "white";
 				if(index=="content_contact"){
 					initMap();
 				}
@@ -194,8 +192,6 @@ function showDetail() {
 	setOpacity("page_overlay", 0);
 	detailBox.style.display = "block";
 	overlay.style.display = "block";
-	detailBox.style.zIndex="1000";
-	overlay.style.zIndex="999";
 	fadeIn("popup", 100, 0.5, 0);
 	fadeIn("page_overlay", 80, 0.5, 0);
 	
@@ -210,8 +206,6 @@ function closeDetail(){
 	setTimeout(function() {
 		detailBox.style.display = "none";
 		overlay.style.display = "none";
-		detailBox.style.zIndex="-1";
-		overlay.style.zIndex="-1";
 		}, 500);
 }
 
