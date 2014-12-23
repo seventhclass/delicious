@@ -61,10 +61,8 @@ function init(){
 	}
 	
 	initMenuNav(); 	//find menu category lists and add onclick events
-<<<<<<< HEAD
 	//register onclick function to send email	
 	registerLister();
-=======
 	
 	
 	overlay = document.getElementById("page_overlay");
@@ -87,7 +85,6 @@ function init(){
 	addEvent(closeBtn, "click", closeDetail, false);
 	//addEvent(overlay, "click", closeDetail, false);
 	
->>>>>>> 01f41e27d3164a28687645ed89738348e5b5c4ef
 }
 
 //click on items on the header bar, switch page content accordingly:
