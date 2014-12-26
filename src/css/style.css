@@ -275,6 +275,14 @@ header #admin{right:0;}
 	font-weight:bold;
 	padding:10px 15px;
 }
+/* overlay page */
+#page_overlay {display: none;
+			position: fixed; top: 0; left: 0;
+			width: 100%; height: 100%;
+			background-color: rgb(140, 111, 111);
+			filter: alpha(opacity = 80); opacity: 0.80}
+			
+/* whole popup area */
 #popup{
 	display:none;
 	position:fixed;
@@ -284,48 +292,126 @@ header #admin{right:0;}
 	margin-top:-290px;
 	width:1100px;
 	height:580px;
+	color:#666;
 }
-#popup > #popup_page{
-	margin:0 auto;
-	width:1000px;
-	height:560px;
-	overflow:auto;
-	background:#fff;
-	padding:10px;
-
-}
-#popup > #popup_nav {
+/* back and forward arrow */
+#popup_nav {
 	position:absolute;
 	width:100%;
 	top:50%;
 	margin-top:-16px;
 }
-#back{
+#popup_nav #back{
 	float:left;
 }
-	
-#forward{
+#popup_nav #forward{
 	float:right;
 }
-#popup > #popup_footer{
-	position:absolute;
-	left:0;
-	right:0;
-	bottom:10px;
+#back, #forward{
+	width:32px;height:32px;
+	background-position:0 0;
+}
+#back:hover, #forward:hover{
+	cursor:pointer;
+	background-position:-32px 0;
+}
+#back{
+	background:url("../images/arrow-back-2.png");
+}
+#forward{
+	background:url("../images/arrow-forward-2.png");
+}
+
+/* popup footer, indicate the current page number and total number */
+#popup_footer{
+	line-height: 30px;
+	padding-top: 5px;
 }
 #popup_footer p{
 	text-align:center;
 }
-#popup  #close{
-	 float:right; 
+/* popup main area */
+#popup_main{
+	margin:0 auto;
+	width:1000px;
+	height:580px;
+	background:#fff;
 }
-/* Styles for the semi-transparent overlay */
-#page_overlay {display: none;/*block;*/
-				position: fixed; top: 0; left: 0;
-				width: 100%; height: 100%;
-				background-color: rgb(140, 111, 111);
-				filter: alpha(opacity = 80); opacity: 0.80
-				}
+
+/* popup top bar, include close button */
+#popup_topbar{
+}
+#close{
+	float:right;
+	position:relative;
+	right:-16px;
+	top:-16px;
+	background:url("../images/gray-close-circled-32-1.png");
+	background-position:0 0;
+	width:32px; height:32px;
+}
+#close:hover{
+	cursor:pointer;
+	background-position:-32px 0;
+}
+/* popup page, include left(pic) area, right(text) area and bottom（description) area*/
+#popup_page{
+	/* position:absolute; 
+	top:30px;*/
+	width:980px;
+	height:500px;
+	overflow:auto;
+	padding:10px;
+	padding-top:0;
+}
+
+#dish_pic,#dish_text{
+	float:left;
+	/* border:1px solid #ccc; */
+	width:460px;
+	height:460px;
+	margin-left: 15px;
+}
+
+#pic_large{
+	border:1px solid #ccc;
+	width:100%;
+	height:350px;
+}	
+
+#dish_text li{
+	width:460px;
+}
+#dish_text li div{
+	display:inline-block;
+}
+#dish_text h1{
+	padding:20px 10px;
+}	
+#dish_text .dt{
+	font-size:16px;
+	line-height:2em;
+	width:120px;
+	padding:5px 10px 5px 30px;
+}
+#dish_text .dd{
+	font-size:14px;
+}
+#is_spicy{
+	background:url("../images/spicy2.png");
+	background-position:0 0;
+	width:30px;height:30px;
+	padding:0;
+	vertical-align:middle;
+}
+#dish_desc{
+	clear:both;
+	width:935px;
+	height:200px;
+	border:1px solid #ccc;
+	margin-left:15px;
+	padding-top:20px;
+}
 /*==========   promotions   =========================================*/
 
 #content_promotion{
