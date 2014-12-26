@@ -1,5 +1,5 @@
-<? php
-require_once '../include.php';
+<?php
+	require_once "../include.php";
 
     
     $msg = $_POST['leaveMessage'];
