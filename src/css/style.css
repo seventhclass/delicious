@@ -461,37 +461,100 @@ header #admin{right:0;}
 
 /*==========   contact us   =========================================*/
 #content_contact{
-	position:relative;
+	/* position:relative; */
 	height:650px;
 	width:980px;
 	color:#D9B181;
-	background-color:rgba(30,0,0,0.4);
+	background-color:#bc966d;
+	/* background-color:rgba(30,0,0,0.4); */
 	margin:50px auto;
 	display: none;
 }
+#contact_comment{
+	/* position: absolute;
+	top: 380px;
+	margin-left: -450px;
+	left: 50%; 
+	position:relative;*/
+	height:250px;
+	color:white;
+	font-size: 14px;
+	line-height:25px;
+	padding:30px;
+	/* background: rgba(217,177,129,1); */
+	border-radius: 3px;
+	width: 840px;
+	margin:30px auto 0;
+	background:url("../images/contactMapBG.png");
+	
+}
+#contact_info,#contact_form{
+	float:left;
+	margin-right: 20px;
+}
+#contact_info{
+	width:300px;
+}
+#contact_form{
+	width:500px;
+}
+
+#contact_comment h3{
+	font-size:18px;
+	margin-top:30px;
+	padding-bottom: 5px;
+}
+#commnetFormId .form_control{
+	display: inline-block;
+	color: #555555;
+	font-size: 14px;
+	font-family:monospace;
+	line-height:1.4;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	vertical-align: middle;
+	padding: 6px 12px;
+	margin:0 3px 15px 0;
+}
+#commnetFormId input{
+	width:218px;
+}
+#leaveMessageId{
+	height:60px;
+	width:470px;
+}
+#emailBtnId{
+	float:right;
+	border: none;
+	font-size: 14px;
+	line-height: 1.2;
+	margin-right: 5px;
+	border-radius: 3px;
+	display: block;
+	padding: 7px 15px;
+	text-align: center;
+	background: #917454;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+#emailBtnId:hover{
+	cursor:pointer;
+	background: #a0805d;
+}
 #content_contact .wrap {
-	position:absolute;
+	/* position:absolute;
 	left:50%;
-	margin-left:-450px;
-	margin-top:40px;
+	margin-left:-450px; 
+	margin-top:40px;*/
 	/* margin:40px auto; */
 }
 #googleMap {
 	/* position:absolute; */
+	margin: 0 auto;
 	width: 900px;
 	height: 300px;
-	border-radius: 10px;
-}
-#contact_comment{
-	position: absolute;
-	top: 380px;
-	margin-left: -450px;
-	left: 50%;
-	font-size: 20px;
-	padding: 30px;
-	background: rgba(30,0,0,0.4);
-	border-radius: 10px;
-	width: 840px;
+	border-radius: 3px;
 }
 
 /*========== footer ==================================================*/

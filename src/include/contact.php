@@ -1,29 +1,27 @@
 <section class="content" id="content_contact">
+	<div id='contact_comment'>
+		<div id='contact_info'>
+			<h3> Contact Info </h3>
+			<p>Tel: 514-342-7687</p>
+			<p>Email:example@xxx.com</p>
+			<p>5665 Côte-des-Neiges </p>
+			<p>Montreal, QC, CA<p>
+			<p>H3T xxx<p>
+
+		</div>
+		<div id='contact_form'>
+			<h3> Contact Form </h3>
+			<form id='commnetFormId'>
+					<input type='text' class='form_control' placeholder='Name' id='clientNameId' name='clientName'/>
+					<input type='text' class='form_control' placeholder='Email' id='clientEmailId' name='clientEmail'/>
+					<textarea  class='form_control' placeholder='Message' id='leaveMessageId' cols='50' row='8' name='leaveMessage'></textarea>
+					<button id='emailBtnId' type='submit' >Send Message</button>
+			</form>
+		</div>
+	</div>
 	<div class="wrap">
 		<div id="googleMap">
 		</div>
-	</div>
-	<div id='contact_comment'>
-		<form id='commnetFormId'>
-			<h3> Get in touch </h3>
-			<p>
-				You can also email Sarah directly, she takes care of all enquiries :
-			</p>
-			<fieldset>
-				<label for='name'>Your Name </label>
-				<input type='text' id='clientNameId' name='clientName'/>
-			</fieldset>
-			<fieldset>
-				<label for='email'>Email</label>
-				<input type='text' id='clientEmailId' name='clientEmail'/>
-				<fieldset>
-					<label for='tellup'>Tell up some details</label>
-					<textarea id='leaveMessageId' cols='50' row='6' name='leaveMessage'></textarea>
-				</fieldset>
-				<fieldset>
-					<input id='emailBtnId' type='button' value='send'></input>
-				</fieldset>
-		</form>
 	</div>
 </section>
 <!-- delicieux.restauant@gmail.com -->
