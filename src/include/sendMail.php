@@ -1,8 +1,6 @@
-<? php
-require_once '../include.php';
+<?php
 
-    
-    $msg = $_POST['leaveMessage'];
+	$msg = $_POST['leaveMessage'];
 
     $msg = wordwrap($msg,70);
     
@@ -17,6 +15,6 @@ require_once '../include.php';
     
     echo $resut;
     
-    alertMesg("go home page ",'../index.php');
+    echo "<script>window.location='../index.php';</script>";
     
 ?>

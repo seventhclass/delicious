@@ -187,12 +187,13 @@ function switchOn(e){
 
 function registerListner(){
 	var emailBtnId = document.getElementById('emailBtnId');
-	addEvent(emailBtnId,"click",sendEmail,false);	
+	addEvent(emailBtnId,"click",sendEmail,false);
+	//alert("111");
 }
 
 function sendEmail(){
 	var commentForm=document.getElementById('commnetFormId');
-	commentForm.action='sendMail.php';
+	commentForm.action='./include/sendMail.php';
 	commentForm.submit();
 }	
 
