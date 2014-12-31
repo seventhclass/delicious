@@ -1,7 +1,7 @@
 <section class="content" id="content_contact">
 	<div id='contact_comment'>
 		<div id='contact_info'>
-			<h3> Contact Info </h3>
+			<h2> Contact Info </h2>
 			<p>Tel: 514-342-7687</p>
 			<p>Email:example@xxx.com</p>
 			<p>5665 Côte-des-Neiges </p>
@@ -10,7 +10,7 @@
 
 		</div>
 		<div id='contact_form'>
-			<h3> Contact Form </h3>
+			<h2> Contact Form </h2>
 			<form id='commnetFormId'>
 					<input type='text' class='form_control' placeholder='Name' id='clientNameId' name='clientName'/>
 					<input type='text' class='form_control' placeholder='Email' id='clientEmailId' name='clientEmail'/>

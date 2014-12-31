@@ -21,21 +21,25 @@ $rows=fetchAll($sql);
 
 <section class="content" id="content_menu">
 	<nav>
-		<div><ul id="category">
-			<li class="on">Appetizers</li>
-			<li>Soup Meals</li>
-			<li>Thaï Style</li>
-			<li>Spécialités Cantonaises et Hong Kong</li>
-			<li>Szechuan Style</li>
-			<li>Assorted Plates</li>
-		</ul></div>
+		<div class="cat_sidebar">
+			<ul id="category">
+				<li class="on">All</li>
+				<li>Appetizers</li>
+				<li>Soup Meals</li>
+				<li>Thaï Style</li>
+				<li>Spécialités Cantonaises et Hong Kong</li>
+				<li>Szechuan Style</li>
+				<li>Assorted Plates</li>
+			</ul>
+			<div class="dot_curr"></div>
+		</div>
 	</nav>
 	<div id="gallery">
-		<div >
+		<div class="wrap" >
 			<?php foreach ($rows as $row):?>	
 			<?php 
 			$dishImg=getFirstImgByDishId($row['dish_id']);
-			if($dishImg){
+			//if($dishImg){
 			?>
 				<div class="pic"><img style="background-color:#ccc" src="./image_350/<?php echo $dishImg['album_path']?>" alt="<?php echo $dishImg['album_path']?>"/>
 					<div class="info">
@@ -43,7 +47,7 @@ $rows=fetchAll($sql);
 						<span class="t_right"><?php echo "CAD&nbsp;&nbsp;".$row['current_price']; ?></span>
 					</div>
 				</div>			
-			<?php }?>	
+			<?php //}?>	
             <?php endforeach; 
             	if($totalRows>$pageSize)
             		echo "<br/>".showPage($page, $totalPage);
