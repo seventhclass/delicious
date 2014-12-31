@@ -3,7 +3,7 @@ require_once './include.php';
 
 $sql="select slider_id,dish_id,album_path from slider_album order by slider_id";
 $rows=fetchAll($sql);
-print_r($rows);	
+//print_r($rows);	
 ?>
 <section class="content" id="content_home">
 	 <div id="list" style="left: -980px;">

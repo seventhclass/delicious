@@ -188,7 +188,7 @@ function switchOn(e){
 function registerLister(){
 	var emailBtnId = document.getElementById('emailBtnId');
 	addEvent(emailBtnId,"click",sendEmail,false);
-	alert("111");
+	//alert("111");
 }
 
 function sendEmail(){

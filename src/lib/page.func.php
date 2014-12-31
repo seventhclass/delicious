@@ -6,7 +6,7 @@
 
 // $pageSize=2;
 
-// //得到总页码数
+// //å¾—åˆ°æ€»é¡µç �æ•°
 // $totalPage=ceil($totalRows/$pageSize);
 // $page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
 // if($page<1||$page==null||!is_numeric($page)){
@@ -23,8 +23,8 @@
 // $rows=fetchAll($sql);
 // //print_r($rows);
 // foreach ($rows as $row){
-// 	echo "编号:".$row['id'],"<br/>";
-// 	echo "管理员的名称:".$row['username'],"<hr/>";
+// 	echo "ç¼–å�·:".$row['id'],"<br/>";
+// 	echo "ç®¡ç�†å‘˜çš„å��ç§°:".$row['username'],"<hr/>";
 // }
 
 // echo showPage($page, $totalPage);
