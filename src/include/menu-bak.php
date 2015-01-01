@@ -25,40 +25,22 @@ $rows=fetchAll($sql);
 
 <section class="content" id="content_menu">
 	<nav>
-		<div><ul id="category">
-			<?php 
-				if($_REQUEST ['cate_id']){
-			?>
-				<li>All</li>	
-			<?php 
-				}else{
-			?>	
-				<li class="on">All</li>					
-			<?php 		
-				};
-			?>
-			<?php 
-				foreach ($cateids as $cateid):
-			?>			
-			<li <?php $_REQUEST ['cate_id']==$cateid['cate_id'] ? "class='on'":null; echo "onclick='cate-click({$cateid['cate_id']})'";?> ><?php echo $cateid['cate_name_en'] ?></li>
-			<?php endforeach; ?>
-		</ul></div>
 		<div class="cat_sidebar">
 			<ul id="category">
 				<?php 
 					if($_REQUEST ['cate_id']){
 				?>
-					<li>All</li>	
+					<li onclick='cate_clicked()'>All</li>	
 				<?php 
 					}else{
 				?>	
-					<li class="on">All</li>					
+					<li class="on" onclick='cate_clicked()'>All</li>					
 				<?php 		
 					};
 				?>
 				<?php 
 					foreach ($cateids as $cateid):
-				?>			
+				?>											
 				<li <?php $_REQUEST ['cate_id']==$cateid['cate_id'] ? "class='on'":null; echo "onclick='cate_clicked({$cateid['cate_id']})'";?> ><?php echo $cateid['cate_name_en'] ?></li>
 				<?php endforeach; ?>
 			</ul>
@@ -70,7 +52,7 @@ $rows=fetchAll($sql);
 			<?php foreach ($rows as $row):?>	
 			<?php 
 			$dishImg=getFirstImgByDishId($row['dish_id']);
-			//if($dishImg){
+			if($dishImg){
 			?>
 				<div class="pic"><img style="background-color:#ccc" src="./image_350/<?php echo $dishImg['album_path']?>" alt="<?php echo $dishImg['album_path']?>"/>
 					<div class="info">
@@ -78,10 +60,15 @@ $rows=fetchAll($sql);
 						<span class="t_right"><?php echo "CAD&nbsp;&nbsp;".$row['current_price']; ?></span>
 					</div>
 				</div>			
-			<?php //}?>	
+			<?php }?>	
             <?php endforeach; 
             	if($totalRows>$pageSize)
-            		echo "<br/>".showPage($page, $totalPage, "content_id=content_menu&".$_REQUEST ['cate_id']?"cate_id=".$_REQUEST ['cate_id']:null);
+            	{
+            		$where="content_id=content_menu";
+            		$where.=$_REQUEST ['cate_id']?"&cate_id=".$_REQUEST ['cate_id']:null;
+            		//var_dump($where);
+            		echo "<br/>".showPage($page, $totalPage, $where);
+            	}
             ?> 			
 		</div>		
 	</div>

@@ -174,7 +174,7 @@ header #admin{right:0;}
 
 #content_menu{
 	position:relative;
- 	width:1200px;
+ 	width:1500px;
 	height:950px;
 	/* color:#D9B181; */
 	/*background-color:#bc966d;rgba(30,0,0,0.6);*/
@@ -757,3 +757,7 @@ footer article a:hover{
 	color:white;
 	text-shadow:0px 1px 2px white;
 }
+
+.gallery_main{width: 980px; float: left; overflow: hidden;}
+.cate_menu{ float: left;  position: relative;}
+.gallery_cont{position: relative;}

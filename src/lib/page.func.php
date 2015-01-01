@@ -45,7 +45,7 @@ function showPage($page, $totalPage, $where = null, $seprator = "&nbsp;") {
 		if ($page == $i) {
 			$p .= "[{$i}]";
 		} else {
-			$p .= "<a href='{$url}?page={$i}'>[{$i}]</a>";
+			$p .= "<a href='{$url}?page={$i}{$where}'>[{$i}]</a>";
 		}
 	}
 	

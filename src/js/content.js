@@ -39,8 +39,15 @@ function init(){
 	var formString = searchString.replace(/\+/g," ");
 	var dataString = unescape(formString);
 	data = dataString.split(/[&=]/g);
-	content_id = data[1];
-	//log.console(content_id);
+	
+	console.log("length="+data.length);
+	//Finding the value of content_id from url array
+	for(var i=0; i<data.length; i+=2){
+		if(data[i]=="content_id")
+			content_id = data[i+1];
+	}		
+	
+	console.log("content_id="+content_id);
 	
 	var allElem = document.getElementsByTagName("*");
 	
@@ -51,6 +58,7 @@ function init(){
 			menuItems.push(document.getElementById(idx.substring(8,idx.length)));  //cut 'content_' to get menu item id
 		}
 	}
+	
 	console.log(content_id);
 	if (!content_id)  {content_id ="content_home";}
 	console.log(content_id);
@@ -264,7 +272,13 @@ function fadeOut(objID, maxOpacity, fadeTime, delay) {
 }
 
 function cate_clicked(cat_id){
-
-	window.location.href = "./index.php?content_id=content_menu&cate_id="+ cat_id ;
+	var category="";
+	
+	if(cat_id)
+		category = "&cate_id="+ cat_id ;
+	
+//	window.location= "./include/dishGallery.php?content_id=content_menu"+category;
+//	target="mainFrame";
+	window.open("./include/dishGallery.php?content_id=content_menu"+category,'mainFrame');
 	
 }
