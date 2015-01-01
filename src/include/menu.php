@@ -41,7 +41,7 @@ $rows=fetchAll($sql);
 				<?php 
 					foreach ($cateids as $cateid):
 				?>			
-				<li <?php $_REQUEST ['cate_id']==$cateid['cate_id'] ? "class='on'":null;?> ><?php echo $cateid['cate_name_en'] ?></li>
+				<li <?php $_REQUEST ['cate_id']==$cateid['cate_id'] ? "class='on'":null; echo "onclick='cate_clicked({$cateid['cate_id']})'";?> ><?php echo $cateid['cate_name_en'] ?></li>
 				<?php endforeach; ?>
 			</ul>
 			<div class="dot_curr"></div>
