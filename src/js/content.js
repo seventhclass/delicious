@@ -32,9 +32,16 @@ var overlay = null;				//object of div id='page_overlay'
 var detailBox = null;			//popup div for displaying detailed dish info
 var clsoeBtn = null;			//close button on detail div
 var dishPics = new Array();		//dish thumbnail pictures in 'menu' div
-
+var content_id = null;			//
 //initialize to show home section and hide all other sections
 function init(){
+	var searchString = location.search.slice(1);
+	var formString = searchString.replace(/\+/g," ");
+	var dataString = unescape(formString);
+	data = dataString.split(/[&=]/g);
+	content_id = data[1];
+	//log.console(content_id);
+	
 	var allElem = document.getElementsByTagName("*");
 	
 	for(var i = 0; i < allElem.length; i++){
@@ -44,10 +51,13 @@ function init(){
 			menuItems.push(document.getElementById(idx.substring(8,idx.length)));  //cut 'content_' to get menu item id
 		}
 	}
+	console.log(content_id);
+	if (!content_id)  {content_id ="content_home";}
+	console.log(content_id);
 	
 	for(var i = 0; i < menuItems.length; i++){
 		
-		if(sections[i].id == "content_home"){
+		if(sections[i].id == content_id){
 			sections[i].style.display="block";
 			prevMenu = menuItems[i].id;				//home item
 			menuItems[i].className = "on";
@@ -204,6 +214,9 @@ function showDetail() {
 	// Reveal the slide show
 	setOpacity("popup", 0);
 	setOpacity("page_overlay", 0);
+	//var objBody = document.getElementsByTagName("body");
+	//objBody[0].style.overflow-x = "hidden";
+	//objBody[0].style.overflow-y = "hidden";
 	detailBox.style.display = "block";
 	overlay.style.display = "block";
 	fadeIn("popup", 100, 0.5, 0);
@@ -250,3 +263,8 @@ function fadeOut(objID, maxOpacity, fadeTime, delay) {
 	}
 }
 
+function cate_clicked(cat_id){
+
+	window.location.href = "./index.php?content_id=content_menu&cate_id="+ cat_id ;
+	
+}

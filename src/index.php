@@ -44,5 +44,6 @@
 			include("./include/footer.php");
 			include("./include/detail.php");
 		?>
+		<input type="hidden" id="curr_id" value="content_home">
 	</body>
 </html>
