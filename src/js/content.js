@@ -72,7 +72,7 @@ function init(){
 	
 	initMenuNav(); 	//find menu category lists and add onclick events
 	//register onclick function to send email	
-	registerLister();
+	registerListener();
 	
 	
 	overlay = document.getElementById("page_overlay");
@@ -195,7 +195,7 @@ function switchOn(e){
 	}
 }
 
-function registerLister(){
+function registerListener(){
 	var emailBtnId = document.getElementById('emailBtnId');
 	addEvent(emailBtnId,"click",sendEmail,false);
 	//alert("111");
