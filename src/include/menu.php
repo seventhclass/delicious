@@ -40,7 +40,7 @@ $rows=fetchAll($sql);
 			<?php 
 				foreach ($cateids as $cateid):
 			?>			
-			<li <?php $_REQUEST ['cate_id']==$cateid['cate_id'] ? "class='on'":null;?> ><?php echo $cateid['cate_name_en'] ?></li>
+			<li <?php $_REQUEST ['cate_id']==$cateid['cate_id'] ? "class='on'":null; echo "onclick='cate-click({$cateid['cate_id']})'";?> ><?php echo $cateid['cate_name_en'] ?></li>
 			<?php endforeach; ?>
 		</ul></div>
 	</nav>
@@ -60,7 +60,7 @@ $rows=fetchAll($sql);
 			<?php }?>	
             <?php endforeach; 
             	if($totalRows>$pageSize)
-            		echo "<br/>".showPage($page, $totalPage, $_REQUEST ['cate_id']?"cate_id=".$_REQUEST ['cate_id']:null);
+            		echo "<br/>".showPage($page, $totalPage, "content_id=content_menu&".$_REQUEST ['cate_id']?"cate_id=".$_REQUEST ['cate_id']:null);
             ?> 			
 		</div>		
 	</div>
