@@ -32,6 +32,7 @@
 // echo showPage($page,$totalPage,"cid=5");
 
 function showPage($page, $totalPage, $where = null, $seprator = "&nbsp;") {
+	
 	$where = ($where == null) ? null : "&" . $where;
 	$url = $_SERVER ['PHP_SELF'];
 	$index = ($page == 1) ? "首页" : "<a href='{$url}?page=1{$where}'>首页</a>";

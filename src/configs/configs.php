@@ -1,7 +1,7 @@
 <?php
 
-//define("DEVELOPMENT_MODE","dev");	//Development Mode
-define("DEVELOPMENT_MODE","rel");	//Release Mode
+define("DEVELOPMENT_MODE","dev");	//Development Mode
+//define("DEVELOPMENT_MODE","rel");	//Release Mode
 
 define("DB_HOST", "localhost");
 
