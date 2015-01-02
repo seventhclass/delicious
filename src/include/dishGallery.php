@@ -1,7 +1,7 @@
 <?php
 require_once '../include.php';
 
-$pageSize=3;
+$pageSize=12;
 $page = $_REQUEST ['page'] ? ( int ) $_REQUEST ['page'] : 1;
 $where_cateid = $_REQUEST ['cate_id'] ? "and d.cate_id=".$_REQUEST ['cate_id']." " : null;
 
@@ -31,8 +31,8 @@ $rows=fetchAll($sql);
 <body>
 	<div id="gallery">
 	<div class="wrap">
-		<?php foreach ($rows as $row):?>
-		<?php
+		<?php if($rows){
+			foreach ($rows as $row):
 			$dishImg = getFirstImgByDishId ( $row ['dish_id'] );
 			//if ($dishImg) {
 		?>
@@ -51,8 +51,11 @@ $rows=fetchAll($sql);
 				$where = "content_id=content_menu";
 				$where .= $_REQUEST ['cate_id'] ? "&cate_id=" . $_REQUEST ['cate_id'] : null;
 				// var_dump($where);
-				echo "<br/>" . showPage ( $page, $totalPage, $where );
+				echo "<div class='pagebox'>" . showPage ( $page, $totalPage, $where )."<div>";
 			}
+		}else{
+			echo "<h1>No dishes can be displayed </h1>";
+		}
 		?> 			
 	</div>
 	</div>

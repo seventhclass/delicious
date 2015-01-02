@@ -31,7 +31,7 @@ $cateids = getAllCate();
 	</nav>
 	<div class="gallery_main">
 		<div class="gallery_cont">
-			<iframe src="./include/dishGallery.php"  frameborder="0" name="mainFrame" width="100%" height="800"></iframe>	
+			<iframe src="./include/dishGallery.php"  frameborder="0" name="mainFrame" width="100%" height="980"></iframe>	
 		</div>
 	</div>
 </section>

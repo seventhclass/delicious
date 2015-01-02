@@ -49,7 +49,7 @@ function showPage($page, $totalPage, $where = null, $seprator = "&nbsp;") {
 		}
 	}
 	
-	$pageStr = $str . $seprator . $index . $seprator . $prev . $seprator . $p . $seprator . $next . $seprator . $last;
+	$pageStr = "<span class='headbox'>".$str."</span>" . $seprator.$seprator.$seprator.$seprator . $index . $seprator . $prev . $seprator . $p . $seprator . $next . $seprator . $last;
 	return $pageStr;
 }
 
