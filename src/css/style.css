@@ -173,17 +173,15 @@ header #admin{right:0;}
 /*==========   menu   =========================================*/
 
 #content_menu{
-	position:relative;
- 	width:1500px;
-	height:950px;
+	/* position:relative; */
+ 	width:1200px;
+	/* height:950px; */
 	/* color:#D9B181; */
 	/*background-color:#bc966d;rgba(30,0,0,0.6);*/
 	/*border:1px solid #bc966d; just for seeing the area*/
-	margin: 0 auto 45px;
-	/* left:50%;
-	margin-left:-450px; */
-	top:50px;
-	margin-bottom: 100px;
+	margin: 50px auto;
+	/*top:50px;
+	 margin-bottom: 100px; */
 	display: none;
 }
 
@@ -199,7 +197,7 @@ header #admin{right:0;}
 }
 .cat_sidebar{
 	position:relative;
-	display:table;
+	/* display:table; */
 	width:270px;
 	margin-bottom:20px;
 	background:#bc966d;
@@ -264,65 +262,16 @@ header #admin{right:0;}
 	border-top: 8px solid rgba(255,255,255,0);
 	border-bottom: 8px solid rgba(255,255,255,0);
 	border-left: 7px solid white;//#93714C;}
-#gallery{
-	float:right;
-	/* margin: 10px 100px 50px 150px; */
-	width: 910px;
+iframe{
+	/* float:left; */
+	/* display:inline-block; */
+	padding:0;
+	margin-left:20px;
+	width:900px;
 	height:950px;
-	padding-top: 30px;
-	background-color: #bc966d; 
-}
-#gallery .wrap{
-	width:800px;
-	margin:0 auto;
-	/* border:1px solid white; */
-}
-#gallery .pic{
-	position:relative;
-	overflow:hidden;
-	display:inline-block;
-	width:250px;
-	height:200px;
-	border:1px solid white;
-	margin:5px;
-	-webkit-transition:0.5s;
-	-moz-transition:0.5s;
-	transition:0.5s;
-}
-#gallery .pic:hover{
-	cursor:pointer;
-	-webkit-box-shadow:2px 2px 5px 5px #93714c;
-	-moz-box-shadow:2px 2px 5px 5px #93714c;
-	box-shadow:2px 2px 5px 5px #93714c;
+	
 }
 
-#gallery img{
-	width:250px;
-	height:200px;
-	-webkit-transition:0.8s;
-	-moz-transition:0.8s;
-	transition:0.8s;
-}
-#gallery img:hover{
-	-webkit-transform:scale(1.2);
-	-moz-transform:scale(1.2);
-	transform:scale(1.2);
-}
-
-#gallery .info{
-	position:absolute;
-	width:220px;
-	height:20px;
-	top:160px;
-	background-color:rgba(255,255,255,0.8);
-	-webkit-transition:0.5s;
-	-moz-transition:0.5s;
-	transition:0.5s;
-	font-size:14px;
-	color:#75593b;
-	font-weight:bold;
-	padding:10px 15px;
-}
 /* overlay page */
 #page_overlay {display: none;
 			position: fixed; top: 0; left: 0;
@@ -758,9 +707,3 @@ footer article a:hover{
 	text-shadow:0px 1px 2px white;
 }
 
-.gallery_main{width: 980px; float: left; overflow: hidden;}
-.cate_menu{ float: left;  position: relative;}
-.gallery_cont{position: relative;}
-.pagebox{font-size:15px;font-weight:bold;color:#000000;}
-.headbox{color:#0101DF;}
-.pagebox a {color:#0101DF;}
