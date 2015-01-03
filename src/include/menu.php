@@ -22,29 +22,29 @@ $rows=fetchAll($sql);
 			<div class="dot_curr"></div>
 		</div>
 	</nav>
-	<div class="gallery_main">
+	<!--<div class="gallery_main">-->
 	<div id="gallery">
-	<div class="wrap">
-		<?php if($rows){
-			foreach ($rows as $row):
-			$dishImg = getFirstImgByDishId ( $row ['dish_id'] );
-			//if ($dishImg) {
-		?>
-			<div class="pic">
-			<img src="./image_350/<?php echo $dishImg['album_path']?>"
-				alt="<?php echo $row['dish_name_en']?>" />
-			<div class="info">
-				<span class="t_left"><?php echo $row['dish_name_en']?></span> <span
-					class="t_right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
-			</div>
-			</div>			
-		<?php //}?>	
-        <?php endforeach;
-		}else{
-			echo "<h4>Sorry, no dish found. </h4>";
-		}
-		?> 			
+		<div class="wrap">
+			<?php if($rows){
+				foreach ($rows as $row):
+				$dishImg = getFirstImgByDishId ( $row ['dish_id'] );
+				//if ($dishImg) {
+			?>
+				<div class="pic">
+				<img src="./image_350/<?php echo $dishImg['album_path']?>"
+					alt="<?php echo $row['dish_name_en']?>" />
+				<div class="info">
+					<span class="t_left"><?php echo $row['dish_name_en']?></span> <span
+						class="t_right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
+				</div>
+				</div>			
+			<?php //}?>	
+			<?php endforeach;
+			}else{
+				echo "<h4>Sorry, no dish found. </h4>";
+			}
+			?> 			
+		</div>
 	</div>
-	</div>
-	</div>
+	<!--</div>-->
 </section>

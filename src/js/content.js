@@ -96,9 +96,9 @@ function init(){
 	closeBtn = document.getElementById("close");
 	addEvent(closeBtn, "click", closeDetail, false);
 	
-	var pic_container = document.getElementById("iframeId");
+	/* var pic_container = document.getElementById("iframeId");
 	var innerDoc = pic_container.contentDocument || pic_container.contentWindow.document;
-	allElem = innerDoc.getElementsByTagName("div");
+	allElem = innerDoc.getElementsByTagName("div"); */
 	
 	for(var i = 0; i < allElem.length; i++){
 		if(allElem[i].className == "pic"){
