@@ -9,11 +9,17 @@ functions:
 		  maxOpacity over an interval of fadeTime seconds with a delay of
 		  delay seconds.
 
-	   fadeOut(objID, maxOpacity, fadeTime, delay)
-		  Fades out an object with the id, objID from a maximum opacity of 
-		  maxOpacity down to 0 over an interval of fadeTime seconds with a 
-		  delay of delay seconds.
-		  
+	fadeOut(objID, maxOpacity, fadeTime, delay)
+	  Fades out an object with the id, objID from a maximum opacity of 
+	  maxOpacity down to 0 over an interval of fadeTime seconds with a 
+	  delay of delay seconds.
+	
+	addEvent(object, evName, fnName, cap)
+		add a event named evName to object in capturing way, execute function fnName.
+		
+	removeEvent(object, evName, fnName, cap)
+	
+	getStyle(object, styleName)
 */  
 addEvent(window, "load", init, false);
 
@@ -40,14 +46,14 @@ function init(){
 	var dataString = unescape(formString);
 	data = dataString.split(/[&=]/g);
 	
-	console.log("length="+data.length);
+	//console.log("length="+data.length);
 	//Finding the value of content_id from url array
 	for(var i=0; i<data.length; i+=2){
 		if(data[i]=="content_id")
 			content_id = data[i+1];
 	}		
 	
-	console.log("content_id="+content_id);
+	//console.log("content_id="+content_id);
 	
 	var allElem = document.getElementsByTagName("*");
 	
@@ -59,9 +65,9 @@ function init(){
 		}
 	}
 	
-	console.log(content_id);
+	//console.log(content_id);
 	if (!content_id)  {content_id ="content_home";}
-	console.log(content_id);
+	//console.log(content_id);
 	
 	for(var i = 0; i < menuItems.length; i++){
 		
@@ -85,10 +91,14 @@ function init(){
 	
 	overlay = document.getElementById("page_overlay");
 	detailBox = document.getElementById("popup");
-	//overlay.style.display = "none";
-	//detailBox.style.display = "none";
+	overlay.style.display = "none";
+	detailBox.style.display = "none";
 	closeBtn = document.getElementById("close");
 	addEvent(closeBtn, "click", closeDetail, false);
+	
+	var pic_container = document.getElementById("iframeId");
+	var innerDoc = pic_container.contentDocument || pic_container.contentWindow.document;
+	allElem = innerDoc.getElementsByTagName("div");
 	
 	for(var i = 0; i < allElem.length; i++){
 		if(allElem[i].className == "pic"){
@@ -100,8 +110,8 @@ function init(){
 		addEvent(dishPics[i], "click", showDetail, false);
 	}
 		
-	addEvent(closeBtn, "click", closeDetail, false);
-	//addEvent(overlay, "click", closeDetail, false);
+	addEvent(closeBtn, "click", closeDetail, false); //when click on close button, close popup page
+	addEvent(overlay, "click", closeDetail, false); //when click on overlay area, close popup page
 	
 }
 

@@ -1,4 +1,3 @@
-
 var PreColor = null;
 
 Date.prototype.format = function(format) {

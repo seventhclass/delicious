@@ -21,12 +21,13 @@ $rows=fetchAll($sql);
 //print_r($rows);
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Menu Page</title>
-<link href="../css/style.css" type="text/css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Menu Page</title>
+	<link href="../css/dishGallery.css" type="text/css" rel="stylesheet">
+	<!--<script type="text/javascript" src="../js/content.js"></script>-->
 </head>
 <body>
 	<div id="gallery">
@@ -37,12 +38,11 @@ $rows=fetchAll($sql);
 			//if ($dishImg) {
 		?>
 			<div class="pic">
-			<img style="background-color: #ccc"
-				src="../image_350/<?php echo $dishImg['album_path']?>"
-				alt="<?php echo $dishImg['album_path']?>" />
+			<img src="../image_350/<?php echo $dishImg['album_path']?>"
+				alt="<?php echo $row['dish_name_en']?>" />
 			<div class="info">
 				<span class="t_left"><?php echo $row['dish_name_en']?></span> <span
-					class="t_right"><?php echo "CAD&nbsp;&nbsp;".$row['current_price']; ?></span>
+					class="t_right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
 			</div>
 			</div>			
 		<?php //}?>	
@@ -51,10 +51,10 @@ $rows=fetchAll($sql);
 				$where = "content_id=content_menu";
 				$where .= $_REQUEST ['cate_id'] ? "&cate_id=" . $_REQUEST ['cate_id'] : null;
 				// var_dump($where);
-				echo "<div class='pagebox'>" . showPage ( $page, $totalPage, $where )."<div>";
+				echo "<div class='pagebox'>" . showPage ( $page, $totalPage, $where )."</div>";
 			}
 		}else{
-			echo "<h1>No dishes can be displayed </h1>";
+			echo "<h4>Sorry, no dish found. </h4>";
 		}
 		?> 			
 	</div>
