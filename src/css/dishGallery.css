@@ -1,7 +1,4 @@
-/*
-.pagebox{font-size:15px;font-weight:bold;color:#000000;}
-.headbox{color:#0101DF;}
-.pagebox a {color:#0101DF;} */
+
 body{
 	margin:0;
 	padding:0;
@@ -22,7 +19,7 @@ h4{
 	background-color: #bc966d; 
 }
 #gallery .wrap{
-	width:800px;
+	width:820px;
 	margin:0 auto;
 	/* border:1px solid white; */
 }
@@ -73,3 +70,7 @@ h4{
 	font-weight:bold;
 	padding:10px 15px;
 }
+
+.pagebox{font-size:15px;font-weight:bold;color:#585858;}
+.headbox{color:#0101DF;}
+.pagebox a {color:#0101DF;} 
