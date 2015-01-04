@@ -32,6 +32,7 @@
 // echo showPage($page,$totalPage,"cid=5");
 
 function showPage($page, $totalPage, $where = null, $seprator = "&nbsp;") {
+	
 	$where = ($where == null) ? null : "&" . $where;
 	$url = $_SERVER ['PHP_SELF'];
 	$index = ($page == 1) ? "首页" : "<a href='{$url}?page=1{$where}'>首页</a>";
@@ -44,11 +45,11 @@ function showPage($page, $totalPage, $where = null, $seprator = "&nbsp;") {
 		if ($page == $i) {
 			$p .= "[{$i}]";
 		} else {
-			$p .= "<a href='{$url}?page={$i}'>[{$i}]</a>";
+			$p .= "<a href='{$url}?page={$i}{$where}'>[{$i}]</a>";
 		}
 	}
 	
-	$pageStr = $str . $seprator . $index . $seprator . $prev . $seprator . $p . $seprator . $next . $seprator . $last;
+	$pageStr = "<span class='headbox'>".$str."</span>" . $seprator.$seprator.$seprator.$seprator . $index . $seprator . $prev . $seprator . $p . $seprator . $next . $seprator . $last;
 	return $pageStr;
 }
 

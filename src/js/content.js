@@ -9,11 +9,17 @@ functions:
 		  maxOpacity over an interval of fadeTime seconds with a delay of
 		  delay seconds.
 
-	   fadeOut(objID, maxOpacity, fadeTime, delay)
-		  Fades out an object with the id, objID from a maximum opacity of 
-		  maxOpacity down to 0 over an interval of fadeTime seconds with a 
-		  delay of delay seconds.
-		  
+	fadeOut(objID, maxOpacity, fadeTime, delay)
+	  Fades out an object with the id, objID from a maximum opacity of 
+	  maxOpacity down to 0 over an interval of fadeTime seconds with a 
+	  delay of delay seconds.
+	
+	addEvent(object, evName, fnName, cap)
+		add a event named evName to object in capturing way, execute function fnName.
+		
+	removeEvent(object, evName, fnName, cap)
+	
+	getStyle(object, styleName)
 */  
 addEvent(window, "load", init, false);
 
@@ -32,9 +38,23 @@ var overlay = null;				//object of div id='page_overlay'
 var detailBox = null;			//popup div for displaying detailed dish info
 var clsoeBtn = null;			//close button on detail div
 var dishPics = new Array();		//dish thumbnail pictures in 'menu' div
-
+var content_id = null;			//
 //initialize to show home section and hide all other sections
 function init(){
+	var searchString = location.search.slice(1);
+	var formString = searchString.replace(/\+/g," ");
+	var dataString = unescape(formString);
+	data = dataString.split(/[&=]/g);
+	
+	//console.log("length="+data.length);
+	//Finding the value of content_id from url array
+	for(var i=0; i<data.length; i+=2){
+		if(data[i]=="content_id")
+			content_id = data[i+1];
+	}		
+	
+	//console.log("content_id="+content_id);
+	
 	var allElem = document.getElementsByTagName("*");
 	
 	for(var i = 0; i < allElem.length; i++){
@@ -45,9 +65,13 @@ function init(){
 		}
 	}
 	
+	//console.log(content_id);
+	if (!content_id)  {content_id ="content_home";}
+	//console.log(content_id);
+	
 	for(var i = 0; i < menuItems.length; i++){
 		
-		if(sections[i].id == "content_home"){
+		if(sections[i].id == content_id){
 			sections[i].style.display="block";
 			prevMenu = menuItems[i].id;				//home item
 			menuItems[i].className = "on";
@@ -62,15 +86,19 @@ function init(){
 	
 	initMenuNav(); 	//find menu category lists and add onclick events
 	//register onclick function to send email	
-	registerLister();
+	registerListener();
 	
 	
 	overlay = document.getElementById("page_overlay");
 	detailBox = document.getElementById("popup");
-	//overlay.style.display = "none";
-	//detailBox.style.display = "none";
+	overlay.style.display = "none";
+	detailBox.style.display = "none";
 	closeBtn = document.getElementById("close");
 	addEvent(closeBtn, "click", closeDetail, false);
+	
+	/* var pic_container = document.getElementById("iframeId");
+	var innerDoc = pic_container.contentDocument || pic_container.contentWindow.document;
+	allElem = innerDoc.getElementsByTagName("div"); */
 	
 	for(var i = 0; i < allElem.length; i++){
 		if(allElem[i].className == "pic"){
@@ -82,8 +110,8 @@ function init(){
 		addEvent(dishPics[i], "click", showDetail, false);
 	}
 		
-	addEvent(closeBtn, "click", closeDetail, false);
-	//addEvent(overlay, "click", closeDetail, false);
+	addEvent(closeBtn, "click", closeDetail, false); //when click on close button, close popup page
+	addEvent(overlay, "click", closeDetail, false); //when click on overlay area, close popup page
 	
 }
 
@@ -185,7 +213,7 @@ function switchOn(e){
 	}
 }
 
-function registerLister(){
+function registerListener(){
 	var emailBtnId = document.getElementById('emailBtnId');
 	addEvent(emailBtnId,"click",sendEmail,false);
 	//alert("111");
@@ -204,6 +232,9 @@ function showDetail() {
 	// Reveal the slide show
 	setOpacity("popup", 0);
 	setOpacity("page_overlay", 0);
+	//var objBody = document.getElementsByTagName("body");
+	//objBody[0].style.overflow-x = "hidden";
+	//objBody[0].style.overflow-y = "hidden";
 	detailBox.style.display = "block";
 	overlay.style.display = "block";
 	fadeIn("popup", 100, 0.5, 0);
@@ -250,3 +281,14 @@ function fadeOut(objID, maxOpacity, fadeTime, delay) {
 	}
 }
 
+function cate_clicked(cat_id){
+	var category="";
+	
+	if(cat_id)
+		category = "&cate_id="+ cat_id ;
+	
+//	window.location= "./include/dishGallery.php?content_id=content_menu"+category;
+//	target="mainFrame";
+	window.open("./include/dishGallery.php?content_id=content_menu"+category,'mainFrame');
+	
+}
