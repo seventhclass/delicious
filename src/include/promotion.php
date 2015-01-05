@@ -22,35 +22,39 @@ $rows=fetchAll($sql);
 <?php foreach ($rows as $row) {
 	$promImgs=getAllImgByPromId($row['prom_id']);
 ?>
-<div class="description_info comWidth">
+<!--<div class="description_info comWidth">-->
 	<div class="description clearfix">
 		<div class="leftArea">
-			<div class="description_imgs">
+			<!--<div class="description_imgs">-->
 				<div class="big">
-					<a href="./image_800/<?php echo  $promImgs[0]['album_path'];?>" class="jqzoom" rel="gal<?php echo $row['prom_id'];?>"  title="triumph" >
-           			 <img width="309" height="340" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="triumph">
-	        		</a>
+           			 <img src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_en'];?>">
 				</div>
-				<ul class="des_smimg clearfix" id="thumblist" >
-					<?php foreach($promImgs as $key=>$promImg):?>
-					<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal<?php echo $row['prom_id'];?>', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}"><img src="./image_50/<?php echo $promImg['album_path'];?>" alt=""></a></li>
-					<?php endforeach;?>
-				</ul>
+				<div class="des_smimg clearfix">
+					<i class="p_back"></i>
+					<ul  id="thumblist" >
+						<?php foreach($promImgs as $key=>$promImg):?>
+						<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal<?php echo $row['prom_id'];?>', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}">
+							<img src="./image_50/<?php echo $promImg['album_path'];?>" alt="">
+						</a></li>
+						<?php endforeach;?>
+					</ul>
+					<i class="p_forward"></i>
+				</div>
 			</div>
-		</div>
+		<!--</div>-->
 		<div class="rightArea">
 			<div class="des_content">
-				<h3 class="des_content_tit"><?php echo $row['title_cn'];?></h3>
+				<h3 class="des_content_tit"><?php echo $row['title_en'];?></h3>
 				<div class="dl clearfix">
-					<div class="dt">活动有效期</div>
-					<div class="dd clearfix"><?php echo date("Y年m月d日",$row['start_time'])." 至 ".date("Y年m月d日",$row['end_time']);?></div>				
+					<div class="dt">Valide Period</div>
+					<div class="dd clearfix"><?php echo "From ".date("Y-m-d ",$row['start_time'])." to ".date("Y-m-d.",$row['end_time']);?></div>				
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">活动详情</div>
-					<div class="dd clearfix"><?php echo $row['content_cn'];?></div>
+					<div class="dt">Detail</div>
+					<div class="dd clearfix"><?php echo $row['content_en'];?></div>
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">促销菜品</div><br/>
+					<div class="dt">Dish</div><br/>
 					<div class="dd clearfix">
 						<?php 
 							if($row['dish_id']){
@@ -58,13 +62,15 @@ $rows=fetchAll($sql);
 								$promImgs=getAllImgByDishId($row['dish_id']);
 								$cateInfo=getCateById($dishInfo['cate_id']);
 						?>
-						<div class="dt">名&nbsp;&nbsp;&nbsp;&nbsp;称：</div>
+						<div class="dt">Dish Name：</div>
 						<div class="dd clearfix">
-							<a href="#"><h4><?php echo $dishInfo['dish_name_cn'];?></h4></a>
+							<a href="javascript:;" id="<?php echo $row['dish_id'];?>">
+								<?php echo $dishInfo['dish_name_en'];?>
+							</a>
 						</div>
-						<div class="dt">分&nbsp;&nbsp;&nbsp;&nbsp;类：</div>
+						<div class="dt">Category：</div>
 						<div class="dd clearfix">
-							<?php echo $cateInfo['cate_name_cn'];?>
+							<?php echo $cateInfo['cate_name_en'];?>
 						</div>
 <!-- 						<div class="dt">菜品编号：</div> -->
 <!-- 						<div class="dd clearfix"> -->
@@ -74,13 +80,13 @@ $rows=fetchAll($sql);
 <!-- 						<div class="dd clearfix"> -->
 							<?php //echo $dishInfo['dish_num'];?>
 <!-- 						</div> -->
-						<div class="dt">原&nbsp;&nbsp;&nbsp;&nbsp;价：</div>
-						<div class="dd clearfix">
-							<?php echo $dishInfo['reg_price']." $";?>
-						</div>
-						<div class="dt">现&nbsp;&nbsp;&nbsp;&nbsp;价：</div>
-						<div class="dd clearfix">
+						<div class="dt">Current Price：</div>
+						<div class="dd clearfix des_money">
 							<?php echo $dishInfo['current_price']." $";?>
+						</div>
+						<div class="dt">Regular Price：</div>
+						<div class="dd clearfix des_money"><em>
+							<?php echo $dishInfo['reg_price']." $";?></em>
 						</div>
 						<?php } ?>				
 					</div>
@@ -88,6 +94,6 @@ $rows=fetchAll($sql);
 			</div>
 		</div>
 	</div>
-</div>
+<!--</div>-->
 <?php };?>
 </section>

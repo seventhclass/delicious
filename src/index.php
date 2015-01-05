@@ -10,8 +10,8 @@
 		<script type="text/javascript" src="./js/home.js"></script>
 		<link href="./css/style.css" type="text/css" rel="stylesheet">
 
-		<link href="./css/promotion.css" type="text/css" rel="stylesheet">		
-		<link type="text/css" rel="stylesheet" media="all" href="./css/jquery.jqzoom.css"/>
+		<!--<link href="./css/promotion.css" type="text/css" rel="stylesheet">	
+		<link type="text/css" rel="stylesheet" media="all" href="./css/jquery.jqzoom.css"/>-->	
 		<script src="./js/jquery-1.6.js" type="text/javascript"></script>
 		<script src="./js/jquery.jqzoom-core.js" type="text/javascript"></script>
 		<!--[if IE 6]>

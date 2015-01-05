@@ -496,15 +496,143 @@ i#s_forward:hover{
 
 #content_promotion{
 	position:relative;
-	width:980px;
+	width:1100px;
+	left:50%;
+	margin-left:-550px;
+	margin-top:50px;
+	margin-bottom:50px;
+	padding-bottom:40px;
 	/* height:540px; */
-	color:#D9B181;
-	background-color:rgba(30,0,0,0.4);
-	border:1px solid #bc966d; /*just for seeing the area*/
-	margin: 50px auto;
+	/* color:#6E461A; */
+	color:white;
+	background-color:#BC966D;
+	/*border:1px solid #bc966d; just for seeing the area*/
+	/* margin: 50px auto; */
 	display: none;
+	font:16px/20px normal 'Elephant Regular';
+}
+#content_promotion a{
+	/* color:#6E461A; */
+	color:white;
+	text-decoration:underline;
+	text-align:left;
+}
+.description{
+	position:relative;
+	top:20px;
+	padding:20px;
+	width:960px;
+	margin:20px auto;
+	border-radius:5px;
+	/* border:1px solid #c4a27d; */
+	-webkit-transition:0.3s;
+	-moz-transition:0.3s;
+	transition:0.3s;
+	border:1px solid rgba(0,0,0,0);
+}
+.description:hover{
+	background:#c4a27d;
+	border: 1px solid rgb(179, 133, 96);
+	/* box-shadow:0 2px 6px rgb(141, 92, 51); */
+}
+.leftArea{
+	border:1px solid white;
+	float:left;
+	width:400px;
+	height:400px;
+}
+.rightArea{
+	/* border:1px solid white; */
+	float:right;width:550px;
+	/* margin-left:30px; 
+	padding:5px;*/
+}
+.des_smimg i{
+	width:17px;
+	height:54px;
+	background:url("../images/sprite.png");
+}
+i.p_back{
+	float:left;
+	background-position:-66px 0;
+}
+i.p_back:hover{
+	cursor:pointer;
+	background-position:-100px 0;
+}
+i.s_forward{
+	float:right;
+	background-position:-83px 0;
+}
+i.s_forward:hover{
+	cursor:pointer;
+	background-position:-66px -58px;
+}
+#thumblist li{
+	display:inline-block;
+	width:64px;
+	height:64px;
+	border:1px solid #6E461A;
 }
 
+#thumblist li:hover{
+	border:1px solid white;
+}
+/*图片展示*/
+div.big{
+	height:330px; 
+	text-align:center;
+	border:1px solid white;
+}
+.big img{
+	width:400px;
+	height:330px;
+}
+.des_smimg{
+	width:398px;
+	height:64px;
+	margin:0 auto;
+	border:1px solid white;
+}
+.des_smimg li{float:left; margin-left:-1px;}
+/* .des_smimg img{
+	border:#CCC solid 1px;
+} */
+.des_smimg .active{
+	border-color:#317EE7; 
+	position:relative;
+}
+.des_content{padding:10px;}
+.des_content_tit{
+	font:bold 22px/24px "Elephant Regular"; 
+	padding:0 12px 10px;
+	color:white;}
+.des_content .dl{margin-bottom:8px;}
+.des_content .dt{
+	width:140px; 
+	float:left; 
+	clear:left;
+	position:relative; 
+	color:#6E461A; 
+	text-indent:17px; 
+	line-height:25px;
+	font-weight: bold;
+}
+
+.des_content .dd{
+	padding-left:30px; 
+	//padding-left:0;
+}
+.des_money{
+	font-size:18px; 
+	color:#F30; 
+	font-family:Verdana;
+}
+.des_money em{
+	text-decoration: line-through;
+	font-style:normal; 
+	/* font-size:12px; */
+}
 /*==========   about us   =========================================*/
 
 #content_about{
