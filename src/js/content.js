@@ -135,7 +135,7 @@ function changeShowDiv(e){
 				sections[i].style.display="none";
 				menuItems[i].className = "";
 		}else{
-			if(sections[i].id == index){
+			if(sections[i].id == index){			
 				$(sections[i]).fadeIn(500);
 				sections[i].style.display="block";
 				menuItems[i].className = "on";
