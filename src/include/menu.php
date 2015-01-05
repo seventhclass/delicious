@@ -20,12 +20,12 @@ $rows=fetchAll($sql);
 	<nav>
 		<div class="cat_sidebar">
 			<ul id="category">
-				<li class="on" onclick='cate_clicked()'>All</li>					
+				<li class="on" data-page='1' data-cateid='' >All</li>					
 				<?php 
 					if($cateids){
 						foreach ($cateids as $cateid):
 				?>											
-				<li <?php echo "onclick='cate_clicked({$cateid['cate_id']})'";?> ><?php echo $cateid['cate_name_en'] ?></li>
+				<li data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></li>
 				<?php endforeach; }?>
 			</ul>
 			<div class="dot_curr"></div>
