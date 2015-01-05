@@ -756,3 +756,11 @@ footer article a:hover{
 	text-shadow:0px 1px 2px white;
 }
 
+.availablePage
+{
+	cursor:pointer;
+}
+
+.pagebox{font-size:15px;font-weight:bold;color:#585858;}
+.headbox{color:#0101DF;}
+.pagebox .availablePage {color:#0101DF;} 
