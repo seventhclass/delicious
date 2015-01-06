@@ -48,6 +48,7 @@
 			include("./include/footer.php");
 			include("./include/detail.php");
 		?>
-		<input type="hidden" id="curr_id" value="content_home">		
+		<input type="hidden" id="curr_id" value="content_home">	
+		<a href="javascript:;" id="back-to-top" title="Back to top"><i class="icon_btt">&#xe050;</i></a>
 	</body>
 </html>

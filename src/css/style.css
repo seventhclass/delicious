@@ -1,10 +1,19 @@
 @charset "utf-8";
+
 /*========== Initialization ==========*/
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,header,footer,dl,dt,dd,input{
 	margin:0;
 	padding:0;
 }
-html, body{
+@font-face{
+	font-family: "delicious";
+	src: url("../icon/delicious.eot"); /* IE9 兼容模式 */
+	src: url("../icon/delicious.eot?#iefix") format("embedded-opentype")
+		 ,url("../icon/delicious.woff") format("woff")
+		 ,url("../icon/delicious.ttf") format("truetype")
+		 ,url("../icon/delicious.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
 body{font-size:12px; 
@@ -14,16 +23,20 @@ body{font-size:12px;
 	font-family: 'Elephant Regular';
 	/* line-height:18px; */}
 img{border:none;}
+fieldset,img{ border: 0; }
 li{list-style:none;}
 input,select,textarea{outline:none;}
 textarea{resize:none;}
 a{text-decoration:none;}
+a:link, a:visited{ color: #d9b181;}
+a:hover { color:#c9394a;}
+a:active { color: #c9394a;}
 /* clear fix */
 .clearfix:after{content:"";display:block;clear:both;}
 .clearfix{zoom:1;}
 .left{float:left}
 .right{float:right}
-
+.clearBorder{border:none;}
 /*========== header ==================================================*/
 header {
 	position:fixed;
@@ -424,6 +437,9 @@ i#close:hover{
 	border:1px solid #ccc;
 	width:100%;
 	height:350px;
+}
+#img_pic_large{
+	display:block;
 }	
 #pic_small{
 	height:100px;
@@ -459,8 +475,9 @@ i#s_forward:hover{
 	border:1px solid #ccc;
 }
 	
-#pic_small .thumb_nail:hover{
+.thumb_nail:hover{
 	border:1px solid red;
+	cursor:pointer;
 }
 
 #dish_text li{
@@ -886,6 +903,7 @@ footer article a:hover{
 	text-shadow:0px 1px 2px white;
 }
 
+/* ? page number in menu div */
 .availablePage
 {
 	cursor:pointer;
@@ -894,3 +912,24 @@ footer article a:hover{
 .pagebox{font-size:15px;font-weight:bold;color:#585858;}
 .headbox{color:#0101DF;}
 .pagebox .availablePage {color:#0101DF;} 
+
+/* back to top */
+#back-to-top{
+	display:none;
+	width:42px;
+	height:38px;
+	bottom:30px; 
+	right:30px;
+	position:fixed;
+	//background:rgba(255,255,255,1);#E3D7BB;
+}
+.icon_btt{
+	font-family: "delicious";
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 38px;
+	/* line-height: 42px;
+	margin-left: 6px; */
+}

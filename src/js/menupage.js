@@ -113,13 +113,13 @@ $(document).ready(function (){
 			
 			if(res.dishimages.length>0){
 				$('#pic_large').append(
-						"<img src='./image_800/" + res.dishimages[0].album_path + "'" + " alt='" + res.dishinfo.dish_name_en + "'" + " width='462' height='352' style='opacity:1;'>"	
+						"<img  id='img_pic_large' src='./image_800/" + res.dishimages[0].album_path + "'" + " alt='" + res.dishinfo.dish_name_en + "'  width='460' height='350 'style='opacity:1;'>"	
 				);
 				$('#pic_small').append("<i id='s_back'></i>");
 				$.each(res.dishimages,function(i, item){
 					$('#pic_small').append(
-						"<div class='thumb_nail'><img src='./image_50/" + item.album_path + "'" + " alt='" + item.album_path + "'" + " width='66' height='66' ></div>"
-					);							
+						"<div class='thumb_nail'><img src='./image_50/" + item.album_path + "'" + " alt='" + item.album_path + "' width='64' height='64'" + " ></div>"
+					);					
 				});
 				$('#pic_small').append("<i id='s_forward'></i>");
 			}else{
@@ -177,10 +177,38 @@ $(document).ready(function (){
 		var dish_name = $('#pic_large img').attr("alt");
 		var pic_name = $(e.target).attr("alt");
 
-		$('#pic_large').html("");		
+		/* $('#pic_large').html("");		
 		$('#pic_large').append(
-			"<img src='./image_800/" + pic_name + "'" + " alt='" + dish_name + "'" + " width='462' height='352' style='opacity:1;'>"
-		);
+			"<img src='./image_800/" + pic_name + "'" + " alt='" + dish_name + "'" + " width='460' height='350' style='opacity:1;'>"
+		); */
+		
+		$('#pic_large').fadeOut(300,function(){
+			$('#pic_large').html("");		
+			$('#pic_large').append(
+				"<img src='./image_800/" + pic_name + "'" + " alt='" + dish_name + "'" + " width='460' height='350' >");
+		
+			$('#pic_large').fadeIn(500,function(){
+				//$('#img_pic_large').css("opacity","1");
+			});		
+		} );	
 	}
+	
+
+	/* function changeDishImage(e){
+		var dish_name = $('#pic_large img').attr("alt");
+		var pic_name = $(e.target).attr("alt");
+		//var detailBox = document.getElementById("img_pic_large");
+		
+		fadeOut("img_pic_large", 100, 0.2, 0);  //the img element fade outerHeight
+		setTimeout(function() {
+			//detailBox.style.display = "none";
+			$('#img_pic_large').css("display","none");
+		}, 200);
+		$("img_pic_large").attr("src","./image_800/" + pic_name); //change attributes
+		$("img_pic_large").attr("alt",dish_name);
+		//detailBox.style.display = "block";
+		$('#img_pic_large').css("display","block");
+		fadeIn("img_pic_large", 100, 0.3, 0);
+	} */
 })
 
