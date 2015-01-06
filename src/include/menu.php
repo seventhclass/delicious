@@ -41,8 +41,8 @@ $rows=fetchAll($sql);
 			?>
 				<div class="pic">
 				<img src="./image_350/<?php echo $dishImg['album_path']?>"
-					alt="<?php echo $row['dish_name_en']?>" />
-				<div class="info">
+					alt="<?php echo $row['dish_name_en']?>" <?php echo "data-dishid='{$row['dish_id']}'";?> />
+				<div class="info" <?php echo "data-dishid='{$row['dish_id']}'";?> >
 					<span class="t_left"><?php echo $row['dish_name_en']?></span> <span
 						class="t_right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
 				</div>

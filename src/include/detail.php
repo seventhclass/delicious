@@ -60,19 +60,24 @@ if($id){
 		<div id="dish_text">
 			<h1><?php echo $dish_info['dish_name_en'];?></h1>
 			<ul>
-				<li><div class="dt">Dish No.</div>
+				<li>
+					<div class="dt">Dish No.</div>
 					<div class="dd"><?php echo $dish_info['dish_no'];?></div>
 				</li>
-				<li><div class="dt">Category:</div>
+				<li>
+					<div class="dt">Category:</div>
 					<div class="dd"><?php echo $cate_info['cate_name_en'];?></div>
 				</li>
-				<li><div class="dt">Spicy:</div>
+				<li>
+					<div class="dt">Spicy:</div>
 					<div class="dd" id="is_spicy"><?php echo $dish_info['is_spicy']==1?"Yes":"No"; ?></div>
 				</li>
-				<li><div class="dt">Current Price:</div>
+				<li>
+					<div class="dt">Current Price:</div>
 					<div class="dd"><?php echo "$ ".$dish_info['current_price'];?></div>
 				</li>
-				<li><div class="dt">Regular Price:</div>
+				<li>
+					<div class="dt">Regular Price:</div>
 					<div class="dd"><?php echo "$ ".$dish_info['reg_price'];?></div>
 				</li>
 			</ul>
