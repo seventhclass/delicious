@@ -3,7 +3,7 @@
 //define("DEVELOPMENT_MODE","dev");	//Development Mode
 define("DEVELOPMENT_MODE","rel");	//Release Mode
 
-define("DB_HOST", "127.0.0.1");
+define("DB_HOST", "localhost");
 
 if(DEVELOPMENT_MODE=="dev"){	
 	define("DB_USER", "root");
