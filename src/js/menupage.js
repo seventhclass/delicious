@@ -62,10 +62,10 @@ $(document).ready(function (){
 				alert("Load Page Error!");
 			},
 			success: function(res){								
-//				alert(dishid);
-//				alert(res.dishinfo.dish_name_cn);
-//				alert(res.dishimages[0].album_path);
-//				alert(res.cateinfo.cate_name_cn);
+				//alert(dishid);
+				//alert(res.dishinfo.dish_name_cn);
+				//alert(res.dishimages[0].album_path);
+				//alert(res.cateinfo.cate_name_cn);
 				createDetailPage(res);
 			}
 		});
@@ -73,7 +73,7 @@ $(document).ready(function (){
 	
 	function createMenuPage(res){
 		$('#dishbox').html("");
-		if(res.dishinfo.length>0){
+		if(res.dishinfo && res.dishinfo.length>0){
 			$.each(res.dishinfo,function(i, item){
 				$('#dishbox').append(
 						"<div class='pic'>"
@@ -96,8 +96,8 @@ $(document).ready(function (){
 	}
 	
 	function createDetailPage(res){
-		$('#popup_page').html("");		
-		if(res.dishinfo.dish_id){
+		$('#popup_page').html("");
+		if(res.dishinfo && res.dishinfo.dish_id){
 			$('#popup_page').append(
 				"<div id='dish_pic'>" 
 					+ "<div id='pic_large'>"
@@ -110,8 +110,8 @@ $(document).ready(function (){
 				+ "<div id='dish_desc'>"
 				+ "</div>"
 			);	
-			
-			if(res.dishimages.length>0){
+
+			if(res.dishimages && res.dishimages.length>0){
 				$('#pic_large').append(
 						"<img src='./image_800/" + res.dishimages[0].album_path + "'" + " alt='" + res.dishinfo.dish_name_en + "'" + " width='462' height='352' style='opacity:1;'>"	
 				);
@@ -126,13 +126,11 @@ $(document).ready(function (){
 				$('#pic_large').append(
 						"<img src='' alt='' style='opacity:1;'>"	
 				);
-				$('#pic_small').append("<i id='s_back'></i>");
-				$.each(res.dishimages,function(i, item){
-					$('#pic_small').append(
-						"<div class='thumb_nail'><img src='' alt=''></div>"
-					);							
-				});	
-				$('#pic_small').append("<i id='s_forward'></i>");
+				$('#pic_small').append(
+					"<i id='s_back'></i>"
+					+ "<div class='thumb_nail'><img src='' alt=''></div>"
+					+ "<i id='s_forward'></i>"
+				);
 			}
 				
 			if(res.dishinfo.is_spicy==1){
