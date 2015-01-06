@@ -42,8 +42,8 @@ $(document).ready(function (){
 								"<div class='pic'>"
 								+ "<img src='./image_350/" + item.album_path + "'" + " alt='" + item.dish_name_en + "'" + " />" 
 								+ "<div class='info'>" 
-								+ "<span class='t_left'>" + item.dish_name_en + "</span>"
-								+ "<span class='t_right'>" + "$&nbsp;" + item.current_price + "</span>"
+								+ "<span class='left'>" + item.dish_name_en + "</span>"
+								+ "<span class='right'>" + "$&nbsp;" + item.current_price + "</span>"
 								+ "</div>"
 								+ "</div>"
 						);
