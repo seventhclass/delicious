@@ -196,7 +196,7 @@ header #admin{right:0;}
 	
 }
 .cat_sidebar{
-	position:relative;
+	position:fixed;
 	/* display:table; */
 	width:270px;
 	margin-bottom:20px;
@@ -235,14 +235,25 @@ header #admin{right:0;}
 #content_menu nav li.on:hover{
 	color:white;
 }
-.dot_curr{
+/* .dot_curr{
 	position:absolute;
 	top:15px;
 	left:13px;
 	width:0px;height:0px;
 	border-top: 8px solid rgba(255,255,255,0);
 	border-bottom: 8px solid rgba(255,255,255,0);
-	border-left: 7px solid white;//#93714C;}
+	border-left: 7px solid white;//#93714C;
+} */
+	
+.dot_curr{
+	position:absolute;
+	top:17px;
+	left:13px;
+	width:0px;height:0px;
+	border-top: 8px solid rgba(255,255,255,0);
+	border-bottom: 8px solid rgba(255,255,255,0);
+	border-left: 7px solid white;//#93714C;
+}
 	
 #content_menu h4{
 	font-size:20px;

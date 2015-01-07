@@ -2,6 +2,9 @@
 $(document).ready(function (){
 	$('#category').click(function(e){
 		if($(e.target).is('li')){
+			var index = $(e.target).attr('id');
+			var offset = index * 50 + 17;
+			$('.dot_curr').animate({top:offset});;
 			getMenuItem(e);
 		}
 	});

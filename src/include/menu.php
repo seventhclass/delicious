@@ -20,15 +20,16 @@ $rows=fetchAll($sql);
 	<nav>
 		<div class="cat_sidebar">
 			<ul id="category">
-				<li class="on" data-page='1' data-cateid='' >All</li>					
+				<li id="0" class="on" data-page='1' data-cateid='' >All</li>					
 				<?php 
 					if($cateids){
-						foreach ($cateids as $cateid):
+						$i=1;
+						foreach ($cateids as $cateid):						
 				?>											
-				<li data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></li>
-				<?php endforeach; }?>
+				<li id="<?php echo $i;?>" data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></li>
+				<?php $i++; endforeach; }?>
 			</ul>
-			<div class="dot_curr"></div>
+			<div class="dot_curr"></div>			
 		</div>
 	</nav>
 	<!--<div class="gallery_main">-->
