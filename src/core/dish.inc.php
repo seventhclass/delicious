@@ -42,29 +42,33 @@ function addDish(){
 	$res3=insert("dish_fr", $arr_3);
 
 	if( $res0 && $res1 && $res2 && $res3 && $dish_id ){
-		foreach ($uploadFiles as $uploadFile){
-			$arr['dish_id']=$dish_id;
-			$arr['album_path']=$uploadFile['name'];
-			addAlbum($arr);
+		if(is_array($uploadFiles)&&$uploadFiles){
+			foreach ($uploadFiles as $uploadFile){
+				$arr['dish_id']=$dish_id;
+				$arr['album_path']=$uploadFile['name'];
+				addAlbum($arr);
+			}
 		}
 		$mesg="<p>添加成功!</p><a href='addDish.php' target='mainFrame'>继续添加</a>|<a href='listDish.php' target='mainFrame'>查看菜品列表</a>";
 	}else{
-		foreach ($uploadFiles as $uploadFile){
-			if(file_exists("../image_800/".$uploadFile['name'])){
-				unlink("../image_800/".$uploadFile['name']);
+		if(is_array($uploadFiles)&&$uploadFiles){
+			foreach ($uploadFiles as $uploadFile){
+				if(file_exists("../image_800/".$uploadFile['name'])){
+					unlink("../image_800/".$uploadFile['name']);
+				}
+				if(file_exists("../image_50/".$uploadFile['name'])){
+					unlink("../image_50/".$uploadFile['name']);
+				}
+				if(file_exists("../image_220/".$uploadFile['name'])){
+					unlink("../image_220/".$uploadFile['name']);
+				}
+				if(file_exists("../image_350/".$uploadFile['name'])){
+					unlink("../image_350/".$uploadFile['name']);
+				}	
+				if(file_exists("./uploads/".$uploadFile['name'])){
+					unlink("./uploads/".$uploadFile['name']);
+				}					
 			}
-			if(file_exists("../image_50/".$uploadFile['name'])){
-				unlink("../image_50/".$uploadFile['name']);
-			}
-			if(file_exists("../image_220/".$uploadFile['name'])){
-				unlink("../image_220/".$uploadFile['name']);
-			}
-			if(file_exists("../image_350/".$uploadFile['name'])){
-				unlink("../image_350/".$uploadFile['name']);
-			}	
-			if(file_exists("./uploads/".$uploadFile['name'])){
-				unlink("./uploads/".$uploadFile['name']);
-			}					
 		}
 		$mesg="<p>添加失败!</p><a href='addDish.php' target='mainFrame'>重新添加</a>";
 	}

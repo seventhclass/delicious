@@ -135,7 +135,7 @@ function changeShowDiv(e){
 				sections[i].style.display="none";
 				menuItems[i].className = "";
 		}else{
-			if(sections[i].id == index){
+			if(sections[i].id == index){			
 				$(sections[i]).fadeIn(500);
 				sections[i].style.display="block";
 				menuItems[i].className = "on";
@@ -232,9 +232,8 @@ function showDetail() {
 	// Reveal the slide show
 	setOpacity("popup", 0);
 	setOpacity("page_overlay", 0);
-	//var objBody = document.getElementsByTagName("body");
-	//objBody[0].style.overflow-x = "hidden";
-	//objBody[0].style.overflow-y = "hidden";
+	var objBody = document.getElementsByTagName("body");
+	objBody[0].style.overflow = "hidden";
 	detailBox.style.display = "block";
 	overlay.style.display = "block";
 	fadeIn("popup", 100, 0.5, 0);
@@ -252,6 +251,8 @@ function closeDetail(){
 		detailBox.style.display = "none";
 		overlay.style.display = "none";
 		}, 500);
+	var objBody = document.getElementsByTagName("body");
+	objBody[0].style.overflow = "auto";
 }
 
 function setOpacity(objID, value) {
