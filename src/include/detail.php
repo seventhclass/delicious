@@ -39,9 +39,9 @@ if($id){
 		<div id="dish_pic">
 			<div id="pic_large">
 				<?php if($dish_images){ ?>
-					<img id="img_pic_large" src="./image_800/<?php echo $dish_images[0]['album_path'];?>" alt="<?php echo $dish_images[0]['album_path'];?>"    style="opacity: 1;"><!--width="462" height="352"-->
+					<img id="org_pic" src="./image_800/<?php echo $dish_images[0]['album_path'];?>" alt="<?php echo $dish_images[0]['album_path'];?>" width="460" height="350" style='opacity: 1'>
 				<?php }else {?>
-					<img src="" alt="" style="opacity: 1;">
+					<img id="org_pic" src="" style="opacity: 1;">
 				<?php }?>
 			</div>
 			<div id="pic_small">
