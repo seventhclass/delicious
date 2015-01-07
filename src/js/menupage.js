@@ -24,7 +24,6 @@ $(document).ready(function (){
 			changeDishImage(e);
 		}
 	});
-	
 	function getMenuItem(e){
 		var page = $(e.target).attr("data-page");
 		var cateid = $(e.target).attr("data-cateid");
@@ -183,19 +182,16 @@ $(document).ready(function (){
 		if (prev_pic == pic_name){
 			return;
 		}
-		
-		//$('#pic_large').html("");
-		
-		//add a same-sized img tag after the large img
 		$('#pic_large').append(
-			"<img id='fake_pic' src='./image_800/" + prev_pic + "'" + " alt='" + dish_name + "'" + " width='460' height='350' style='opacity:1; position:absolute;z-index:2;' >"
+			"<img class='fake_pic' src='./image_800/" + prev_pic + "'" + " alt='" + dish_name + "'" + " width='460' height='350' style='opacity:1; position:absolute;left:0;top:0;z-index:2;' >"
 		);
 		$('#org_pic').attr("src","./image_800/"+ pic_name);//change src of the original image tag to new image
 		$('#org_pic').attr("data-path", pic_name);//change 'xxx.jpg' of the original image tag to new image
 		
-		$('#fake_pic').fadeOut(500,function(){
-			$('#fake_pic').remove();	//remove the img tag
-		} );	
+		$('.fake_pic').fadeOut(500,function(){
+			$('.fake_pic').remove();	//remove the img tag
+			$('#org_pic').css("position","static");	//before adding the new img tag, change the position style back
+		} );
 	}
 })
 

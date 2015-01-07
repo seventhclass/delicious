@@ -7,11 +7,11 @@ body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,header,footer,d
 }
 @font-face{
 	font-family: "delicious";
-	src: url("../icon/delicious.eot"); /* IE9 兼容模式 */
-	src: url("../icon/delicious.eot?#iefix") format("embedded-opentype")
-		 ,url("../icon/delicious.woff") format("woff")
-		 ,url("../icon/delicious.ttf") format("truetype")
-		 ,url("../icon/delicious.svg") format("svg");
+	src: url("../icon/fonts/delicious.eot"); /* IE9 兼容模式 */
+	src: url("../icon/fonts/delicious.eot?#iefix") format("embedded-opentype")
+		 ,url("../icon/fonts/delicious.woff") format("woff")
+		 ,url("../icon/fonts/delicious.ttf") format("truetype")
+		 ,url("../icon/fonts/delicious.svg") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -446,12 +446,12 @@ i#close:hover{
 }
 
 #pic_large{
+	position:relative;
 	border:1px solid #ccc;
 	width:100%;
 	height:350px;
 }
 #org_pic{
-	position:absolute;
 	width:460px;
 	height:350px;
 }	
@@ -937,13 +937,21 @@ footer article a:hover{
 	position:fixed;
 	//background:rgba(255,255,255,1);#E3D7BB;
 }
-.icon_btt{
+[class^="icon_"],[class*=" icon_"]{
 	font-family: "delicious";
 	font-style: normal;
 	font-weight: normal;
+	/*Better Font Rendering*/
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon_btt{
 	font-size: 38px;
-	/* line-height: 42px;
-	margin-left: 6px; */
+}
+.icon_contact{
+	font-size: 14px;
+}
+.icon_admin{
+	font-size: 14px;
 }

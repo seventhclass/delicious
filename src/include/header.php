@@ -12,6 +12,7 @@
 		<li><a href="#" id="english">English</a></li>
 		<li><a href="#" id="chinese">中文</a></li>
 		<li><a href="./admin/index.php" id="admin">管理员登录</a></li>
+		<!--<li><a href="./admin/index.php" id="admin"><i class="icon_admin">&#xe9e1;</i></a></li>-->
 	</ul>
   </nav>
 </header>
