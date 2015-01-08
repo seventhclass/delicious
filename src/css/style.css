@@ -978,7 +978,7 @@ footer article a:hover{
 	margin:0 2px;
 	border:1px solid #FFFFFF;
 	border-radius:3px;
-	filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5; -khtml-opacity: 0.5;
+	filter:alpha(opacity=60);-moz-opacity:0.6;opacity:0.6; -khtml-opacity: 0.6;
 }
 .icon_page_inactive{
 	display:inline-block;
@@ -999,4 +999,15 @@ footer article a:hover{
 	background-color:#A4A4A4;
 	border:1px solid #A4A4A4;
 	
+-webkit-animation-name: fadeIn; /*动画名称*/
+-webkit-animation-duration: 1s; /*动画持续时间*/
+-webkit-animation-iteration-count: 1; /*动画次数*/
+-webkit-animation-delay: 0s; /*延迟时间*/		
 }
+
+@-webkit-keyframes fadeIn {
+	0%   { opacity: 0.3;}	
+	100% { opacity: 0.6;}
+}
+
+
