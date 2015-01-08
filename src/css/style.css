@@ -917,9 +917,8 @@ footer article a:hover{
 	cursor:pointer;
 }
 
-.pagebox{font-size:15px;font-weight:bold;color:#585858;}
-.headbox{color:#0101DF;}
-.pagebox .availablePage {color:#0101DF;} 
+.pagebox{font-size:20px;font-weight:bold;text-align:center;margin:10px 0}
+.pagebox .availablePage {color:#000000;} 
 
 /* back to top */
 #back-to-top{
@@ -948,4 +947,39 @@ footer article a:hover{
 }
 .icon_admin{
 	font-size: 14px;
+}
+
+.icon_page{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	font-size:20px;
+	text-align:center;	
+	background-color:#FFFFFF;
+	color:#000000;
+	margin:0 2px;
+	border:1px solid #FFFFFF;
+	border-radius:3px;
+	filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5; -khtml-opacity: 0.5;
+}
+.icon_page_inactive{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	font-size:20px;
+	text-align:center;		
+	background-color:#FFFFFF;
+	color:#BDBDBD;
+	margin:0 2px;
+	border:1px solid #FFFFFF;
+	border-radius:3px;	
+	filter:alpha(opacity=20);-moz-opacity:0.2;opacity:0.2; -khtml-opacity: 0.2;
+}
+
+.icon_page:hover{	
+	background-color:#A4A4A4;
+	border:1px solid #A4A4A4;
+	
 }
