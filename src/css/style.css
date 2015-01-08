@@ -5,16 +5,6 @@ body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,header,footer,d
 	margin:0;
 	padding:0;
 }
-@font-face{
-	font-family: "delicious";
-	src: url("../icon/fonts/delicious.eot"); /* IE9 兼容模式 */
-	src: url("../icon/fonts/delicious.eot?#iefix") format("embedded-opentype")
-		 ,url("../icon/fonts/delicious.woff") format("woff")
-		 ,url("../icon/fonts/delicious.ttf") format("truetype")
-		 ,url("../icon/fonts/delicious.svg") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
 
 body{font-size:12px; 
 	height:100%;
@@ -73,9 +63,7 @@ header  #menus li{
 header #languages{
 	font-size:12px;
 	float:right;
-}
-header #languages li{
-	text-align:right;
+	padding-top:8px;
 }
 
  header ul li  a{
@@ -84,8 +72,9 @@ header #languages li{
 	transition: color 0.4s ease 0s;
 	color: #d9b181;
 	display: inline-block;
-	position:absolute;
-	bottom:10px;
+	/* position:absolute; 
+	bottom:10px; */
+	padding-left:30px;
 }
 
 header ul li  a.on{
@@ -96,14 +85,27 @@ header > nav > ul > li a:hover {
 	color: white;
 	/*color: #280000;*/
 }
-header #menu{	left:77px;}
-header #promotion{left:152px;}
-header #about{left:261px;}
-header #contact{left:363px;}
-header #french{right:172px;}
-header #english{right:115px;}
-header #chinese{right:76px;}
-header #admin{right:0;}
+
+#languages li{
+	line-height:16px;
+	/* display:block; */
+	float:right;
+	margin-left:10px;
+}
+#languages li a{
+	/* float:right; */
+	padding-left:5px;
+}
+#languages i{
+	/* display: inline-block; */
+	float:left;
+	width: 16px;
+	height: 16px;
+	margin-left:5px;
+}
+header #lang_fr{background:url('../icon/french.png') left top no-repeat;}
+header #lang_en{background:url('../icon/english.png') left top no-repeat;}
+header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 
 
 /*========== style for all pages ==================================================*/
@@ -373,6 +375,7 @@ header #admin{right:0;}
 }
 /* back and forward arrow */
 #popup_nav {
+	display:none; /*not to display for now*/
 	position:absolute;
 	width:100%;
 	top:50%;
@@ -927,6 +930,17 @@ footer article a:hover{
 .headbox{color:#0101DF;}
 .pagebox .availablePage {color:#0101DF;} 
 
+/*=========  font icon for the whole website  ==========================*/
+@font-face{
+	font-family: "delicious";
+	src: url("../icon/fonts/deicons.eot"); /* IE9 兼容模式 */
+	src: url("../icon/fonts/deicons.eot?#iefix") format("embedded-opentype")
+		 ,url("../icon/fonts/deicons.woff") format("woff")
+		 ,url("../icon/fonts/deicons.ttf") format("truetype")
+		 ,url("../icon/fonts/deicons.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 /* back to top */
 #back-to-top{
 	display:none;
@@ -945,7 +959,6 @@ footer article a:hover{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 .icon_btt{
 	font-size: 38px;
 }
@@ -953,5 +966,14 @@ footer article a:hover{
 	font-size: 14px;
 }
 .icon_admin{
-	font-size: 14px;
+	font-size: 24px;
 }
+#admin:hover{none;color:#D9B181;cursor: default;}
+.icon_admin{
+	padding-right:8px;
+}
+/* #div_admin{
+	position:absolute;
+	bottom:10px;
+	right:20px;
+} */
