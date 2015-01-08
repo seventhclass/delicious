@@ -62,6 +62,6 @@
 	<?php
 		}
 	?>
-	<a href="javascript:;" class="arrow" id="prev">&lt;</a>
-	<a href="javascript:;" class="arrow" id="next">&gt;</a>
+	<a href="javascript:;" class="arrow icon_arrow" id="prev">&#xe610;</a>
+	<a href="javascript:;" class="arrow icon_arrow" id="next">&#xe611;</a>
 </section>

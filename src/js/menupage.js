@@ -64,7 +64,7 @@ $(document).ready(function (){
 		if($(e.target).is('li')){
 			var index = $(e.target).attr('id');
 			var offset = index * 68 + 17;
-			$('.dot_curr').animate({top:offset});;
+			$('.dot_curr').animate({top:offset},{duration:"slow",easing:"easeOutCubic"});
 			getMenuItem(e);
 		}
 	});

@@ -45,7 +45,9 @@ if($id){
 				<?php }?>
 			</div>
 			<div id="pic_small">
-				<i id="s_back"></i>
+				<!--<i id="s_back"></i>-->
+				<a href="javascript:;" class="arrow icon_arrow" id="s_back">&#xe61d;</a>
+				<a href="javascript:;" class="arrow icon_arrow" id="s_forward">&#xe61e;</a>
 				<?php if( $dish_images && count($dish_images)>1 ){
 					for($i=1; $i<count($dish_images); $i++):
 				?>			
@@ -53,7 +55,7 @@ if($id){
 				<?php endfor;}else{?>
 					<div class="thumb_nail"><img src="" alt="" ></div>
 				<?php }?>
-				<i id="s_forward"></i>
+				<!--<i id="s_forward"></i>-->
 			</div>
 		</div>
 		
