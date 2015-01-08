@@ -84,7 +84,6 @@ $(document).ready(function (){
 			changeDishImage(e);
 		}
 	});
-	
 	function getMenuItem(e){
 		var page = $(e.target).attr("data-page");
 		var cateid = $(e.target).attr("data-cateid");
@@ -176,18 +175,18 @@ $(document).ready(function (){
 
 			if(res.dishimages && res.dishimages.length>0){
 				$('#pic_large').append(
-						"<img src='./image_800/" + res.dishimages[0].album_path + "'" + " alt='" + res.dishinfo.dish_name_en + "'" + " width='462' height='352' style='opacity:1;'>"	
+						"<img  id='org_pic' data-path='" + res.dishimages[0].album_path + "' src='./image_800/" + res.dishimages[0].album_path + "'" + " alt='" + res.dishinfo.dish_name_en + "'  width='460' height='350' style='opacity:1;'>"	
 				);
 				$('#pic_small').append("<i id='s_back'></i>");
 				$.each(res.dishimages,function(i, item){
 					$('#pic_small').append(
-						"<div class='thumb_nail'><img src='./image_50/" + item.album_path + "'" + " alt='" + item.album_path + "'" + " width='66' height='66' ></div>"
-					);							
+						"<div class='thumb_nail'><img src='./image_50/" + item.album_path + "'" + " alt='" + item.album_path + "' width='64' height='64'" + " ></div>"
+					);					
 				});
 				$('#pic_small').append("<i id='s_forward'></i>");
 			}else{
 				$('#pic_large').append(
-						"<img src='' alt='' style='opacity:1;'>"	
+						"<img id='org_pic' width='460' height='350' style='opacity: 1'>"	
 				);
 				$('#pic_small').append(
 					"<i id='s_back'></i>"
@@ -235,13 +234,24 @@ $(document).ready(function (){
 	}
 	
 	function changeDishImage(e){
-		var dish_name = $('#pic_large img').attr("alt");
-		var pic_name = $(e.target).attr("alt");
-
-		$('#pic_large').html("");		
+		var prev_pic = $('#org_pic').attr("data-path"); //'xxx.jpg' of the previous image
+		var dish_name = $('#org_pic').attr("alt");		//dish name
+		var pic_name = $(e.target).attr("alt");			//'xxx.jpg' of the small image being clicked
+		
+		//if the image clicked is the same as the large one, don't change image
+		if (prev_pic == pic_name){
+			return;
+		}
 		$('#pic_large').append(
-			"<img src='./image_800/" + pic_name + "'" + " alt='" + dish_name + "'" + " width='462' height='352' style='opacity:1;'>"
+			"<img class='fake_pic' src='./image_800/" + prev_pic + "'" + " alt='" + dish_name + "'" + " width='460' height='350' style='opacity:1; position:absolute;left:0;top:0;z-index:2;' >"
 		);
+		$('#org_pic').attr("src","./image_800/"+ pic_name);//change src of the original image tag to new image
+		$('#org_pic').attr("data-path", pic_name);//change 'xxx.jpg' of the original image tag to new image
+		
+		$('.fake_pic').fadeOut(500,function(){
+			$('.fake_pic').remove();	//remove the img tag
+			$('#org_pic').css("position","static");	//before adding the new img tag, change the position style back
+		} );
 	}
 })
 

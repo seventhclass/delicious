@@ -53,7 +53,8 @@ function init(){
 			content_id = data[i+1];
 	}		
 	
-	//console.log("content_id="+content_id);
+	
+	backToTop();	//When scroll far, appears an icon being used to go back to top.
 	
 	var allElem = document.getElementsByTagName("*");
 	
@@ -279,6 +280,47 @@ function fadeOut(objID, maxOpacity, fadeTime, delay) {
 	for (var i = maxOpacity; i >= 0; i--) {
 		setTimeout("setOpacity('" + objID + "', " + i + ")", delay);
 		delay += fadeOut;
+	}
+}
+
+function backToTop(){
+	var obtn = document.getElementById("back-to-top");
+	var timer = null;
+	var isTop = true;
+	//获取页面可视区的高度
+	var clientHeight = document.documentElement.clientHeight;
+	
+	window.onscroll = function(){
+		var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+		if(osTop >= clientHeight){
+			obtn.style.display = "block";
+		}else{
+			obtn.style.display = "none";
+		}
+		
+		if (!isTop){
+			clearInterval(timer);
+		}
+		isTop = false;
+	}
+	
+	obtn.onclick = function(){
+		//设置定时器
+		timer = setInterval(function(){
+			//获取滚动条距离顶部的高度， IE || Chrome兼容
+			var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+			ispeed = Math.ceil(osTop/6);
+			document.documentElement.scrollTop -= ispeed;
+			document.body.scrollTop -= ispeed;
+			
+			//console.log(osTop-ispeed);
+			
+			isTop = true;
+			
+			if(osTop == 0){
+				clearInterval(timer);
+			}
+		},30);
 	}
 }
 
