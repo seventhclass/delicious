@@ -971,9 +971,8 @@ footer article a:hover{
 	cursor:pointer;
 }
 
-.pagebox{font-size:15px;font-weight:bold;color:#585858;}
-.headbox{color:#0101DF;}
-.pagebox .availablePage {color:#0101DF;} 
+.pagebox{font-size:20px;font-weight:bold;text-align:center;margin:10px 0}
+.pagebox .availablePage {color:#000000;} 
 
 /*=========  font icon for the whole website  ==========================*/
 @font-face{
@@ -1017,3 +1016,62 @@ footer article a:hover{
 .icon_admin{
 	padding-right:8px;
 }
+
+.icon_page{
+	display:inline-block;
+	width:25px;
+	height:25px;
+	line-height:25px;
+	font-size:20px;
+	text-align:center;	
+	background-color:#FFFFFF;
+	color:#000000;
+	margin:0 2px;
+	border:1px solid #FFFFFF;
+	border-radius:3px;
+	filter:alpha(opacity=60);-moz-opacity:0.6;opacity:0.6; -khtml-opacity: 0.6;
+}
+.icon_page_inactive{
+	display:inline-block;
+	width:25px;
+	height:25px;
+	line-height:25px;
+	font-size:20px;
+	text-align:center;		
+	background-color:#FFFFFF;
+	color:#BDBDBD;
+	margin:0 2px;
+	border:1px solid #FFFFFF;
+	border-radius:3px;	
+	filter:alpha(opacity=20);-moz-opacity:0.2;opacity:0.2; -khtml-opacity: 0.2;
+}
+
+.icon_page:hover{	
+	background-color:#A4A4A4;
+	border:1px solid #A4A4A4;
+	
+	-webkit-animation-name: fadeIn; /*动画名称*/
+	-moz-animation-name: fadeIn;
+	-o-animation-name: fadeIn;
+	-ms-animation-name: fadeIn;
+	animation-name: fadeIn;
+		
+	-webkit-animation-duration: 1s; /*动画持续时间*/		
+	-moz-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	animation-duration: 1s;		
+	
+	-webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+	-moz-animation-fill-mode:forwards; /*FF 5+*/
+	-o-animation-fill-mode:forwards; /*Not implemented yet*/
+	-ms-animation-fill-mode:forwards; /*IE 10+*/
+	animation-fill-mode:forwards; /*when the spec is finished*/		
+}
+
+@-webkit-keyframes fadeIn {
+	0%   { opacity: 0.6;}		
+	100%   { opacity: 0.4;}
+}
+
+

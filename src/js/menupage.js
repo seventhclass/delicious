@@ -87,12 +87,14 @@ $(document).ready(function (){
 	function getMenuItem(e){
 		var page = $(e.target).attr("data-page");
 		var cateid = $(e.target).attr("data-cateid");
+		//alert("page="+page);
+		//alert("cateid="+cateid);
 		$.ajax({
 			url:'./include/doMenu.php',
 			cache:false,
 			async: false,
 			type:'GET',
-			data: {"do":"third","page":page,"cateid":cateid},
+			data: {"page":page,"cateid":cateid},
 			dataType:'json',
 			timeout:5000,
 			error: function(xhr){
