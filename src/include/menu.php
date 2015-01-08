@@ -18,7 +18,7 @@ $rows=fetchAll($sql);
 
 <section class="content" id="content_menu">
 	<nav>
-		<div class="cat_sidebar">
+		<div id="categorybox" class="cat_sidebar">
 			<ul id="category">
 				<li id="0" class="on" data-page='1' data-cateid='' >All</li>					
 				<?php 
