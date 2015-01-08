@@ -36,12 +36,18 @@ function editCate($where){
 	//$arr=$_POST;
 	$arr_c['cate_name']=addslashes($_POST['cName']);
 	$arr_e['cate_name']=addslashes($_POST['eName']);
-	$arr_f['cate_name']=addslashes($_POST['fName']);	
-	if( update("cate_cn", $arr_c, $where) && update("cate_en", $arr_e, $where) && update("cate_fr", $arr_f, $where)){
-		$mesg="分类修改成功!<br/> <a href='listCate.php'>查看分类</a>";
+	$arr_f['cate_name']=addslashes($_POST['fName']);
+
+	$res1 = update("cate_cn", $arr_c, $where);
+	$res2 = update("cate_en", $arr_e, $where);
+	$res3 = update("cate_fr", $arr_f, $where);
+	
+	if( $res1===false || $res2===false || $res3===false ){	
+		$mesg="分类修改失败!<br/> <a href='listCate.php'>重新修改</a>";				
 	}else{
-		$mesg="分类修改失败!<br/> <a href='listCate.php'>重新修改</a>";
+		$mesg="分类修改成功!<br/> <a href='listCate.php'>查看分类</a>";
 	}
+	
 	return $mesg;
 }
 

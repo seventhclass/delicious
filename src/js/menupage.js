@@ -1,5 +1,65 @@
 
 $(document).ready(function (){
+
+	var jWindow = $(window);			
+	
+	jWindow.scroll(function(){
+		
+		var scrollHeight = jWindow.scrollTop();					
+		var screenHeight = jWindow.height();
+		var cateboxHeight = $('#categorybox').height();
+		var galleryHeight = $('#gallery').height();
+		
+		//alert("scrollHeight="+scrollHeight);
+		//alert("cateboxHeight="+cateboxHeight);
+		//alert("galleryHeight="+galleryHeight);
+		
+		if(cateboxHeight>=(galleryHeight+60)){
+			$('.cat_sidebar').css({
+				'position':'relative',
+				'top':'0',
+				'left':'0'
+			});											
+			
+			if(scrollHeight+screenHeight-50>(galleryHeight+60)){
+				$('#gallery').css({
+					'position':'fixed',
+					'top':-(galleryHeight+60-screenHeight),
+					'right':74
+				});				
+			}
+			else{
+				$('#gallery').css({
+					'position':'static'
+				});							
+			}
+			
+			if(cateboxHeight-scrollHeight<screenHeight-50){				
+				$('#gallery').css({
+					'position':'relative',
+					'right':0,
+					'top':cateboxHeight-(galleryHeight+60)
+				});	
+			}					
+		}else{			
+			if(galleryHeight+60-scrollHeight<cateboxHeight){
+				var topVal = (galleryHeight+60-cateboxHeight)+"px";
+				$('.cat_sidebar').css({
+					'position':'relative',
+					'left':'0',
+					'top':topVal
+				});
+			}else{
+				$('.cat_sidebar').css({
+					'position':'fixed',
+					'top':'50px',
+					'left':'75px'
+				});
+			}
+		}	
+	});
+	
+
 	$('#category').click(function(e){
 		if($(e.target).is('li')){
 			var index = $(e.target).attr('id');
