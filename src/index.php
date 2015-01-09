@@ -19,6 +19,7 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="./js/menupage.js"></script>
 		<script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="./js/promotion.js"></script>
 		<!--[if IE 6]>
 		<script type="text/javascript" src="./js/DD_belatedPNG_0.0.8a-min.js"></script>
 		<script type="text/javascript" src="./js/ie6Fixpng.js"></script>

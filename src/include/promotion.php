@@ -19,15 +19,18 @@ $rows=fetchAll($sql);
 ?>
 
 <section class="content" id="content_promotion">
-<?php foreach ($rows as $row) {
-	$promImgs=getAllImgByPromId($row['prom_id']);
+<?php 
+	$counter = 0;
+	foreach ($rows as $row) {
+		$counter ++;  //give a number for each promotion
+		$promImgs=getAllImgByPromId($row['prom_id']);
 ?>
 <!--<div class="description_info comWidth">-->
 	<div class="description clearfix">
 		<div class="leftArea">
 			<!--<div class="description_imgs">-->
-				<div class="big">
-           			 <img src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_en'];?>">
+				<div class="big" id="<?php echo 'big'.$counter ?>" data-bigid="<?php echo $counter ?>">
+           			 <img class="big_img" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_en'];?>">
 				</div>
 				<div class="des_smimg clearfix">
 					<div id="icon_wrap">
@@ -37,7 +40,7 @@ $rows=fetchAll($sql);
 							<a href="javascript:;"><i class="icon_forward">&#xe611;</i></a>
 					</div>
 					
-					<ul  id="thumblist" >
+					<ul  class="thumblist" id="<?php echo 'thumblist'.$counter ?>" data-listid="<?php echo $counter ?>">
 						<?php foreach($promImgs as $key=>$promImg):?>
 						<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal<?php echo $row['prom_id'];?>', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}">
 							<img src="./image_50/<?php echo $promImg['album_path'];?>" alt="">

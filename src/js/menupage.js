@@ -1,6 +1,7 @@
 
 $(document).ready(function (){
 
+	$('#category li:last-child').css("border-bottom","0");  //remove the bottom border of the last category list item. 
 	var jWindow = $(window);			
 	
 	jWindow.scroll(function(){
@@ -216,7 +217,7 @@ $(document).ready(function (){
 					+ "</li>"
 					+ "<li>"
 						+ "<div class='dt'>Spicy:</div>"
-						+ "<div class='dd' " + spicyinfo + "></div>"
+						+ "<div class='dd' " + spicyinfo + ">"+(!spicyinfo?"No":"")+"</div>"
 					+ "</li>"	
 					+ "<li>"
 						+ "<div class='dt'>Current Price:</div>"
@@ -250,7 +251,7 @@ $(document).ready(function (){
 		$('#org_pic').attr("src","./image_800/"+ pic_name);//change src of the original image tag to new image
 		$('#org_pic').attr("data-path", pic_name);//change 'xxx.jpg' of the original image tag to new image
 		
-		$('.fake_pic').fadeOut(500,function(){
+		$('.fake_pic').fadeOut(300,function(){
 			$('.fake_pic').remove();	//remove the img tag
 			$('#org_pic').css("position","static");	//before adding the new img tag, change the position style back
 		} );

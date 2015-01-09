@@ -521,7 +521,7 @@ i#s_forward:hover{
 }
 #dish_text .dd{
 	font-size:16px;
-	color: white;
+	color: #93714c;
 }
 #is_spicy{
 	background-position:0 -96px;
@@ -641,22 +641,24 @@ i.p_forward:hover{
 	color:#6E461A;
 	}
 
-#thumblist{
+.thumblist{
 	position:absolute;
-	width:330px;
-	height:60px;
+	width:360px;
+	height:52px;
 	left:20px;
 	top:8px;
+	overflow:hidden;
 }
-#thumblist li{
+.thumblist li{
 	//display:inline-block;
 	width:50px;
 	height:50px;
 	border:1px solid #BC966D;
-	margin:0 10px 0 10px;
+	margin:0 18px 0 18px;
+	float:left; 
 }
 
-#thumblist li:hover{
+.thumblist li:hover{
 	border:1px solid white;
 }
 /*图片展示*/
@@ -664,6 +666,8 @@ div.big{
 	height:330px; 
 	text-align:center;
 	border:4px solid white;
+	position:relative;
+	//opacity:1;
 }
 .big img{
 	width:100%;
@@ -676,10 +680,7 @@ div.big{
 	//border:1px solid white;
 	position:relative;
 }
-.des_smimg li{float:left; margin-left:-1px;}
-/* .des_smimg img{
-	border:#CCC solid 1px;
-} */
+
 .des_smimg .active{
 	border-color:#317EE7; 
 	position:relative;
