@@ -39,21 +39,23 @@ if($id){
 		<div id="dish_pic">
 			<div id="pic_large">
 				<?php if($dish_images){ ?>
-					<img src="./image_800/<?php echo $dish_images[0]['album_path'];?>" alt="<?php echo $dish_images[0]['album_path'];?>" width="462" height="352" style="opacity: 1;">
+					<img id="org_pic" src="./image_800/<?php echo $dish_images[0]['album_path'];?>" alt="<?php echo $dish_images[0]['album_path'];?>" width="460" height="350" style='opacity: 1'>
 				<?php }else {?>
-					<img src="" alt="" style="opacity: 1;">
+					<img id="org_pic" src="" style="opacity: 1;">
 				<?php }?>
 			</div>
 			<div id="pic_small">
-				<i id="s_back"></i>
+				<!--<i id="s_back"></i>-->
+				<a href="javascript:;" class="arrow icon_arrow" id="s_back">&#xe61d;</a>
+				<a href="javascript:;" class="arrow icon_arrow" id="s_forward">&#xe61e;</a>
 				<?php if( $dish_images && count($dish_images)>1 ){
 					for($i=1; $i<count($dish_images); $i++):
 				?>			
-					<div class="thumb_nail"><img src="./image_50/<?php echo $dish_images[$i]['album_path'];?>" alt="<?php echo $dish_images[$i]['album_path'];?>" width="66" height="66" ></div>
+					<div class="thumb_nail"><img src="./image_50/<?php echo $dish_images[$i]['album_path'];?>" alt="<?php echo $dish_images[$i]['album_path'];?>"  ></div><!--width="66" height="66"-->
 				<?php endfor;}else{?>
 					<div class="thumb_nail"><img src="" alt="" ></div>
 				<?php }?>
-				<i id="s_forward"></i>
+				<!--<i id="s_forward"></i>-->
 			</div>
 		</div>
 		

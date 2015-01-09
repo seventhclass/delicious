@@ -1,6 +1,29 @@
-delicious
+需要修复的bug:
+	1. home slider:当数据库中只有一张图片时，图片无法显示
+	2. detail页小图片数量 >4 时有问题，前后导航按钮不起作用
+	3. menu页左侧分类导航的小三角定位要求每个分类的行高相等（done，但文字没有垂直居中）
+	4. menu页左侧分类导航最后一行底边border应去掉
+～ 2015.1.6 ～
+本阶段待完成的工作如下：
+	About Us页增加社交媒体图标及样式编辑
+		（建议使用字体图标制作，易维护）
+	Menu页分类导航条的position控制
+		(基于目前gallery高度固定，分类数目不变的情况下直接将position=fixed即可，将来如有需要，可改为js实现)
+	Menu页分页样式编辑（首页，上一页，下一页，尾页，可用字体图标）
+	Menu页分类导航条左侧的小三角位置的移动控制(js)
+	Promotion页样式完善
+	Promotion页图片显示，多图片间的切换（js控制渐入渐出）
+	Detail页多图片间的切换（js控制渐入渐出）
+下一阶段待完成的工作如下：
+	加Logo（需要小马提供）
+	在Detail页直接跳转到前一个或后一个菜品
+	网站所用图标尽可能更换为字体图标，以便于今后样式修改和维护
+	侧边栏的社交媒体图标
+	Promotion页分页
+	多语言支持
+	
 =========
-xiaoma restaurant
+delicious restaurant
 
 0. 头和尾(header & footer)
 	增加logo
