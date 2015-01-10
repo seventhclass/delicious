@@ -79,6 +79,13 @@ $(document).ready(function (){
 			showDetail();
 		}
 	});	
+	
+	$('.dishdetail').click(function(e){
+		if($(e.target).is('span')){
+			getDetailItem(e);
+			showDetail();
+		}		
+	});
 		
 	$('#popup_page').click(function(e){
 		if($(e.target).is('img')){
@@ -205,10 +212,10 @@ $(document).ready(function (){
 			}
 			
 			$('#dish_text').append(
-				"<h1>" + res.dishinfo.dish_name_en + "</h1>"
+				"<h1 style='text-align:center'>" + res.dishinfo.dish_name_en + "</h1>"
 				+ "<ul>"
 					+ "<li>"
-						+ "<div class='dt'>Dish No.</div>"
+						+ "<div class='dt'>Dish No.:</div>"
 						+ "<div class='dd'>" + res.dishinfo.dish_no + "</div>"
 					+ "</li>"
 					+ "<li>"
@@ -221,11 +228,11 @@ $(document).ready(function (){
 					+ "</li>"	
 					+ "<li>"
 						+ "<div class='dt'>Current Price:</div>"
-						+ "<div class='dd' >" + "$" + res.dishinfo.current_price + "</div>"
+						+ "<div class='dd' style='color:red' >" + "$" + res.dishinfo.current_price + "</div>"
 					+ "</li>"	
 					+ "<li>"
 						+ "<div class='dt'>Regular Price:</div>"
-						+ "<div class='dd' >" + "$" + res.dishinfo.reg_price + "</div>"
+						+ "<div class='dd' ><s>" + "$" + res.dishinfo.reg_price + "</s></div>"
 					+ "</li>"					
 				+ "</ul>"
 			);	

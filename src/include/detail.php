@@ -91,7 +91,6 @@ if($id){
 		
 	</div>
 
-
 	<div id="popup_footer">
 		<p><span id="slideNumber">4</span> / <span id="slideTotal">14<span></p>
 	</div>

@@ -72,10 +72,10 @@ $rows=fetchAll($sql);
 								$cateInfo=getCateById($dishInfo['cate_id']);
 						?>
 						<div class="dt">Dish Name:</div>
-						<div class="dd clearfix">
-							<a href="javascript:;" id="<?php echo $row['dish_id'];?>">
+						<div class="dd clearfix dishdetail" <?php echo "data-dishid='{$row['dish_id']}'";?> >
+							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> >
 								<?php echo $dishInfo['dish_name_en'];?>
-							</a>
+							</span></u>
 						</div>
 						<div class="dt">Category:</div>
 						<div class="dd clearfix">
