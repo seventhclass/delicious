@@ -18,17 +18,18 @@ $rows=fetchAll($sql);
 
 <section class="content" id="content_menu">
 	<nav>
-		<div class="cat_sidebar">
+		<div id="categorybox" class="cat_sidebar">
 			<ul id="category">
-				<li class="on" data-page='1' data-cateid='' >All</li>					
+				<li id="0" class="on" data-page='1' data-cateid='' >All</li>					
 				<?php 
 					if($cateids){
-						foreach ($cateids as $cateid):
+						$i=1;
+						foreach ($cateids as $cateid):						
 				?>											
-				<li data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></li>
-				<?php endforeach; }?>
+				<li id="<?php echo $i;?>" data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></li>
+				<?php $i++; endforeach; }?>
 			</ul>
-			<div class="dot_curr"></div>
+			<div class="dot_curr"></div>			
 		</div>
 	</nav>
 	<!--<div class="gallery_main">-->
@@ -41,10 +42,10 @@ $rows=fetchAll($sql);
 			?>
 				<div class="pic">
 				<img src="./image_350/<?php echo $dishImg['album_path']?>"
-					alt="<?php echo $row['dish_name_en']?>" />
-				<div class="info">
-					<span class="t_left"><?php echo $row['dish_name_en']?></span> <span
-						class="t_right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
+					alt="<?php echo $row['dish_name_en']?>" <?php echo "data-dishid='{$row['dish_id']}'";?> />
+				<div class="info" <?php echo "data-dishid='{$row['dish_id']}'";?> >
+					<span class="left"><?php echo $row['dish_name_en']?></span> <span
+						class="right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
 				</div>
 				</div>			
 			<?php //}?>	

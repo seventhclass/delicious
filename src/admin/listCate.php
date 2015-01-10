@@ -66,7 +66,7 @@ if (! $rows) {
 			<?php endforeach; ?>
 			<?php if($totalRows>$pageSize): ?>
 			<tr>
-					<td colspan="4"><?php echo showPage($page, $totalPage);?></td>
+					<td colspan="5"><?php echo showPage($page, $totalPage);?></td>
 				</tr>
 			<?php endif;?>
 			</tbody>

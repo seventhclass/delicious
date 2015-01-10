@@ -12,16 +12,19 @@
 		<script type="text/javascript" src="./js/home.js"></script>
 		<link href="./css/style.css" type="text/css" rel="stylesheet">
 
-		<link href="./css/promotion.css" type="text/css" rel="stylesheet">		
-		<link type="text/css" rel="stylesheet" media="all" href="./css/jquery.jqzoom.css"/>
+		<!--<link href="./css/promotion.css" type="text/css" rel="stylesheet">	
+		<link type="text/css" rel="stylesheet" media="all" href="./css/jquery.jqzoom.css"/>-->	
 		<script src="./js/jquery-1.6.js" type="text/javascript"></script>
 		<script src="./js/jquery.jqzoom-core.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="./js/menupage.js"></script>			
+		<script type="text/javascript" src="./js/menupage.js"></script>
+		<script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="./js/promotion.js"></script>
 		<!--[if IE 6]>
 		<script type="text/javascript" src="./js/DD_belatedPNG_0.0.8a-min.js"></script>
 		<script type="text/javascript" src="./js/ie6Fixpng.js"></script>
 		<![endif]-->		
+		<!--
 		<script type="text/javascript">
 		$(document).ready(function() {			
 			$('.jqzoom').jqzoom({
@@ -35,7 +38,8 @@
 				});	
 			
 		});
-		</script>			
+		</script>
+		-->			
 	</head>
 	<body>
 		<?php
@@ -48,6 +52,7 @@
 			include("./include/footer.php");
 			include("./include/detail.php");
 		?>
-		<input type="hidden" id="curr_id" value="content_home">		
+		<input type="hidden" id="curr_id" value="content_home">	
+		<a href="javascript:;" id="back-to-top" title="Back to top"><i class="icon_btt">&#xe057;</i></a>
 	</body>
 </html>

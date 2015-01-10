@@ -91,21 +91,21 @@ function showPage3($page, $totalPage, $cateid = null, $seprator = "&nbsp;") {
 	if($page<$totalPage)
 		$nextPage=$page+1;
 	
-	$index = ($page == 1) ? "首页" : "<span class='availablePage' data-page='1' {$where_cateid} >首页</span>";
-	$last = ($page == $totalPage) ? "尾页" : "<span class='availablePage' data-page='{$totalPage}' {$where_cateid} >尾页</span>";
-	$prev = ($page == 1) ? "上一页" : "<span class='availablePage' data-page='{$prevPage}' {$where_cateid} >上一页</span>";
-	$next = ($page == $totalPage) ? "下一页" : "<span class='availablePage' data-page='{$nextPage}' {$where_cateid} >下一页</span>";
-	$str = "总共:{$totalPage}页/当前是第{$page}页";
+	$index = ($page == 1) ? "<span class='icon_page_inactive'>&#xe050;</span>" : "<span class='icon_page'><span class='availablePage' data-page='1' {$where_cateid} >&#xe050;</span></span>";
+	$last = ($page == $totalPage) ? "<span class='icon_page_inactive'>&#xe056;</span>" : "<span class='icon_page'><span class='availablePage' data-page='{$totalPage}' {$where_cateid} >&#xe056;</span></span>";
+	$prev = ($page == 1) ? "<span class='icon_page_inactive'>&#xe051;</span>" : "<span class='icon_page'><span class='availablePage' data-page='{$prevPage}' {$where_cateid} >&#xe051;</span></span>";
+	$next = ($page == $totalPage) ? "<span class='icon_page_inactive'>&#xe055;</span>" : "<span class='icon_page'><span class='availablePage' data-page='{$nextPage}' {$where_cateid} >&#xe055;</span></span>";
+	$str = "";
 	for($i = 1; $i <= $totalPage; $i ++) {
 		// 当前页无连接
 		if ($page == $i) {
-			$p .= "[{$i}]";
+			$p .= "<span class='icon_page_inactive'>{$i}</span>";
 		} else {
-			$p .= "<span class='availablePage' data-page='{$i}' {$where_cateid} > [{$i}] </span>";
+			$p .= "<span class='icon_page'><span class='availablePage' data-page='{$i}' {$where_cateid}>{$i}</span></span>";
 		}
 	}
 
-	$pageStr = "<span class='headbox'>".$str."</span>" . $seprator.$seprator.$seprator.$seprator . $index . $seprator . $prev . $seprator . $p . $seprator . $next . $seprator . $last;
+	$pageStr = $seprator . $index . $seprator . $prev . $seprator . $p . $seprator . $next . $seprator . $last;
 	return $pageStr;
 }
 
