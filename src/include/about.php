@@ -24,10 +24,10 @@ An pri viderer omittam suscipit, in mei quas adolescens. Vix vivendo offendit id
 		<div  class="left_icon">
 			
 			<a href="http://www.facebook.com"><img src="./images/facebook.png"  alt="facebook"  height="40" width="40"/></a>
-			<a  href="http://www.apple.com"><img src="./images/apple.png" alt="apple"  height="40" width="40"/></a>
+			<!--  <a  href="http://www.apple.com"><img src="./images/apple.png" alt="apple"  height="40" width="40"/></a>    -->
 			<a  href="http://www.google.com"><img src="./images/googleplus.png" alt="google"  height="40" width="40"/></a>
-			<a  href="http://www.paypal.com"><img src="./images/paypal.png" alt="paypal"  height="40" width="40"/></a>
-			<a  href="http://www.skype.com"><img src="./images/skype.png" alt="skype"  height="40" width="40"/></a>
+			<!--  <a  href="http://www.paypal.com"><img src="./images/paypal.png" alt="paypal"  height="40" width="40"/></a> -->
+			<!--  <a  href="http://www.skype.com"><img src="./images/skype.png" alt="skype"  height="40" width="40"/></a>    -->
 			<a  href="http://www.twitter.com"><img src="./images/twitter.png" alt="twitter"  height="40" width="40"/></a>
 		</div>
 	</div>
