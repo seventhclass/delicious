@@ -16,6 +16,7 @@
 				if(count($rows)==1){
 		?>
 					<img src="./admin/uploads/<?php echo $rows[0]['album_path']?>"  height="490" width="980" />
+					<img src="./admin/uploads/<?php echo $rows[0]['album_path']?>"  height="490" width="980" />
 		<?php
 				}else{
 		?>
