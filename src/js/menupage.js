@@ -1,7 +1,7 @@
 
 $(document).ready(function (){
 
-	$('#category li:last-child').css("border-bottom","0");  //remove the bottom border of the last category list item. 
+	$('#category tr:last-child td').css("border-bottom","0");  //remove the bottom border of the last category list item. 
 	var jWindow = $(window);			
 	
 	jWindow.scroll(function(){
@@ -62,9 +62,9 @@ $(document).ready(function (){
 	
 
 	$('#category').click(function(e){
-		if($(e.target).is('li')){
+		if($(e.target).is('td')){
 			var index = $(e.target).attr('id');
-			var offset = index * 68 + 17;
+			var offset = index * 58 +17 ;
 			$('.dot_curr').animate({top:offset},{duration:"slow",easing:"easeOutCubic"});
 			getMenuItem(e);
 		}

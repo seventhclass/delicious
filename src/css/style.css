@@ -225,12 +225,17 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 #category{
 	width:230px;
 	margin:0 auto;
+	border:0;
+	border-spacing: 0px;
+	//border-collapse: collapse;
 }
-#content_menu nav li{
+
+#content_menu nav td{
 	cursor:pointer; 
 	color:rgba(255,255,255,0.5);//#6d5439;
-	padding: 15px 20px;
-	display:block;
+	padding: 10px 20px;
+	//display:block;
+	display:table-cell;
 	height:36px;
 	font-size:16px;
 	border-top: 1px solid #c9a074;
@@ -241,18 +246,18 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 	-moz-transition:color 0.4s;
 	transition:color 0.4s;
 }
-#content_menu nav li.on{
+#content_menu nav td.on{
 	/* background: #93714c; */
 	color:white;
 }
 	
-#content_menu nav li:hover{
+#content_menu nav td:hover{
 	/*color: #93714c;
 	 background: #93714c; 
 	box-shadow: 0px 2px 6px rgba(30,0,0,.4);*/
 	color:white;
 }
-#content_menu nav li.on:hover{
+#content_menu nav td.on:hover{
 	color:white;
 }
 	

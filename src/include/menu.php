@@ -19,16 +19,16 @@ $rows=fetchAll($sql);
 <section class="content" id="content_menu">
 	<nav>
 		<div id="categorybox" class="cat_sidebar">
-			<ul id="category">
-				<li id="0" class="on" data-page='1' data-cateid='' >All</li>					
+			<table id="category">
+				<tr><td id="0" class="on" data-page='1' data-cateid='' >All</td></tr>					
 				<?php 
 					if($cateids){
 						$i=1;
 						foreach ($cateids as $cateid):						
 				?>											
-				<li id="<?php echo $i;?>" data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></li>
+				<tr><td id="<?php echo $i;?>" data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></td></tr>
 				<?php $i++; endforeach; }?>
-			</ul>
+			</table>
 			<div class="dot_curr"></div>			
 		</div>
 	</nav>
