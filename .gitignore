@@ -16,4 +16,9 @@ src/image_50/*
 src/image_800/*
 src/admin/uploads/*
 src/include/promotion_cn.php
+<<<<<<< HEAD
 configs.php
+=======
+RemoteSystemsTempFiles/*
+.metadata/*
+>>>>>>> 2b69e63667812258010948f60949eded635eacdc

@@ -19,26 +19,35 @@ $rows=fetchAll($sql);
 ?>
 
 <section class="content" id="content_promotion">
-<?php foreach ($rows as $row) {
-	$promImgs=getAllImgByPromId($row['prom_id']);
+<?php 
+	$counter = 0;
+	foreach ($rows as $row) {
+		$counter ++;  //give a number for each promotion
+		$promImgs=getAllImgByPromId($row['prom_id']);
 ?>
 <!--<div class="description_info comWidth">-->
 	<div class="description clearfix">
 		<div class="leftArea">
 			<!--<div class="description_imgs">-->
-				<div class="big">
-           			 <img src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_en'];?>">
+				<div class="big" id="<?php echo 'big'.$counter ?>" data-bigid="<?php echo $counter ?>">
+           			 <img class="big_img" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_en'];?>">
 				</div>
 				<div class="des_smimg clearfix">
-					<i class="p_back"></i>
-					<ul  id="thumblist" >
+					<div id="icon_wrap">
+<!-- 						<i class="p_back"></i> -->
+<!-- 						<i class="p_forward"></i> -->
+							<a href="javascript:;"><i class="icon_back">&#xe610;</i> </a>
+							<a href="javascript:;"><i class="icon_forward">&#xe611;</i></a>
+					</div>
+					
+					<ul  class="thumblist" id="<?php echo 'thumblist'.$counter ?>" data-listid="<?php echo $counter ?>">
 						<?php foreach($promImgs as $key=>$promImg):?>
 						<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal<?php echo $row['prom_id'];?>', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}">
 							<img src="./image_50/<?php echo $promImg['album_path'];?>" alt="">
 						</a></li>
 						<?php endforeach;?>
 					</ul>
-					<i class="p_forward"></i>
+					
 				</div>
 			</div>
 		<!--</div>-->
@@ -62,29 +71,29 @@ $rows=fetchAll($sql);
 								$promImgs=getAllImgByDishId($row['dish_id']);
 								$cateInfo=getCateById($dishInfo['cate_id']);
 						?>
-						<div class="dt">Dish Name：</div>
-						<div class="dd clearfix">
-							<a href="javascript:;" id="<?php echo $row['dish_id'];?>">
+						<div class="dt">Dish Name:</div>
+						<div class="dd clearfix dishdetail" <?php echo "data-dishid='{$row['dish_id']}'";?> >
+							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> >
 								<?php echo $dishInfo['dish_name_en'];?>
-							</a>
+							</span></u>
 						</div>
-						<div class="dt">Category：</div>
+						<div class="dt">Category:</div>
 						<div class="dd clearfix">
 							<?php echo $cateInfo['cate_name_en'];?>
 						</div>
-<!-- 						<div class="dt">菜品编号：</div> -->
+<!-- 						<div class="dt">菜品编号</div> -->
 <!-- 						<div class="dd clearfix"> -->
 							<?php //echo $dishInfo['dish_no'];?>
 <!-- 						</div> -->
-<!-- 						<div class="dt">数&nbsp;&nbsp;&nbsp;&nbsp;量：</div> -->
+<!-- 						<div class="dt">数&nbsp;&nbsp;&nbsp;&nbsp;量</div> -->
 <!-- 						<div class="dd clearfix"> -->
 							<?php //echo $dishInfo['dish_num'];?>
 <!-- 						</div> -->
-						<div class="dt">Current Price：</div>
+						<div class="dt">Current Price:</div>
 						<div class="dd clearfix des_money">
 							<?php echo $dishInfo['current_price']." $";?>
 						</div>
-						<div class="dt">Regular Price：</div>
+						<div class="dt">Regular Price:</div>
 						<div class="dd clearfix des_money"><em>
 							<?php echo $dishInfo['reg_price']." $";?></em>
 						</div>

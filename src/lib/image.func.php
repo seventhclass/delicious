@@ -19,12 +19,18 @@ function verifyImage($type = 1,$length = 4, $pixel=0, $line=0, $sess_name = "ver
 	$chars = buildRandomString ( $type, $length );
 	
 	$_SESSION [$sess_name] = $chars;
-	$fontfiles = array (
+/* 	$fontfiles = array (
 			"MSYH.TTC",
 			"MSYHBD.TTC",
 			"MSYHL.TTC",
 			"MTCORSVA.TTF"
-	);
+	); */
+	$fontfiles = array (
+	 "ELEPHNT.TTF",
+	 "PLAYBILL.TTF",
+	 "OLDENGL.TTF",
+	 "MTCORSVA.TTF"
+	);	
 	for($i = 0; $i < $length; $i ++) {
 		$size = mt_rand ( 14, 18 );
 		$angle = mt_rand ( - 15, 15 );

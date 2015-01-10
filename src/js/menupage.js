@@ -1,6 +1,7 @@
 
 $(document).ready(function (){
 
+	$('#category li:last-child').css("border-bottom","0");  //remove the bottom border of the last category list item. 
 	var jWindow = $(window);			
 	
 	jWindow.scroll(function(){
@@ -64,7 +65,7 @@ $(document).ready(function (){
 		if($(e.target).is('li')){
 			var index = $(e.target).attr('id');
 			var offset = index * 68 + 17;
-			$('.dot_curr').animate({top:offset});;
+			$('.dot_curr').animate({top:offset},{duration:"slow",easing:"easeOutCubic"});
 			getMenuItem(e);
 		}
 	});
@@ -78,6 +79,13 @@ $(document).ready(function (){
 			showDetail();
 		}
 	});	
+	
+	$('.dishdetail').click(function(e){
+		if($(e.target).is('span')){
+			getDetailItem(e);
+			showDetail();
+		}		
+	});
 		
 	$('#popup_page').click(function(e){
 		if($(e.target).is('img')){
@@ -87,12 +95,14 @@ $(document).ready(function (){
 	function getMenuItem(e){
 		var page = $(e.target).attr("data-page");
 		var cateid = $(e.target).attr("data-cateid");
+		//alert("page="+page);
+		//alert("cateid="+cateid);
 		$.ajax({
 			url:'./include/doMenu.php',
 			cache:false,
 			async: false,
 			type:'GET',
-			data: {"do":"third","page":page,"cateid":cateid},
+			data: {"page":page,"cateid":cateid},
 			dataType:'json',
 			timeout:5000,
 			error: function(xhr){
@@ -202,10 +212,10 @@ $(document).ready(function (){
 			}
 			
 			$('#dish_text').append(
-				"<h1>" + res.dishinfo.dish_name_en + "</h1>"
+				"<h1 style='text-align:center'>" + res.dishinfo.dish_name_en + "</h1>"
 				+ "<ul>"
 					+ "<li>"
-						+ "<div class='dt'>Dish No.</div>"
+						+ "<div class='dt'>Dish No.:</div>"
 						+ "<div class='dd'>" + res.dishinfo.dish_no + "</div>"
 					+ "</li>"
 					+ "<li>"
@@ -214,15 +224,15 @@ $(document).ready(function (){
 					+ "</li>"
 					+ "<li>"
 						+ "<div class='dt'>Spicy:</div>"
-						+ "<div class='dd' " + spicyinfo + "></div>"
+						+ "<div class='dd' " + spicyinfo + ">"+(!spicyinfo?"No":"")+"</div>"
 					+ "</li>"	
 					+ "<li>"
 						+ "<div class='dt'>Current Price:</div>"
-						+ "<div class='dd' >" + "$" + res.dishinfo.current_price + "</div>"
+						+ "<div class='dd' style='color:red' >" + "$" + res.dishinfo.current_price + "</div>"
 					+ "</li>"	
 					+ "<li>"
 						+ "<div class='dt'>Regular Price:</div>"
-						+ "<div class='dd' >" + "$" + res.dishinfo.reg_price + "</div>"
+						+ "<div class='dd' ><s>" + "$" + res.dishinfo.reg_price + "</s></div>"
 					+ "</li>"					
 				+ "</ul>"
 			);	
@@ -248,7 +258,7 @@ $(document).ready(function (){
 		$('#org_pic').attr("src","./image_800/"+ pic_name);//change src of the original image tag to new image
 		$('#org_pic').attr("data-path", pic_name);//change 'xxx.jpg' of the original image tag to new image
 		
-		$('.fake_pic').fadeOut(500,function(){
+		$('.fake_pic').fadeOut(300,function(){
 			$('.fake_pic').remove();	//remove the img tag
 			$('#org_pic').css("position","static");	//before adding the new img tag, change the position style back
 		} );
