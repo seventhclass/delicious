@@ -125,7 +125,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 	-webkit-box-shadow: 2px 2px 6px #937A6A;//#2d0307;#b07546;#480b12;  
 	-moz-box-shadow: 2px 2px 6px #937A6A; 
 	box-shadow: 2px 2px 6px #937A6A;
-	display: none;
+	/*display: none;*/
 }
 
 #list{
@@ -1084,7 +1084,7 @@ footer article a:hover{
 	100%   { opacity: 0.4;}
 }
 
-.dishdetail:hover{
+.dishdetail u:hover{
 	color:red;
 	cursor:pointer;
 }

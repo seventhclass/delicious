@@ -24,6 +24,15 @@ $rows=fetchAll($sql);
 	foreach ($rows as $row) {
 		$counter ++;  //give a number for each promotion
 		$promImgs=getAllImgByPromId($row['prom_id']);
+		
+		if($promImgs){
+			foreach($promImgs as $key=>$promImg){
+				if($imgList)
+					$imgList .= " ";
+				
+				$imgList .= $promImg['album_path'];
+			}
+		}
 ?>
 <!--<div class="description_info comWidth">-->
 	<div class="description clearfix">
@@ -36,15 +45,15 @@ $rows=fetchAll($sql);
 					<div id="icon_wrap">
 <!-- 						<i class="p_back"></i> -->
 <!-- 						<i class="p_forward"></i> -->
-							<a href="javascript:;"><i class="icon_back">&#xe610;</i> </a>
-							<a href="javascript:;"><i class="icon_forward">&#xe611;</i></a>
+							<a href="javascript:;"><i class="icon_back icon_back<?php echo $row['prom_id'];?>" data-index="0" data-promid="<?php echo $row['prom_id'];?>" data-imgs="<?php echo $imgList;?>">&#xe610;</i> </a>
+							<a href="javascript:;"><i class="icon_forward icon_forward<?php echo $row['prom_id'];?>" data-index="0" data-promid="<?php echo $row['prom_id'];?>" data-imgs="<?php echo $imgList;?>">&#xe611;</i></a>
 					</div>
 					
-					<ul  class="thumblist" id="<?php echo 'thumblist'.$counter ?>" data-listid="<?php echo $counter ?>">
+					<ul  class="thumblist thumb<?php echo $row['prom_id'];?>" id="<?php echo 'thumblist'.$counter ?>" data-listid="<?php echo $counter ?>">
 						<?php foreach($promImgs as $key=>$promImg):?>
-						<li><a class="<?php echo $key==0?"zoomThumbActive":"";?> active" href='javascript:void(0);' rel="{gallery: 'gal<?php echo $row['prom_id'];?>', smallimage: './image_350/<?php echo $promImg['album_path'];?>',largeimage: './image_800/<?php echo $promImg['album_path'];?>'}">
+						<li>
 							<img src="./image_50/<?php echo $promImg['album_path'];?>" alt="">
-						</a></li>
+						</li>
 						<?php endforeach;?>
 					</ul>
 					
@@ -73,9 +82,7 @@ $rows=fetchAll($sql);
 						?>
 						<div class="dt">Dish Name:</div>
 						<div class="dd clearfix dishdetail" <?php echo "data-dishid='{$row['dish_id']}'";?> >
-							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> >
-								<?php echo $dishInfo['dish_name_en'];?>
-							</span></u>
+							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> ><?php echo $dishInfo['dish_name_en'];?></span></u>
 						</div>
 						<div class="dt">Category:</div>
 						<div class="dd clearfix">

@@ -1,7 +1,7 @@
 <?php 
 
 $id=$_REQUEST['dish_id'];
-$id=3;
+
 if($id){
 	//Get dish information by dish id
 	$dish_info = getDishById($id);	
@@ -48,8 +48,12 @@ if($id){
 				<!--<i id="s_back"></i>-->
 				<a href="javascript:;" class="arrow icon_arrow" id="s_back">&#xe61d;</a>
 				<a href="javascript:;" class="arrow icon_arrow" id="s_forward">&#xe61e;</a>
-				<?php if( $dish_images && count($dish_images)>1 ){
-					for($i=1; $i<count($dish_images); $i++):
+				<?php if( $dish_images && count($dish_images)>1 ){					
+					$img_nums = count($dish_images);
+					if($img_nums>4){
+						$img_nums = 4;
+					}
+					for($i=0; $i<$img_nums; $i++):
 				?>			
 					<div class="thumb_nail"><img src="./image_50/<?php echo $dish_images[$i]['album_path'];?>" alt="<?php echo $dish_images[$i]['album_path'];?>"  ></div><!--width="66" height="66"-->
 				<?php endfor;}else{?>
