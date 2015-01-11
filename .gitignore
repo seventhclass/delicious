@@ -16,5 +16,8 @@ src/image_50/*
 src/image_800/*
 src/admin/uploads/*
 src/include/promotion_cn.php
+src/configs/*
+src/configs/configs.php
 RemoteSystemsTempFiles/*
 .metadata/*
+

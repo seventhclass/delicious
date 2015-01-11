@@ -125,7 +125,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 	-webkit-box-shadow: 2px 2px 6px #937A6A;//#2d0307;#b07546;#480b12;  
 	-moz-box-shadow: 2px 2px 6px #937A6A; 
 	box-shadow: 2px 2px 6px #937A6A;
-	/*display: none;*/
+	/* display: none; */
 }
 
 #list{
@@ -192,7 +192,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 #content_menu{
 	/* position:relative; */
  	width:1200px;
-	height:950px;
+	height:1390px;
 	/* color:#D9B181; */
 	/*background-color:#bc966d;rgba(30,0,0,0.6);*/
 	/*border:1px solid #bc966d; just for seeing the area*/
@@ -225,12 +225,17 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 #category{
 	width:230px;
 	margin:0 auto;
+	border:0;
+	border-spacing: 0px;
+	//border-collapse: collapse;
 }
-#content_menu nav li{
+
+#content_menu nav td{
 	cursor:pointer; 
 	color:rgba(255,255,255,0.5);//#6d5439;
-	padding: 15px 20px;
-	display:block;
+	padding: 10px 20px;
+	//display:block;
+	display:table-cell;
 	height:36px;
 	font-size:16px;
 	border-top: 1px solid #c9a074;
@@ -241,18 +246,18 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 	-moz-transition:color 0.4s;
 	transition:color 0.4s;
 }
-#content_menu nav li.on{
+#content_menu nav td.on{
 	/* background: #93714c; */
 	color:white;
 }
 	
-#content_menu nav li:hover{
+#content_menu nav td:hover{
 	/*color: #93714c;
 	 background: #93714c; 
 	box-shadow: 0px 2px 6px rgba(30,0,0,.4);*/
 	color:white;
 }
-#content_menu nav li.on:hover{
+#content_menu nav td.on:hover{
 	color:white;
 }
 	
@@ -274,7 +279,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 	float:right;
 	right:75px;
 	width: 910px;
-	height: 890px;
+	height: 1330px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	background-color: #bc966d; 
