@@ -72,7 +72,7 @@ $rows=fetchAll($sql);
 					<div class="dd clearfix"><?php echo $row['content_en'];?></div>
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">Dish</div><br/>
+				<div class="dt">Dish</div><br/>				
 					<div class="dd clearfix">
 						<?php 
 							if($row['dish_id']){
