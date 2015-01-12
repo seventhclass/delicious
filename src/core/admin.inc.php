@@ -1,7 +1,7 @@
 <?php
 
 /**
- * æ£€æŸ¥ç®¡ç�†å‘˜æ˜¯å�¦å­˜åœ¨
+ * 检查管理员是否存在
  * @param unknown $sql
  * @return multitype:
  */
@@ -10,17 +10,16 @@ function checkAdmin($sql) {
 }
 
 /**
- * æ£€æµ‹æ˜¯å�¦æœ‰ç®¡ç�†å‘˜ç™»å½•
+ * 检测是否有管理员登录
  */
 function checkLogined() {
 	if ($_SESSION ['adminId'] == "" && $_COOKIE ['adminId'] == "") {
-		//alertMesg ( "è¯·å…ˆç™»å½•", "login.php" );
-		echo "<script>window.location='login.php';</script>";
+		alertMesg ( "请先登录", "login.php" );
 	}
 }
 
 /**
- * æ·»åŠ ç®¡ç�†å‘˜
+ * 添加管理员
  * 
  * @return string
  */
@@ -28,15 +27,15 @@ function addAdmin() {
 	$arr = $_POST;
 	$arr ['password'] = md5 ( $_POST ['password'] );
 	if (insert ( "resto_admin", $arr )) {
-		$mesg = "æ·»åŠ æˆ�åŠŸ!<br/><a href='addAdmin.php'>ç»§ç»­æ·»åŠ </a>|<a href='listAdmin.php'>æŸ¥çœ‹ç®¡ç�†å‘˜åˆ—è¡¨</a>";
+		$mesg = "添加成功!<br/><a href='addAdmin.php'>继续添加</a>|<a href='listAdmin.php'>查看管理员列表</a>";
 	} else {
-		$mesg = "æ·»åŠ å¤±è´¥!<br/><a href='addAdmin.php'>é‡�æ–°æ·»åŠ </a>";
+		$mesg = "添加失败!<br/><a href='addAdmin.php'>重新添加</a>";
 	}
 	return $mesg;
 }
 
 /**
- * å¾—åˆ°æ‰€æœ‰çš„ç®¡ç�†å‘˜
+ * 得到所有的管理员
  * 
  * @return array:
  */
@@ -64,7 +63,7 @@ function getAdminByPage($page, $pageSize = 2) {
 }
 
 /**
- * ç¼–è¾‘ç®¡ç�†å‘˜
+ * 编辑管理员
  * 
  * @param int $id        	
  * @return string
@@ -73,30 +72,30 @@ function editAdmin($id) {
 	$arr = $_POST;
 	$arr ['password'] = md5 ( $_POST ['password'] );
 	if (update ( "resto_admin", $arr, "admin_id={$id}" )) {
-		$mesg = "ç¼–è¾‘æˆ�åŠŸ!<br/> <a href='listAdmin.php'>æŸ¥çœ‹ç®¡ç�†å‘˜åˆ—è¡¨</a>";
+		$mesg = "编辑成功!<br/> <a href='listAdmin.php'>查看管理员列表</a>";
 	} else {
-		$mesg = "ç¼–è¾‘å¤±è´¥!<br/> <a href='listAdmin.php'>è¯·é‡�æ–°ä¿®æ”¹</a>";
+		$mesg = "编辑失败!<br/> <a href='listAdmin.php'>请重新修改</a>";
 	}
 	return $mesg;
 }
 
 /**
- * åˆ é™¤ç®¡ç�†å‘˜çš„æ“�ä½œ
+ * 删除管理员的操作
  * 
  * @param int $id        	
  * @return string
  */
 function delAdmin($id) {
 	if (delete ( "resto_admin", "admin_id={$id}" )) {
-		$mesg = "åˆ é™¤æˆ�åŠŸ!<br/> <a href='listAdmin.php'>æŸ¥çœ‹ç®¡ç�†å‘˜åˆ—è¡¨</a>";
+		$mesg = "删除成功!<br/> <a href='listAdmin.php'>查看管理员列表</a>";
 	} else {
-		$mesg = "åˆ é™¤å¤±è´¥!<br/> <a href='listAdmin.php'>è¯·é‡�æ–°åˆ é™¤</a>";
+		$mesg = "删除失败!<br/> <a href='listAdmin.php'>请重新删除</a>";
 	}
 	return $mesg;
 }
 
 /**
- * ç®¡ç�†å‘˜é€€å‡º
+ * 管理员退出
  */
 function logout() {
 	$_SESSION = array ();
