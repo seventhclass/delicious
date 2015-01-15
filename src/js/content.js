@@ -244,6 +244,7 @@ function showDetail() {
 	objBody[0].style.overflow = "hidden";
 	detailBox.style.display = "block";
 	overlay.style.display = "block";
+	//$('#logo').css('display','none');
 	fadeIn("popup", 100, 0.5, 0);
 	fadeIn("page_overlay", 80, 0.5, 0);
 	
@@ -255,9 +256,11 @@ function showDetail() {
 function closeDetail(){
 	fadeOut("popup", 100, 0.5, 0);
 	fadeOut("page_overlay", 80, 0.5, 0);
+	//$('#logo').css('display','block');
 	setTimeout(function() {
 		detailBox.style.display = "none";
 		overlay.style.display = "none";
+		
 		}, 500);
 	var objBody = document.getElementsByTagName("body");
 	objBody[0].style.overflow = "auto";

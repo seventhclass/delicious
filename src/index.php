@@ -52,7 +52,7 @@
 			include("./include/footer.php");
 			include("./include/detail.php");
 		?>
-		<div id="logo" onclick="changeShowDiv()"><a href="#" ><img id="logo_img" src="./images/logo_resto-delicieux.png" alt="Restaurant Délicieux"></a></div>
+		
 		<input type="hidden" id="curr_id" value="content_home">	
 		<a href="javascript:;" id="back-to-top" title="Back to top"><i class="icon_btt">&#xe057;</i></a>
 	</body>

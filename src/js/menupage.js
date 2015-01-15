@@ -328,7 +328,7 @@ $(document).ready(function (){
 		$('#org_pic').attr("src","./image_800/"+ pic_name);//change src of the original image tag to new image
 		$('#org_pic').attr("data-path", pic_name);//change 'xxx.jpg' of the original image tag to new image
 		
-		$('.fake_pic').fadeOut(300,function(){
+		$('.fake_pic').fadeOut(400,function(){
 			$('.fake_pic').remove();	//remove the img tag
 			$('#org_pic').css("position","static");	//before adding the new img tag, change the position style back
 		} );

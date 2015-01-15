@@ -1,4 +1,9 @@
 <header >
+	<div id="logo" onclick="changeShowDiv()">
+		<a href="#" >
+			<img id="logo_img" src="./images/logo_resto-delicieux.png" alt="Restaurant Délicieux">
+		</a>
+	</div>
 	<nav>
 	<ul id="menus">
 		<li><a href="#" id="home" >Home</a></li>
