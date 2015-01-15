@@ -34,7 +34,7 @@ if (! $rows) {
 					<th width="25%">管理员名称</th>
 					<th width="30%">管理员邮箱</th>
 					<th>操作</th>
-				</tr>
+				</tr>	
 			</thead>
 			<tbody>
 			<?php foreach($rows as $row): ?>
