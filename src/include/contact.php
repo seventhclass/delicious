@@ -3,8 +3,8 @@
 		<div id='contact_info'>
 			<h2> Contact Info </h2>
 			<p><i class="icon_contact">&#xe942;</i>: 514-342-7687</p>
-			<p><i class="icon_contact">&#xe614;</i>: example@xxx.com</p>
-			<p><i class="icon_contact">&#xe900;</i>: 5665 Côte-des-Neiges </p>
+			<p><i class="icon_contact">&#xe614;</i>: delicieux.restauant@gmail.com</p>
+			<p><i class="icon_contact">&#xe900;</i>: 5665 Ch. de la Côte-des-Neiges </p>
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Montreal, QC, CA<p>
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3T xxx<p>
 

@@ -2,7 +2,7 @@ var min_height=0;		//height of the category is the minimum height for #content_m
 var diff_height = 0;	//#content_menu.height - #gallery.height
 
 $(document).ready(function (){
-
+//$(window).ready(function (){
 	$('#category tr:last-child td').css("border-bottom","0");  //remove the bottom border of the last category list item. 
 	//get the height of the category area, as minimum height of #content_menu
 	$("td").each(function(){
@@ -21,14 +21,26 @@ $(document).ready(function (){
 	
 	$('#content_menu').css("height",$('#gallery').height+diff_height);
 
-	var jWindow = $(window);			
+	var jWindow = $(window);
+	//initialize
+	/*$('#categorybox').css({
+		'position':'relative',
+		'top':'0',
+		'left':'0'
+	});	
+	
+	var cate_left = $('.cat_sidebar').offset().left;
+	console.log ('cate_left='+cate_left);*/
+	
 	jWindow.scroll(function(){
-		var cate_left = $('.cat_sidebar').offset().left;
+		var cate_left = $('#categorybox').offset().left;
 		var gal_left = $('#gallery').offset().left;
 		var scrollHeight = jWindow.scrollTop();					
 		var screenHeight = jWindow.height();
 		var cateboxHeight = $('#categorybox').height();
 		var galleryHeight = $('#gallery').height();
+		
+		console.log ('cate_left='+cate_left);
 		
 		//alert("scrollHeight="+scrollHeight);
 		//alert("cateboxHeight="+cateboxHeight);
@@ -70,16 +82,24 @@ $(document).ready(function (){
 					'left':'0',
 					'top':topVal
 				});
-				console.log($('.cat_sidebar').css("top"));
+				//console.log($('#categorybox').css("top"));
 				
 			}else{
-				$('.cat_sidebar').css({
+				$('#categorybox').css({
 					'position':'fixed',
 					'top':'50px',
 					'left':cate_left+'px'
 				});
 			}
 		/*}	*/
+			
+		if(scrollHeight==0){
+			$('#categorybox').css({
+				'position':'relative',
+				'top':'0',
+				'left':'0'
+			});
+		}
 	});	
 /*	jWindow.scroll(function(){
 		

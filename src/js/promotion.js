@@ -25,7 +25,7 @@ $(document).ready(function (){
 		
 		$('#big'+prom_index +' .big_img').attr("src","./image_350/"+ pic_name);//change src of the original image tag to new image
 				
-		$('.fake_pic').fadeOut(300,function(){
+		$('.fake_pic').fadeOut(400,function(){
 			$('.fake_pic').remove();	//remove the img tag(s)
 		} );
 	}

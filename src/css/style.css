@@ -233,7 +233,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 	width:250px;
 	
 }
-.cat_sidebar{
+#categorybox{
 	position:relative; 
 	float:left;
 	/* display:inline-block; */
