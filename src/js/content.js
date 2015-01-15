@@ -120,16 +120,23 @@ function init(){
 function changeShowDiv(e){
 	var evt = e || window.event;
 	mouseMenu = evt.target || evt.srcElement;
+	var itemClicked=null;
 	
+	if (mouseMenu.id=="logo_img"){
+		itemClicked ="home";
+	}else{
+		itemClicked = mouseMenu.id;
+	}
 	//evt.stopPropagation();  //stop bubbling
 	//evt.preventDefault();   //prevent default event for tag 'a'
-	if (prevMenu == mouseMenu.id){
+	
+	if (prevMenu == itemClicked){
 		return;
 	}
 	else{
-		prevMenu = mouseMenu.id;
+		prevMenu = itemClicked;
 	}
-	index = "content_" + mouseMenu.id;
+	index = "content_" + itemClicked;
 	for(var i = 0; i < sections.length; i++){
 		if(sections[i].style.display == "block"){
 				$(sections[i]).fadeOut();

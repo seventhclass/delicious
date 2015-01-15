@@ -31,23 +31,22 @@ $rows=fetchAll($sql);
 			</table>
 			<div class="dot_curr"></div>			
 		</div>
-	</nav>
-	<!--<div class="gallery_main">-->
-	<div id="gallery">
-		<div id="dishbox" class="wrap">
+
+	</nav><div id="gallery">
+		<ul id="dishbox" class="wrap">
 			<?php if($rows){
 				foreach ($rows as $row):
 				$dishImg = getFirstImgByDishId ( $row ['dish_id'] );
 				//if ($dishImg) {
 			?>
-				<div class="pic">
-				<img src="./image_350/<?php echo $dishImg['album_path']?>"
-					alt="<?php echo $row['dish_name_en']?>" <?php echo "data-dishid='{$row['dish_id']}'";?> />
-				<div class="info" <?php echo "data-dishid='{$row['dish_id']}'";?> >
-					<span class="left"><?php echo $row['dish_name_en']?></span> <span
-						class="right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
-				</div>
-				</div>			
+				<li class="pic">
+					<img src="./image_350/<?php echo $dishImg['album_path']?>"
+						alt="<?php echo $row['dish_name_en']?>" <?php echo "data-dishid='{$row['dish_id']}'";?> />
+					<div class="info" <?php echo "data-dishid='{$row['dish_id']}'";?> >
+						<span class="left"><?php echo $row['dish_name_en']?></span> <span
+							class="right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
+					</div>
+				</li>			
 			<?php //}?>	
 			<?php endforeach;
 				if ($totalRows > $pageSize) {					
@@ -57,7 +56,13 @@ $rows=fetchAll($sql);
 				echo "<h4>Sorry, no dish found. </h4>";
 			}
 			?>
-		</div>
+		</ul>
 	</div>
-	<!--</div>-->
+	<!-- <script>
+console.log($("#gallery").css("height"));
+	$('#content_menu').css("height",$('#gallery').height()+"px");
+		console.log($('#content_menu').css("height"));
+	</script> -->
+	<!--</div>
+	<div style="clear:both;"></div>-->
 </section>

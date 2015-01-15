@@ -1,11 +1,30 @@
+var min_height=0;		//height of the category is the minimum height for #content_menu
+var diff_height = 0;	//#content_menu.height - #gallery.height
 
 $(document).ready(function (){
 
 	$('#category tr:last-child td').css("border-bottom","0");  //remove the bottom border of the last category list item. 
-	var jWindow = $(window);			
-	
-	jWindow.scroll(function(){
+	//get the height of the category area, as minimum height of #content_menu
+	$("td").each(function(){
+		min_height += $("td").height()+parseInt($("td").css("margin-top"))+parseInt($("td").css("margin-bottom"))
+				+parseInt($("td").css("padding-top"))+parseInt($("td").css("padding-bottom"))
+				+parseInt($("td").css("border-top"))+parseInt($("td").css("border-bottom"));
 		
+	})
+	min_height -= 1;	//remove the border-bottom height of the last td
+	
+	$('#content_menu').css("min-height",min_height+"px");//set the minimum height of the menu page content div, 
+	diff_height =  parseInt($('#gallery').css("margin-top")) + parseInt($('#gallery').css("margin-bottom"))
+					+ parseInt($('#gallery').css("border-top"))+ parseInt($('#gallery').css("border-bottom"))
+					+ parseInt($('#gallery').css("padding-top"))+ parseInt($('#gallery').css("padding-bottom"));
+	$('#gallery').css("min-height",(min_height - diff_height)+"px");	//set the minimum height of the gallery div, gallery's padding top + bottom = 60
+	
+	$('#content_menu').css("height",$('#gallery').height+diff_height);
+
+	var jWindow = $(window);			
+	jWindow.scroll(function(){
+		var cate_left = $('.cat_sidebar').offset().left;
+		var gal_left = $('#gallery').offset().left;
 		var scrollHeight = jWindow.scrollTop();					
 		var screenHeight = jWindow.height();
 		var cateboxHeight = $('#categorybox').height();
@@ -15,7 +34,7 @@ $(document).ready(function (){
 		//alert("cateboxHeight="+cateboxHeight);
 		//alert("galleryHeight="+galleryHeight);
 		
-		if(cateboxHeight>=(galleryHeight+60)){
+/*		if(cateboxHeight>(galleryHeight+60)){
 			$('.cat_sidebar').css({
 				'position':'relative',
 				'top':'0',
@@ -26,7 +45,8 @@ $(document).ready(function (){
 				$('#gallery').css({
 					'position':'fixed',
 					'top':-(galleryHeight+60-screenHeight),
-					'right':74
+					'right':69
+					left:gal_left+'px'
 				});				
 			}
 			else{
@@ -42,7 +62,7 @@ $(document).ready(function (){
 					'top':cateboxHeight-(galleryHeight+60)
 				});	
 			}					
-		}else{			
+		}else{*/
 			if(galleryHeight+60-scrollHeight<cateboxHeight){
 				var topVal = (galleryHeight+60-cateboxHeight)+"px";
 				$('.cat_sidebar').css({
@@ -50,15 +70,49 @@ $(document).ready(function (){
 					'left':'0',
 					'top':topVal
 				});
+				console.log($('.cat_sidebar').css("top"));
+				
 			}else{
 				$('.cat_sidebar').css({
 					'position':'fixed',
 					'top':'50px',
-					'left':'75px'
+					'left':cate_left+'px'
 				});
 			}
-		}	
-	});
+		/*}	*/
+	});	
+/*	jWindow.scroll(function(){
+		
+		var scrollHeight = jWindow.scrollTop();	//scrollbar top				
+		var screenHeight = jWindow.height();
+		var cateboxHeight = $('#categorybox').height();
+		var galleryHeight = $('#gallery').height();
+		
+		console.log("scrollHeight="+scrollHeight);
+		console.log("cateboxHeight="+cateboxHeight);
+		console.log("galleryHeight="+galleryHeight);
+		
+		
+			if(galleryHeight+60 <= cateboxHeight+scrollHeight){
+				
+				var topVal = (galleryHeight+60-cateboxHeight)+"px";
+				//var topVal = (scrollHeight)+"px";
+				$('.cat_sidebar').css({
+					'position':'relative',
+					'left':'0',
+					'top':topVal});
+				console.log('topVal='+topVal);
+				console.log($('#categorybox').css("top"));
+				
+			}else{
+				$('.cat_sidebar').css({
+					'position':'fixed',
+					'top':'50px',
+					'left':'150px'
+				});
+			}
+			
+	});*/
 	
 
 	$('#category').click(function(e){
@@ -167,6 +221,9 @@ $(document).ready(function (){
 						+ "</div>"
 				);
 			});
+			
+			$('#content_menu').css("height",$('#gallery').height+diff_height);
+			
 			if(res.totalRows>res.pageSize){
 				$('#dishbox').append(								
 						"<div class='pagebox'>" + res.pageLink + "</div>"
@@ -174,7 +231,8 @@ $(document).ready(function (){
 			}
 		}else{
 			$('#dishbox').append("<h4>Sorry, no dish found. </h4>");
-		}			
+		}
+		
 	}
 	
 	function createDetailPage(res){
@@ -328,4 +386,3 @@ $(document).ready(function (){
 		}			
 	}
 })
-

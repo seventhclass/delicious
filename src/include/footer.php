@@ -1,4 +1,4 @@
-<footer>
+<footer class="clearfix">
 	<div>
 		<div id="footer1">
 			<h1><span><i class="icon_admin">&#xe620;</i></span>Opening Hours</h1>
