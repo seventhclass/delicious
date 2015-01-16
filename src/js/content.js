@@ -198,7 +198,7 @@ function initMap(){
 function initMenuNav(){
 	var ulobj = document.getElementById("category");
 	if(ulobj){
-		menuNav = ulobj.getElementsByTagName("li");
+		menuNav = ulobj.getElementsByTagName("td");
 		prevCate = menuNav[0];
 		for(var i = 0; i < menuNav.length; i++){
 			addEvent(menuNav[i],"click",switchOn, false);
