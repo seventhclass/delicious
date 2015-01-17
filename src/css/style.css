@@ -318,6 +318,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 #gallery .wrap{
 	width:792px;
 	margin:0 auto;
+	overflow: hidden;
 	/* border:1px solid white; */
 }
 
@@ -345,9 +346,9 @@ visibility: hidden;
 }
 #gallery .pic:hover{
 	cursor:pointer;
-	-webkit-box-shadow:2px 2px 5px 5px #93714c;
-	-moz-box-shadow:2px 2px 5px 5px #93714c;
-	box-shadow:2px 2px 5px 5px #93714c;
+	-webkit-box-shadow:0px 2px 3px 2px #93714c;
+	-moz-box-shadow:0px 2px 3px 2px #93714c;
+	box-shadow:0px 2px 3px 2px #93714c;
 	/* -webkit-box-shadow:0 1px 2px #93714c;
 	-moz-box-shadow:0 1px 2px#93714c;
 	box-shadow:0 1px 2px#93714c; */
@@ -1059,7 +1060,7 @@ footer article a:hover{
 	cursor:pointer;
 }
 
-.pagebox{font-size:20px;font-weight:bold;text-align:center;margin:10px 0}
+.pagebox{font-size:20px;font-weight:bold;text-align:center;margin:20px 0 0}
 .pagebox .availablePage {color:#000000;} 
 
 /*=========  font icon for the whole website  ==========================*/

@@ -48,15 +48,15 @@ $rows=fetchAll($sql);
 					</div>
 				</li>			
 			<?php //}?>	
-			<?php endforeach;
-				if ($totalRows > $pageSize) {					
+			<?php endforeach;?>	
+		</ul>
+			<?php	if ($totalRows > $pageSize) {					
 					echo "<div class='pagebox'>" . showPage3 ( $page, $totalPage )."</div>";
 				}			
 			}else{
 				echo "<h4>Sorry, no dish found. </h4>";
 			}
 			?>
-		</ul>
 	</div>
 	<!-- <script>
 console.log($("#gallery").css("height"));
