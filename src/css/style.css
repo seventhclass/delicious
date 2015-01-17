@@ -208,6 +208,12 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 #next{
        right:20px;}
 
+#pause{
+       position:relative;
+       top:440px;
+       left:920px;
+       font-size:14px;}
+    
 /*==========   menu   =========================================*/
 
 #content_menu{

@@ -65,4 +65,5 @@
 	?>
 	<a href="javascript:;" class="arrow icon_arrow" id="prev">&#xe610;</a>
 	<a href="javascript:;" class="arrow icon_arrow" id="next">&#xe611;</a>
+	<!--<a href="javascript:;" class="arrow icon_arrow" id="pause">&#xe61a;</a>-->
 </section>

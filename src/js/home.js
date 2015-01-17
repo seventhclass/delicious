@@ -5,6 +5,8 @@ window.onload = function() {
 	var buttons = document.getElementById('buttons').getElementsByTagName('span');
 	var prev = document.getElementById('prev');
 	var next = document.getElementById('next');
+	//var pause = document.getElementById('pause');
+	//var paused = false;
 	
 	var animated = false; //优化动画用的变量，点击动画按钮的时候，只有完成了一次操作以后，再按钮才可以继续，这样节省内存
 	var timer; //自动播放定时器
@@ -60,6 +62,7 @@ window.onload = function() {
 		timer = setInterval(function() { //setInterval这个函数会一直执行，而setTimeout这个函数只会执行一次
 			next.onclick();
 		}, 4000);
+		paused = false;
 	}
 
 	function stop() {
@@ -92,6 +95,18 @@ window.onload = function() {
 		}
 	}
 
+	/*pause.onclick = function(){
+		if(paused){
+			$('#pause').html('&#xe619;');
+			play();
+			paused = false;
+		}else{
+			$('#pause').html('&#xe61a;');
+			stop();
+			paused = true;
+		}
+	}*/
+		
 	// 点击小圆点，实现图像更换
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].onclick = function() {
@@ -112,7 +127,11 @@ window.onload = function() {
 			}
 		}
 	}
-	container.onmouseover = stop; //鼠标放到图片上面，就停止自动播放功能
-	container.onmouseout = play; //鼠标放到图片外面，就开始自动播放功能
+	container.onmouseover = stop;	//鼠标放到图片上面，就停止自动播放功能
+	container.onmouseout = play;	//鼠标放到图片外面，就开始自动播放功能
+	/*container.onmouseout = function(){
+		if (paused) return;
+		else play();
+	}*/
 	play(); //设置最开始状态为播放状态
 }
