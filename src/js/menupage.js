@@ -228,29 +228,38 @@ $(document).ready(function (){
 	}
 	
 	function createMenuPage(res){
-		$('#dishbox').html("");
+		$('#dishbox').html("");				//clear contents inside #dishbox
+		$('#dishbox').nextAll().remove();	//remove all following siblings
+		
 		if(res.dishinfo && res.dishinfo.length>0){
 			$.each(res.dishinfo,function(i, item){
 				$('#dishbox').append(
-						"<div class='pic'>"
+						"<li class='pic'>"
 						+ "<img src='./image_350/" + item.album_path + "'" + " alt='" + item.dish_name_en + "'" + " data-dishid='" + item.dish_id + "' />" 
 						+ "<div class='info'" + " data-dishid='" + item.dish_id + "' >" 
 						+ "<span class='left'>" + item.dish_name_en + "</span>"
 						+ "<span class='right'>" + "$&nbsp;" + item.current_price + "</span>"
 						+ "</div>"
-						+ "</div>"
+						+ "</li>"
 				);
 			});
 			
 			$('#content_menu').css("height",$('#gallery').height+diff_height);
 			
-			if(res.totalRows>res.pageSize){
+	/*		if(res.totalRows>res.pageSize){
 				$('#dishbox').append(								
 						"<div class='pagebox'>" + res.pageLink + "</div>"
 				);
 			}
 		}else{
 			$('#dishbox').append("<h4>Sorry, no dish found. </h4>");
+		}*/
+			
+			if(res.totalRows>res.pageSize){
+				$("<div class='pagebox'>" + res.pageLink + "</div>").insertAfter('#dishbox');								
+			}
+		}else{
+			$("<h4>Sorry, no dish found. </h4>").insertAfter('#dishbox');
 		}
 		
 	}

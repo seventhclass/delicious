@@ -305,6 +305,7 @@ header #lang_cn{background:url('../icon/chinese.png') left top no-repeat;}
 #content_menu h4{
 	font-size:16px;
 	color:white;
+	text-indent: 30px;
 }
 #gallery{	
 	float:right;
