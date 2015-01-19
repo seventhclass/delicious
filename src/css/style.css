@@ -370,32 +370,59 @@ visibility: hidden;
 
 #gallery .info{
 	position:absolute;
-	width:220px;
+	width:230px;
 	height:20px;
 	top:160px;
 	background-color:rgba(255,255,255,0.8);
+	/* -webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; */
+	font-size:11px;
+	line-height: 14px;
+	color:#75593b;
+	font-weight:bold;
+	padding:10px 10px;
+	overflow:hidden;
+}
+#gallery .visible_area{
+	position:absolute;
+	left:0;
+	top:0;
+	width:230px;
+	min-height:20px;
 	-webkit-transition:0.5s;
 	-moz-transition:0.5s;
 	transition:0.5s;
-	font-size:11px;
-	color:#75593b;
-	font-weight:bold;
-	padding:10px 15px;
+	padding:10px 10px;
+}
+.visible_area:hover{
+	/* position:relative;
+	bottom:0;
+	color:white;
+	background:#75593b;
+	opacity:0.8; */
+}
+#gallery .info:hover{
+	/* color:white;
+	background:#75593b;
+	opacity:0.8; */
 }
 
-/* .pagebox{font-size:15px;font-weight:bold;color:#585858;}
-.headbox{color:#0101DF;}
-.pagebox a {color:#0101DF;}  */
+/* ? page number in menu div */
+.pagebox .availablePage {
+	color:#000000;
+} 
+.availablePage{
+	cursor:pointer;
+}
+.pagebox{
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+	margin:20px 0 0}
 
-/* iframe{
-	padding:0;
-	margin-left:20px;
-	width:900px;
-	height:950px;
-} */
-	
 
-/* overlay page */
+/* ==============  overlay page and detail ================== */
 #page_overlay {display: none;
 			position: fixed; top: 0; left: 0;
 			width: 100%;  height: 100%;
@@ -1055,14 +1082,7 @@ footer article a:hover{
 	text-shadow:0px 1px 2px white;
 }
 
-/* ? page number in menu div */
-.availablePage
-{
-	cursor:pointer;
-}
 
-.pagebox{font-size:20px;font-weight:bold;text-align:center;margin:20px 0 0}
-.pagebox .availablePage {color:#000000;} 
 
 /*=========  font icon for the whole website  ==========================*/
 @font-face{
