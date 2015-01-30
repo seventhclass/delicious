@@ -6,11 +6,11 @@
 	</div>
 	<nav>
 	<ul id="menus">
-		<li><a href="#" id="home" >Home</a></li>
-		<li><a href="#" id="menu" >Menu</a></li>
-		<li><a href="#" id="promotion" >Promotions</a></li>
-		<li><a href="#" id="about" >About Us</a></li>
-		<li><a href="#" id="contact" >Contact Us</a></li>
+		<li><a href="#" id="home" >主页</a></li>
+		<li><a href="#" id="menu" >菜单</a></li>
+		<li><a href="#" id="promotion" >促销</a></li>
+		<li><a href="#" id="about" >关于我们</a></li>
+		<li><a href="#" id="contact" >联系我们</a></li>
 	</ul>
 	<ul id="languages">
 		<!--<li><a href="./admin/index.php" id="admin">管理员登录</a></li>-->
