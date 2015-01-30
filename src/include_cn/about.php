@@ -11,7 +11,7 @@
 		
 		<div  class="left">
 			<h3>欢迎来到我们的饭店!</h3>
-			<h4>跟随我们 on:</h4>
+			<h4>跟随我们 :</h4>
 				<div><a href="http://www.facebook.com"><img class="social" src="./images/facebook.png"  alt="facebook"/></a>
 					<a href="http://www.twitter.com"><img class="social" src="./images/twitter.png" alt="twitter"/></a>
 					<a href="http://www.google.com"><img class="social" src="./images/googleplus.png" alt="google"/></a>

@@ -17,18 +17,18 @@
 			<h1><span><a href="./admin/index.php" id="admin"><i class="icon_admin">&#xe622;</i></a></span>联系方式</h1>
 			<br/>
 			<p>5665 Ch. de la Côte-des-Neiges <br/>Montreal<br/>QC, CA<br/>H3T xxx</p>
-			<p>Tel: 514-342-7687</p>
+			<p>电话: 514-342-7687</p>
 			<!--<p>Fax: 123-456-7890</p>-->
 		</div>
 
 		<div id="footer3">
 			<h1><span><i class="icon_admin">&#xe621;</i></span>接受订餐</h1>
 			<br/>
-			<p>Lunch: 11:00am - 4:30pm</p>
-			<p>Dinner: 4:30pm - 10:30pm</p>
+			<p>午餐: 11:00am - 4:30pm</p>
+			<p>晚餐: 4:30pm - 10:30pm</p>
 			<br />
 			<p>快乐时光:</p>
-			<p>Mon-Wed 3:00pm - 7:00pm</p>
+			<p>星期一-星期三 3:00pm - 7:00pm</p>
 			<p>我们为各种聚会场合提供团体餐饮服务</p>
 		</div>
 		<article id="copyright">&copy; 2014 by Delicious.  <a href="http://www.7thclass.com">7thclass.com 荣誉出品</a>
