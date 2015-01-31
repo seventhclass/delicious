@@ -76,7 +76,7 @@ if($id){
 				</li>
 				<li>
 					<div class="dt">辣:</div>
-					<div class="dd" id="is_spicy"><?php echo $dish_info['is_spicy']==1?"Yes":"No"; ?></div>
+					<div class="dd" id="is_spicy"><?php echo $dish_info['is_spicy']==1?"是":"否"; ?></div>
 				</li>
 				<li>
 					<div class="dt">现在的价格:</div>

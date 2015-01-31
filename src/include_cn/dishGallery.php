@@ -26,7 +26,7 @@ $rows=fetchAll($sql);
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>菜单页</title>
+	<title>菜单</title>
 	<link href="../css/dishGallery.css" type="text/css" rel="stylesheet">
 	<!--<script type="text/javascript" src="../js/content.js"></script>-->
 </head>
@@ -55,7 +55,7 @@ $rows=fetchAll($sql);
 				echo "<div class='pagebox'>" . showPage ( $page, $totalPage, $where )."</div>";
 			}
 		}else{
-			echo "<h4>对不起，没有找到您需要的菜品 </h4>";
+			echo "<h4>对不起,没有找到您需要的菜品 </h4>";
 		}
 		?> 			
 	</div>

@@ -26,7 +26,7 @@ $rows=fetchAll($sql);
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Menu Page</title>
+	<title>Menu</title>
 	<link href="../css/dishGallery.css" type="text/css" rel="stylesheet">
 	<!--<script type="text/javascript" src="../js/content.js"></script>-->
 </head>
@@ -40,9 +40,9 @@ $rows=fetchAll($sql);
 		?>
 			<div class="pic">
 			<img src="../image_350/<?php echo $dishImg['album_path']?>"
-				alt="<?php echo $row['dish_name_en']?>" />
+				alt="<?php echo $row['dish_name_fr']?>" />
 			<div class="info">
-				<span class="t_left"><?php echo $row['dish_name_en']?></span> <span
+				<span class="t_left"><?php echo $row['dish_name_fr']?></span> <span
 					class="t_right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
 			</div>
 			</div>			
@@ -55,7 +55,7 @@ $rows=fetchAll($sql);
 				echo "<div class='pagebox'>" . showPage ( $page, $totalPage, $where )."</div>";
 			}
 		}else{
-			echo "<h4>Sorry, no dish found. </h4>";
+			echo "<h4>Désolé, Pas de Plats </h4>";
 		}
 		?> 			
 	</div>

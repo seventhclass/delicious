@@ -64,33 +64,33 @@ if($id){
 		</div>
 		
 		<div id="dish_text">
-			<h1><?php echo $dish_info['dish_name_en'];?></h1>
+			<h1><?php echo $dish_info['dish_name_fr'];?></h1>
 			<ul>
 				<li>
-					<div class="dt">Dish No.</div>
+					<div class="dt">Plat No.</div>
 					<div class="dd"><?php echo $dish_info['dish_no'];?></div>
 				</li>
 				<li>
-					<div class="dt">Category:</div>
-					<div class="dd"><?php echo $cate_info['cate_name_en'];?></div>
+					<div class="dt">Galerie:</div>
+					<div class="dd"><?php echo $cate_info['cate_name_fr'];?></div>
 				</li>
 				<li>
-					<div class="dt">Spicy:</div>
-					<div class="dd" id="is_spicy"><?php echo $dish_info['is_spicy']==1?"Yes":"No"; ?></div>
+					<div class="dt">Épicé:</div>
+					<div class="dd" id="is_spicy"><?php echo $dish_info['is_spicy']==1?"Oui":"Non"; ?></div>
 				</li>
 				<li>
-					<div class="dt">Current Price:</div>
+					<div class="dt">Prix Actuel:</div>
 					<div class="dd"><?php echo "$ ".$dish_info['current_price'];?></div>
 				</li>
 				<li>
-					<div class="dt">Regular Price:</div>
+					<div class="dt">Prix Régulier:</div>
 					<div class="dd"><?php echo "$ ".$dish_info['reg_price'];?></div>
 				</li>
 			</ul>
 		</div>
 		
 		<div id="dish_desc">
-			<h1><?php echo $dish_info['dish_desc_en'];?></h1>
+			<h1><?php echo $dish_info['dish_desc_fr'];?></h1>
 		</div>
 		
 	</div>

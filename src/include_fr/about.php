@@ -1,7 +1,7 @@
 <section class="content" id="content_about">
 	
 	<div class="top">
-		<h2>About Us</h2>
+		<h2>À Propos</h2>
 		<!--<div></div>-->
 		<img src="./images/FBcover851x315_resto-delicieux.jpg" alt="delicious restaurant" />
 	</div>
@@ -10,8 +10,8 @@
 		<div id="logo_about"><i></i></div>
 		
 		<div  class="left">
-			<h3>Welcome to our restaurant!</h3>
-			<h4>Follow us on:</h4>
+			<h3>Bienvenue au Délicieux!</h3>
+			<h4>Réseaux Sociaux:</h4>
 				<div><a href="http://www.facebook.com"><img class="social" src="./images/facebook.png"  alt="facebook"/></a>
 					<a href="http://www.twitter.com"><img class="social" src="./images/twitter.png" alt="twitter"/></a>
 					<a href="http://www.google.com"><img class="social" src="./images/googleplus.png" alt="google"/></a>

@@ -38,8 +38,8 @@ $rows=fetchAll($sql);
 	<div class="description clearfix">
 		<div class="leftArea">
 			<!--<div class="description_imgs">-->
-				<div class="big" id="<?php echo 'big'.$counter ?>" data-bigid="<?php echo $counter ?>">
-           			 <img class="big_img" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_en'];?>">
+				<div class="big" id="<?php echo 'grand'.$counter ?>" data-bigid="<?php echo $counter ?>">
+           			 <img class="big_img" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_fr'];?>">
 				</div>
 				<div class="des_smimg clearfix">
 					<div id="icon_wrap">
@@ -62,17 +62,17 @@ $rows=fetchAll($sql);
 		<!--</div>-->
 		<div class="rightArea">
 			<div class="des_content">
-				<h3 class="des_content_tit"><?php echo $row['title_en'];?></h3>
+				<h3 class="des_content_tit"><?php echo $row['title_fr'];?></h3>
 				<div class="dl clearfix">
 					<div class="dt">Valide Period</div>
-					<div class="dd clearfix"><?php echo "From ".date("Y-m-d ",$row['start_time'])." to ".date("Y-m-d.",$row['end_time']);?></div>				
+					<div class="dd clearfix"><?php echo "Dpuis ".date("Année-mois-jour ",$row['start_time'])." à ".date("Année-mois-jour.",$row['end_time']);?></div>				
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">Detail</div>
-					<div class="dd clearfix"><?php echo $row['content_en'];?></div>
+					<div class="dt">Détail</div>
+					<div class="dd clearfix"><?php echo $row['content_fr'];?></div>
 				</div>
 				<div class="dl clearfix">
-				<div class="dt">Dish</div><br/>				
+				<div class="dt">Plat</div><br/>				
 					<div class="dd clearfix">
 						<?php 
 							if($row['dish_id']){
@@ -80,13 +80,13 @@ $rows=fetchAll($sql);
 								$promImgs=getAllImgByDishId($row['dish_id']);
 								$cateInfo=getCateById($dishInfo['cate_id']);
 						?>
-						<div class="dt">Dish Name:</div>
+						<div class="dt">Nom de Plat:</div>
 						<div class="dd clearfix dishdetail" <?php echo "data-dishid='{$row['dish_id']}'";?> >
-							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> ><?php echo $dishInfo['dish_name_en'];?></span></u>
+							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> ><?php echo $dishInfo['dish_name_fr'];?></span></u>
 						</div>
-						<div class="dt">Category:</div>
+						<div class="dt">Galerie:</div>
 						<div class="dd clearfix">
-							<?php echo $cateInfo['cate_name_en'];?>
+							<?php echo $cateInfo['cate_name_fr'];?>
 						</div>
 <!-- 						<div class="dt">菜品编号</div> -->
 <!-- 						<div class="dd clearfix"> -->
@@ -96,11 +96,11 @@ $rows=fetchAll($sql);
 <!-- 						<div class="dd clearfix"> -->
 							<?php //echo $dishInfo['dish_num'];?>
 <!-- 						</div> -->
-						<div class="dt">Current Price:</div>
+						<div class="dt">Prix Actual:</div>
 						<div class="dd clearfix des_money">
 							<?php echo $dishInfo['current_price']." $";?>
 						</div>
-						<div class="dt">Regular Price:</div>
+						<div class="dt">Prix Régulier:</div>
 						<div class="dd clearfix des_money"><em>
 							<?php echo $dishInfo['reg_price']." $";?></em>
 						</div>

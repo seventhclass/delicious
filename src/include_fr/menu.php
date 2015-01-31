@@ -26,7 +26,7 @@ $rows=fetchAll($sql);
 						$i=1;
 						foreach ($cateids as $cateid):						
 				?>											
-				<tr><td id="<?php echo $i;?>" data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_en'] ?></td></tr>
+				<tr><td id="<?php echo $i;?>" data-page='1' <?php echo "data-cateid='{$cateid['cate_id']}'";?> ><?php echo $cateid['cate_name_fr'] ?></td></tr>
 				<?php $i++; endforeach; }?>
 			</table>
 			<div class="dot_curr"></div>			
@@ -41,10 +41,10 @@ $rows=fetchAll($sql);
 			?>
 				<li class="pic">
 					<img src="./image_350/<?php echo $dishImg['album_path']?>"
-						alt="<?php echo $row['dish_name_en']?>" <?php echo "data-dishid='{$row['dish_id']}'";?> />
+						alt="<?php echo $row['dish_name_fr']?>" <?php echo "data-dishid='{$row['dish_id']}'";?> />
 					<div class="info" <?php echo "data-dishid='{$row['dish_id']}'";?> >
 						<div class="visible_area">
-							<span class="left"><?php echo $row['dish_name_en']?></span>
+							<span class="left"><?php echo $row['dish_name_fr']?></span>
 							<span class="right"><?php echo "$&nbsp;".$row['current_price']; ?></span>
 						</div>
 					</div>
@@ -56,7 +56,7 @@ $rows=fetchAll($sql);
 					echo "<div class='pagebox'>" . showPage3 ( $page, $totalPage )."</div>";
 				}			
 			}else{
-				echo "<h4>Sorry, no dish found. </h4>";
+				echo "<h4>Désolé, aucun plat trouvé. </h4>";
 			}
 			?>
 	</div>
