@@ -20,7 +20,7 @@ $rows=fetchAll($sql);
 	<nav>
 		<div id="categorybox" class="cat_sidebar">
 			<table id="category">
-				<tr><td id="0" class="on" data-page='1' data-cateid='' >All</td></tr>					
+				<tr><td id="0" class="on" data-page='1' data-cateid='' >Tous</td></tr>					
 				<?php 
 					if($cateids){
 						$i=1;
