@@ -38,7 +38,7 @@ $rows=fetchAll($sql);
 	<div class="description clearfix">
 		<div class="leftArea">
 			<!--<div class="description_imgs">-->
-				<div class="big" id="<?php echo '大'.$counter ?>" data-bigid="<?php echo $counter ?>">
+				<div class="big" id="<?php echo 'big'.$counter ?>" data-bigid="<?php echo $counter ?>">
            			 <img class="big_img" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_cn'];?>">
 				</div>
 				<div class="des_smimg clearfix">
@@ -49,7 +49,7 @@ $rows=fetchAll($sql);
 							<a href="javascript:;"><i class="icon_forward icon_forward<?php echo $row['prom_id'];?>" data-index="0" data-promid="<?php echo $row['prom_id'];?>" data-imgs="<?php echo $imgList;?>">&#xe611;</i></a>
 					</div>
 					
-					<ul  class="thumblist thumb<?php echo $row['prom_id'];?>" id="<?php echo '头牌列表'.$counter ?>" data-listid="<?php echo $counter ?>">
+					<ul  class="thumblist thumb<?php echo $row['prom_id'];?>" id="<?php echo 'thumblist'.$counter ?>" data-listid="<?php echo $counter ?>">
 						<?php foreach($promImgs as $key=>$promImg):?>
 						<li>
 							<img src="./image_50/<?php echo $promImg['album_path'];?>" alt="">
@@ -64,15 +64,15 @@ $rows=fetchAll($sql);
 			<div class="des_content">
 				<h3 class="des_content_tit"><?php echo $row['title_cn'];?></h3>
 				<div class="dl clearfix">
-					<div class="dt">活动有效期</div>
+					<div class="dt">活动有效期:</div>
 					<div class="dd clearfix"><?php echo "从 ".date("年-月-日 ",$row['start_time'])." 到 ".date("年-月-日.",$row['end_time']);?></div>				
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">活动细节</div>
+					<div class="dt">活动细节:</div>
 					<div class="dd clearfix"><?php echo $row['content_cn'];?></div>
 				</div>
 				<div class="dl clearfix">
-				<div class="dt">菜品</div><br/>				
+				<div class="dt">菜品:</div><br/>				
 					<div class="dd clearfix">
 						<?php 
 							if($row['dish_id']){
@@ -81,8 +81,8 @@ $rows=fetchAll($sql);
 								$cateInfo=getCateById($dishInfo['cate_id']);
 						?>
 						<div class="dt">菜品名称:</div>
-						<div class="dd clearfix dishdetail" <?php echo "菜品：'{$row['dish_id']}'";?> >
-							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "菜品：'{$row['dish_id']}'";?> ><?php echo $dishInfo['dish_name_cn'];?></span></u>
+						<div class="dd clearfix dishdetail" <?php echo "data-dishid='{$row['dish_id']}'";?> >
+							<u><span id="<?php echo $row['dish_id'];?>" <?php echo "data-dishid='{$row['dish_id']}'";?> ><?php echo $dishInfo['dish_name_cn'];?></span></u>
 						</div>
 						<div class="dt">分类:</div>
 						<div class="dd clearfix">

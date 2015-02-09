@@ -38,7 +38,7 @@ $rows=fetchAll($sql);
 	<div class="description clearfix">
 		<div class="leftArea">
 			<!--<div class="description_imgs">-->
-				<div class="big" id="<?php echo 'grand'.$counter ?>" data-bigid="<?php echo $counter ?>">
+				<div class="big" id="<?php echo 'big'.$counter ?>" data-bigid="<?php echo $counter ?>">
            			 <img class="big_img" src="./image_350/<?php  echo $promImgs[0]['album_path'];?>"  title="<?php echo $row['title_fr'];?>">
 				</div>
 				<div class="des_smimg clearfix">
@@ -64,15 +64,15 @@ $rows=fetchAll($sql);
 			<div class="des_content">
 				<h3 class="des_content_tit"><?php echo $row['title_fr'];?></h3>
 				<div class="dl clearfix">
-					<div class="dt">Valide Period</div>
-					<div class="dd clearfix"><?php echo "Dpuis ".date("Année-mois-jour ",$row['start_time'])." à ".date("Année-mois-jour.",$row['end_time']);?></div>				
+					<div class="dt">Valide Period:</div>
+					<div class="dd clearfix"><?php echo "Dpuis ".date("Y-m-d ",$row['start_time'])." à ".date("Y-m-d.",$row['end_time']);?></div>				
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">Détail</div>
+					<div class="dt">Détail:</div>
 					<div class="dd clearfix"><?php echo $row['content_fr'];?></div>
 				</div>
 				<div class="dl clearfix">
-				<div class="dt">Plat</div><br/>				
+				<div class="dt">Plat:</div><br/>				
 					<div class="dd clearfix">
 						<?php 
 							if($row['dish_id']){

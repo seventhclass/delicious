@@ -64,15 +64,15 @@ $rows=fetchAll($sql);
 			<div class="des_content">
 				<h3 class="des_content_tit"><?php echo $row['title_en'];?></h3>
 				<div class="dl clearfix">
-					<div class="dt">Valide Period</div>
+					<div class="dt">Valide Period:</div>
 					<div class="dd clearfix"><?php echo "From ".date("Y-m-d ",$row['start_time'])." to ".date("Y-m-d.",$row['end_time']);?></div>				
 				</div>
 				<div class="dl clearfix">
-					<div class="dt">Detail</div>
+					<div class="dt">Detail:</div>
 					<div class="dd clearfix"><?php echo $row['content_en'];?></div>
 				</div>
 				<div class="dl clearfix">
-				<div class="dt">Dish</div><br/>				
+				<div class="dt">Dish:</div><br/>				
 					<div class="dd clearfix">
 						<?php 
 							if($row['dish_id']){
