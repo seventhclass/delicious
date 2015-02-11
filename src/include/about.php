@@ -19,7 +19,7 @@
 		</div>
 		
 		<div  class="right">
-			<span>Lorem ipsum dolor sit amet, id quo fabellas comprehensam. Duo in atqui ceteros quaestio. Animal perfecto ei cum. In eam libris perfecto lobortis, eam doming denique expetenda eu, et tempor inciderint mel. At eum falli prodesset gloriatur. Mei ex erant neglegentur, cu pro consul altera.
+			<span>you can write anything here as you want,this is just a sample. In eam libris perfecto lobortis, eam doming denique expetenda eu, et tempor inciderint mel. At eum falli prodesset gloriatur. Mei ex erant neglegentur, cu pro consul altera.
 
 An pri viderer omittam suscipit, in mei quas adolescens. Vix vivendo offendit id, eam ex clita petentium, qui reque constituto ullamcorper et. An nec tempor urbanitas vituperata, labitur delicatissimi ne mei, no enim graecis reprehendunt mea. Tincidunt quaerendum vel in, per ea putant doctus.</span>
 		</div>

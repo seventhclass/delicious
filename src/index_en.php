@@ -39,13 +39,23 @@
 			
 		});
 		</script>
-		-->			
+		-->
+    		
 	</head>
 	<body>
-		<div>
-		<a href="index_en.php"><img  src="./images/logo1.jpg"  alt="delicious" style="display:block;border:1px;width:100%"></a>
 	
-	</div  >
+		<?php
+			include("./include/home.php");
+			include("./include/menu.php");
+			include("./include/promotion.php");
+			include("./include/about.php");
+			include("./include/contact.php");
+			include("./include/header.php");
+			include("./include/footer.php");
+			include("./include/detail.php");
+		?>
 		
+		<input type="hidden" id="curr_id" value="content_home">	
+		<a href="javascript:;" id="back-to-top" title="Back to top"><i class="icon_btt">&#xe057;</i></a>
 	</body>
 </html>
