@@ -9,6 +9,7 @@ body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,header,footer,d
 body{font-size:12px; 
 	height:100%;
 	background:url("../images/bg-unit4.png") repeat fixed;//#E0D2B4; 
+	/*background:url("../images/sushi.jpg")  ;//#E0D2B4;  */
 	//font-family: 'HelveticaRegular', Helvetica,Arial;
 	font-family: 'Elephant Regular',Tahoma, Geneva, sans-serif;
 	/* line-height:18px; */}

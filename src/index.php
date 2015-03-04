@@ -41,11 +41,27 @@
 		</script>
 		-->			
 	</head>
-	<body>
-		<div>
-		<a href="index_en.php"><img  src="./images/logo1.jpg"  alt="delicious" style="display:block;border:1px;width:100%"></a>
+	<body style=" text-align:-webkit-center;">  <!-- background="./images/sushi.jpg;background-repeat-x: no-repeat;background-repeat-y: no-repeat;"-->
+		
+		
+		<!--<div style="width:100%; height:100%;vertical-align:middle; padding-top:100px;background-image:url(./images/sushi.jpg)">   -->
+		<div style="width:100%; height:100%;vertical-align:middle; padding-top:100px;">
+		    <div>
+			   <img  src="./images/logo_1.jpg"  alt="delicious" style="display:block;border:1px;width:50%;">
+	        </div>
+			
+			<div style="display:block;height:157px; width:50%;padding-top: 25px;">
+			  <a href="index_en.php" ><span style="font-size:40px;" >ENGLISH&nbsp;&nbsp;&nbsp;</span></a> <!-- 可以直接修改字体颜色： color:green;-->
+			  <a href="index_FR.php"><span style="font-size:40px;">FRANÇAIS&nbsp;&nbsp;&nbsp;</span></a>
+			  <a href="index_cn.php"><span style="font-size:40px;">中  文</span></a>
+			
+			</div>
 	
-	</div  >
+	    
+		
+		
+		
+		</div  >
 		
 	</body>
 </html>
